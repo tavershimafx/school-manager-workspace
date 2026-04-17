@@ -1,0 +1,424 @@
+<body class="bg-surface text-on-surface flex flex-col h-screen overflow-hidden">
+  <!-- TopNavBar -->
+  <header
+    class="h-9 flex items-center justify-between px-3 bg-surface-container border-b border-outline-variant/10 select-none">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary"
+          style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+        <span class="text-[11px] font-semibold text-on-surface">Workspace IDE</span>
+      </div>
+      <nav class="flex gap-4">
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface relative" dropdown>File</a>
+          <div
+            class="pointer-events-auto absolute hidden z-70 top-[-4px] left-[110px] w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span
+                class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary">add_box</span>
+              <span class="text-[13px] flex-1">New File</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+N</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span
+                class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary">file_open</span>
+              <span class="text-[13px] flex-1">Open File</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+O</span>
+            </div>
+            <div class="my-1 border-t border-outline-variant/10"></div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary"
+                data-weight="fill" style="font-variation-settings: 'FILL' 1;">save</span>
+              <span class="text-[13px] flex-1">Save</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+S</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Save All</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+Shift+S</span>
+            </div>
+            <div class="my-1 border-t border-outline-variant/10"></div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Close Editor</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+W</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Exit</span>
+            </div>
+          </div>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface relative" dropdown>Edit</a>
+          <div
+            class="pointer-events-auto hidden z-70 absolute top-[-4px] left-[165px] w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Undo</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+Z</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Redo</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+Y</span>
+            </div>
+            <div class="my-1 border-t border-outline-variant/10"></div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span
+                class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary">content_cut</span>
+              <span class="text-[13px] flex-1">Cut</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+X</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span
+                class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary">content_copy</span>
+              <span class="text-[13px] flex-1">Copy</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+C</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
+              <span
+                class="material-symbols-outlined text-[18px] mr-3 text-on-surface-variant group-hover:text-primary">content_paste</span>
+              <span class="text-[13px] flex-1">Paste</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+V</span>
+            </div>
+            <div class="my-1 border-t border-outline-variant/10"></div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Find</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+F</span>
+            </div>
+            <div
+              class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
+              <div class="w-[18px] mr-3"></div>
+              <span class="text-[13px] flex-1">Replace</span>
+              <span class="text-[11px] text-on-surface-variant ml-4">Ctrl+H</span>
+            </div>
+          </div>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">Selection</a>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">View</a>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">Go</a>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">Run</a>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">Terminal</a>
+        </div>
+        <div class="inline">
+          <a class="text-[11px] text-on-surface-variant hover:text-on-surface">Help</a>
+        </div>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <div
+        class="relative flex items-center bg-surface-container-lowest border border-outline-variant/30 rounded px-2 h-6 w-64">
+        <span class="material-symbols-outlined text-[14px] text-outline">search</span>
+        <input class="bg-transparent border-none text-[11px] focus:ring-0 w-full placeholder:text-outline"
+          placeholder="Search files, symbols..." type="text" />
+      </div>
+      <div class="relative">
+        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
+          dropdown>settings</span>
+        <div class="hidden absolute right-0 mt-2 w-[350px] max-w-sm self-end mt-4">
+          <!-- Dropdown Arrow Indicator  -->
+          <div
+            class="absolute -top-1 right-10 w-3 h-3 bg-surface-bright rotate-45 z-10 border-t border-l border-outline-variant/10">
+          </div>
+          <!-- Notification Content Panel -->
+          <div
+            class="cloud-shadow glass-morphism rounded bg-on-primary-container border border-outline-variant/20 overflow-hidden w-full z-20 relative">
+            <div
+              class="px-4 py-3 flex items-center justify-between bg-surface-container-low border-b border-outline-variant/10">
+              <span
+                class="font-['Inter'] text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface">Notifications</span>
+              <button class="text-primary font-bold text-[0.6875rem] hover:underline">Mark all as read</button>
+            </div>
+            <div class="max-h-[400px] overflow-y-auto">
+              <!-- Notification Item: Success -->
+              <div
+                class="px-4 py-3 flex gap-3 hover:bg-surface-container-highest transition-colors cursor-pointer border-b border-outline-variant/10">
+                <div class="flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-emerald-600 text-[1.2rem]"
+                    data-icon="check_circle">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <p class="font-['Inter'] text-[0.6875rem] font-bold text-on-surface leading-tight">Build successful
+                  </p>
+                  <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant leading-tight">All production
+                    artifacts generated in 24.2s.</p>
+                  <span class="text-[10px] text-outline mt-1 uppercase tracking-tighter">2 mins ago</span>
+                </div>
+              </div>
+              <!-- Notification Item: Warning -->
+              <div
+                class="px-4 py-3 flex gap-3 hover:bg-surface-container-highest transition-colors cursor-pointer border-b border-outline-variant/10 bg-surface-container-low/50">
+                <div class="flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-amber-500 text-[1.2rem]"
+                    data-icon="warning">warning</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <p class="font-['Inter'] text-[0.6875rem] font-bold text-on-surface leading-tight">Merge conflict in
+                    main.py</p>
+                  <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant leading-tight">Conflict detected in
+                    line 124 with branch 'feature/ui-refactor'.</p>
+                  <span class="text-[10px] text-outline mt-1 uppercase tracking-tighter">15 mins ago</span>
+                </div>
+              </div>
+              <!-- Notification Item: Info -->
+              <div
+                class="px-4 py-3 flex gap-3 hover:bg-surface-container-highest transition-colors cursor-pointer border-b border-outline-variant/10">
+                <div class="flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-primary text-[1.2rem]" data-icon="update">update</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <p class="font-['Inter'] text-[0.6875rem] font-bold text-on-surface leading-tight">2 new extension
+                    updates</p>
+                  <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant leading-tight">Tailwind IntelliSense
+                    and Python (Microsoft) have updates.</p>
+                  <span class="text-[10px] text-outline mt-1 uppercase tracking-tighter">1 hour ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2 bg-surface-container-low flex justify-center border-t border-outline-variant/10">
+              <button
+                class="text-on-surface-variant hover:text-on-surface text-[0.6875rem] font-medium flex items-center gap-1">
+                View Activity Log <span class="material-symbols-outlined text-[1rem]"
+                  data-icon="chevron_right">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <span dropdown
+          class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">account_circle</span>
+
+        <div class="hidden absolute right-0 mt-2 w-[350px] max-w-xs self-end mt-4">
+          <!-- Dropdown Arrow Indicator -->
+          <div
+            class="absolute -top-1 right-8 w-3 h-3 bg-surface-bright rotate-45 z-10 border-t border-l border-outline-variant/10">
+          </div>
+          <!-- Profile Content Panel -->
+          <div
+            class="cloud-shadow glass-morphism rounded bg-on-primary-container border border-outline-variant/20 overflow-hidden w-full z-20 relative">
+            <!-- Header / Identity -->
+            <div class="px-4 py-4 flex flex-col items-center border-b border-outline-variant/10">
+              <div class="w-16 h-16 rounded-full border-2 border-primary-fixed p-0.5 mb-2">
+                <img alt="User Avatar" class="w-full h-full rounded-full object-cover"
+                  data-alt="Close up portrait of a male software engineer with a beard wearing glasses and a navy sweater"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96K7Pkn71rU6xnitdmMI3FFLOxGtfDV8npo8fRkTnM3W87fIug-40BH9MIBiaFlFlWAgAFkCyf9PKqxgoVz_U2i9Lh152kgTzZZS5f5p6PqKouMPJzYdaGphP_olc4_2kELVj4prZL4B6rk6iUCG9hMYWJt_0D0BkAV1r_p_kaycoVOMO0qeIuY7oQz_zA0hNZJsgUJ4jf_9B01wFQEyPCbPzEXIfUt4-ixQcMSqX7hO7dVbClafdoia-Lz0X8vFrLloQDZatdT2P" />
+              </div>
+              <h3 class="font-['Inter'] text-sm font-bold text-on-surface">Alex Rivera</h3>
+              <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant">Senior Cloud Architect</p>
+              <div
+                class="mt-2 px-2 py-0.5 bg-primary-fixed text-on-primary-fixed rounded-full text-[0.625rem] font-bold tracking-tight">
+                PRO ACCOUNT</div>
+            </div>
+            <!-- Menu Options -->
+            <nav class="py-1">
+              <button
+                class="w-full px-4 py-2 flex items-center justify-between hover:bg-surface-container-highest transition-colors group">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-[1.1rem] text-on-surface-variant group-hover:text-primary transition-colors"
+                    data-icon="settings">settings</span>
+                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-on-surface">Settings</span>
+                </div>
+                <span class="text-[10px] text-outline font-mono">⌘,</span>
+              </button>
+              <button
+                class="w-full px-4 py-2 flex items-center justify-between hover:bg-surface-container-highest transition-colors group">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-[1.1rem] text-on-surface-variant group-hover:text-primary transition-colors"
+                    data-icon="person">person</span>
+                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-on-surface">Profile Settings</span>
+                </div>
+              </button>
+              <button
+                class="w-full px-4 py-2 flex items-center justify-between hover:bg-surface-container-highest transition-colors group">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="material-symbols-outlined text-[1.1rem] text-on-surface-variant group-hover:text-primary transition-colors"
+                    data-icon="swap_horiz">swap_horiz</span>
+                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-on-surface">Switch Workspace</span>
+                </div>
+                <span class="text-[10px] text-outline font-mono">⌃S</span>
+              </button>
+              <div class="h-[1px] bg-outline-variant/10 my-1"></div>
+              <button
+                class="w-full px-4 py-2 flex items-center justify-between hover:bg-error-container/20 transition-colors group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[1.1rem] text-error" data-icon="logout">logout</span>
+                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-error">Sign Out</span>
+                </div>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content Area -->
+  <main class="flex-1 flex overflow-hidden">
+    <!-- SideNavBar (Activity Bar) -->
+    <aside
+      class="w-12 bg-surface-container-low border-r border-outline-variant/10 flex flex-col items-center py-4 gap-4">
+      <div class="relative group cursor-pointer">
+        <span class="material-symbols-outlined text-primary"
+          style="font-variation-settings: 'FILL' 1;">content_copy</span>
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-6 bg-primary rounded-r-full"></div>
+      </div>
+      <span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">search</span>
+      <span
+        class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">account_tree</span>
+      <span
+        class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">play_circle</span>
+      <span
+        class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">widgets</span>
+      <div class="mt-auto flex flex-col items-center gap-4">
+        <span
+          class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">account_circle</span>
+        <span
+          class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">settings</span>
+      </div>
+    </aside>
+    <!-- Solution Explorer -->
+    <aside class="w-54 bg-surface-container-low flex flex-col border-r border-outline-variant/10">
+      <div class="p-3 flex items-center justify-between">
+        <div>
+          <h2 class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Project Alpha</h2>
+          <p class="text-[10px] text-outline italic">main branch</p>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant text-[16px]">more_horiz</span>
+      </div>
+      <div class="flex-1 overflow-y-auto px-1 py-2">
+        <div
+          class="flex items-center gap-2 px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded-sm cursor-pointer mb-1">
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+          <span class="material-symbols-outlined text-[16px]">folder_open</span>
+          <span class="text-[12px] font-medium">src</span>
+        </div>
+        <div class="pl-6 flex flex-col gap-0.5">
+          <div
+            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
+            <span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+            <span class="text-[12px] text-on-surface">main.py</span>
+          </div>
+          <div
+            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
+            <span class="material-symbols-outlined text-[16px] text-secondary">css</span>
+            <span class="text-[12px] text-on-surface">styles.css</span>
+          </div>
+          <div
+            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
+            <span class="material-symbols-outlined text-[16px] text-error">html</span>
+            <span class="text-[12px] text-on-surface">index.html</span>
+          </div>
+        </div>
+        <div
+          class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer mt-1">
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="material-symbols-outlined text-[16px]">folder</span>
+          <span class="text-[12px] text-on-surface">assets</span>
+        </div>
+        <div class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer">
+          <span class="material-symbols-outlined text-[16px] text-outline">description</span>
+          <span class="text-[12px] text-on-surface">README.md</span>
+        </div>
+      </div>
+    </aside>
+    <!-- Editor Canvas -->
+    <section class="flex-1 flex flex-col bg-surface-container-lowest overflow-hidden">
+      <!-- Tabs  overflow-x-auto-->
+      <div class="h-9 flex items-center bg-surface-container-high no-scrollbar">
+        <div class="flex h-full items-end">
+          <div
+            class="px-4 py-2 hover:bg-surface-dim border-t-2 border-primary flex items-center gap-2 cursor-pointer h-full">
+            <span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+            <span class="text-[11px] font-bold text-on-surface">main.py</span>
+            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
+          </div>
+          <div
+            class="px-4 py-2 bg-surface-container-lowest flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
+            <span class="material-symbols-outlined text-[16px] text-secondary">css</span>
+            <span class="text-[11px] text-on-surface-variant">styles.css</span>
+            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
+          </div>
+          <div
+            class="px-4 py-2 hover:bg-surface-dim flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
+            <span class="material-symbols-outlined text-[16px] text-error">html</span>
+            <span class="text-[11px] text-on-surface-variant">index.html</span>
+            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
+          </div>
+          <div
+            class="px-4 py-2 hover:bg-surface-dim flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
+            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">add</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editor Surface -->
+      <div class="flex-1 flex flex-col relative overflow-y-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+
+  </main>
+  <!-- Status Bar (BottomNavBar) -->
+  <footer
+    class="h-6 bg-gradient-to-r from-primary to-primary-container text-on-primary flex items-center justify-between px-3 select-none">
+    <div class="flex items-center gap-4 h-full">
+      <div class="flex items-center gap-2 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="material-symbols-outlined text-[14px]">account_tree</span>
+        <span class="text-[10px] font-medium">main*</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="material-symbols-outlined text-[14px]">sync</span>
+        <span class="text-[10px]">0 ↓ 1 ↑</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="material-symbols-outlined text-[14px]">error</span>
+        <span class="text-[10px]">2</span>
+        <span class="material-symbols-outlined text-[14px]">warning</span>
+        <span class="text-[10px]">0</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 h-full">
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="text-[10px]">Ln 14, Col 24</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="text-[10px]">Spaces: 4</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="text-[10px]">UTF-8</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="text-[10px]">Python 3.10.2</span>
+      </div>
+      <div class="flex items-center gap-1 hover:bg-white/10 px-2 h-full cursor-pointer transition-colors">
+        <span class="material-symbols-outlined text-[14px]">notifications</span>
+      </div>
+    </div>
+  </footer>
+</body>

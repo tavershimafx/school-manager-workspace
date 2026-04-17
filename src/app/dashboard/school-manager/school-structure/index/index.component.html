@@ -1,0 +1,29 @@
+<div class="px-6 py-2 border-b border-outline-variant/10 bg-surface-bright flex items-center justify-between shrink-0">
+   <div class="flex items-center gap-6">
+      <button routerLink="/dashboard/scm/structure/subjects"
+         class="relative py-1 text-xs font-bold text-primary tracking-tight">
+         Subjects
+         <span class="absolute bottom-[-9px] left-0 right-0 h-0.5 bg-primary"></span>
+      </button>
+      <button routerLink="/dashboard/scm/structure/classes"
+         class="py-1 text-xs font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-colors">
+         Classes
+      </button>
+      <button routerLink="/dashboard/scm/structure/sessions"
+         class="py-1 text-xs font-medium text-on-surface-variant hover:text-on-surface tracking-tight transition-colors">
+         Sessions
+      </button>
+   </div>
+   <div class="flex items-center gap-2">
+      <div class="flex bg-surface-container-low rounded p-0.5 border border-outline-variant/15">
+         <button class="p-1 rounded-sm bg-surface-container-lowest shadow-sm">
+            <span class="material-symbols-outlined !text-sm text-primary">view_list</span>
+         </button>
+         <button class="p-1 rounded-sm hover:bg-surface-container-high">
+            <span class="material-symbols-outlined !text-sm text-on-surface-variant">grid_view</span>
+         </button>
+      </div>
+   </div>
+</div>
+
+<router-outlet></router-outlet>

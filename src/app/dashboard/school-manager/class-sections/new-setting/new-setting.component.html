@@ -1,0 +1,55 @@
+<base-modal title="Class Sections" module="School Management" subModule="Sections">
+   <!-- Modal Body (Form) -->
+   <div class="p-6 flex flex-col gap-5">
+      <div class="space-y-1.5">
+         <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Class
+            Category</label>
+         <div class="relative">
+            <select
+               class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary/20 appearance-none">
+               <option>Select Category</option>
+               <option>Junior Secondary School</option>
+               <option>Senior Secondary School</option>
+               <option>Primary Education</option>
+               <option>Kindergarten</option>
+            </select>
+            <span
+               class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant scale-75">expand_more</span>
+         </div>
+      </div>
+      <div class="space-y-1.5">
+         <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Max Num Of Compulsory
+            Subjects</label>
+         <input
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20"
+            placeholder="Enter number" type="number" />
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+         <div class="space-y-1.5">
+            <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Min Num Of
+               Subjects</label>
+            <input
+               class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20"
+               placeholder="0" type="number" />
+         </div>
+         <div class="space-y-1.5">
+            <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Max Num Of
+               Subjects</label>
+            <input
+               class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm text-on-surface placeholder:text-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20"
+               placeholder="0" type="number" />
+         </div>
+      </div>
+   </div>
+   <!-- Modal Footer -->
+   <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/10 flex justify-end gap-3">
+      <button
+         class="px-4 py-2 text-xs font-bold text-on-surface-variant hover:bg-surface-dim transition-colors rounded-sm uppercase tracking-wider">
+         Cancel
+      </button>
+      <button
+         class="px-6 py-2 text-xs font-bold text-on-primary bg-gradient-to-r from-primary to-primary-container shadow-lg shadow-primary/20 hover:brightness-110 transition-all rounded-sm uppercase tracking-wider">
+         Create
+      </button>
+   </div>
+</base-modal>

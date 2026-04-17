@@ -1,0 +1,46 @@
+<base-modal title="Move Student Assessment" module="Student Management" subModule="Reset Student Passwords">
+  <!-- Warning Message -->
+  <div class="px-6 pb-6">
+    <div class="p-4 bg-error-container/30 rounded-lg border border-error-container/50">
+      <div class="flex gap-3">
+        <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+        <p class="text-sm leading-relaxed text-on-error-container font-medium">
+          You are about to move student assessments from <span class="font-bold">Business Studies BE 7 A First Term,
+            2025/2026</span> to another subject of the same class and term. This will override any previous scores
+          in the target subject. This operation cannot be undone. Please select the target subject to proceed.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Form -->
+  <div class="px-6 pb-8 space-y-4">
+    <div class="space-y-1.5">
+      <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant"
+        for="target-subject">Target Subject</label>
+      <div class="relative">
+        <select
+          class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2.5 text-sm focus:ring-1 focus:ring-primary focus:border-primary appearance-none cursor-pointer"
+          id="target-subject">
+          <option disabled="" selected="" value="">Select a subject...</option>
+          <option value="math">Mathematics BE 7 A</option>
+          <option value="english">English Language BE 7 A</option>
+          <option value="science">Basic Science BE 7 A</option>
+          <option value="social">Social Studies BE 7 A</option>
+        </select>
+        <span
+          class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+      </div>
+    </div>
+  </div>
+  <!-- Actions -->
+  <footer class="bg-surface-container-low px-6 py-4 flex justify-end gap-3">
+    <button
+      class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-dim transition-colors rounded">
+      Cancel
+    </button>
+    <button
+      class="px-6 py-2 text-sm font-bold bg-gradient-to-r from-primary to-primary-container text-white rounded shadow-sm hover:opacity-90 active:scale-[0.98] transition-all">
+      Move
+    </button>
+  </footer>
+</base-modal>

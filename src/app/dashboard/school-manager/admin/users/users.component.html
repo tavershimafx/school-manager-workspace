@@ -1,0 +1,164 @@
+<div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Sub-Header / Tab Navigation Area -->
+        <div class="bg-surface-container-low px-6 py-4 flex justify-between items-end">
+          <div>
+            <h1 class="text-xl font-bold text-on-surface tracking-tight">Users</h1>
+            <p class="text-xs text-on-surface-variant font-medium">Manage users and privileges</p>
+          </div>
+          <button routerLink="/dashboard/mgmt/admin/new-user"
+            class="bg-[#2e7d32] hover:bg-[#1b5e20] text-white px-4 py-2 text-xs font-bold rounded-sm flex items-center gap-2 transition-colors">
+            <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+            New User
+          </button>
+        </div>
+        <!-- Search & Filter Bar -->
+        <div
+          class="bg-surface-container-lowest border-b border-outline-variant/15 p-4 flex flex-wrap items-center gap-4">
+          <div class="flex-1 min-w-[200px] relative">
+            <input
+              class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-1.5 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+              placeholder="Search..." type="text" />
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[0.6875rem] font-semibold text-on-surface-variant uppercase tracking-wider">Search
+              By</span>
+            <select
+              class="bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-1.5 text-xs focus:border-primary outline-none">
+              <option>Username</option>
+              <option>Email</option>
+              <option>Full Name</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[0.6875rem] font-semibold text-on-surface-variant uppercase tracking-wider">Entries per
+              page</span>
+            <select
+              class="bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-1.5 text-xs focus:border-primary outline-none">
+              <option>100</option>
+              <option>50</option>
+              <option>25</option>
+            </select>
+          </div>
+          <button
+            class="bg-[#2e7d32] hover:bg-[#1b5e20] text-white px-6 py-1.5 text-xs font-bold rounded-sm transition-colors">
+            Search
+          </button>
+        </div>
+        <!-- High Density Data Table -->
+        <div class="flex-1 overflow-auto custom-scrollbar bg-surface-container-lowest">
+          <table class="w-full text-left border-collapse min-w-[1000px]">
+            <thead>
+              <tr class="bg-surface-container-low sticky top-0 z-10">
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Username (Email)</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Full Name</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Email</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Status</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Created At</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20">
+                  Last Login</th>
+                <th
+                  class="px-6 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/20 text-right">
+                  Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/10">
+              <!-- Row 1 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-6 py-3 text-[0.6875rem] font-medium text-primary">admin_root</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface">System Administrator</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">admin@eduarch.edu</td>
+                <td class="px-6 py-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                </td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Oct 12, 2023, 08:45 AM</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">2 mins ago</td>
+                <td class="px-6 py-3 text-right">
+                  <button class="p-1 hover:bg-surface-container-highest rounded text-on-surface-variant">
+                    <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-6 py-3 text-[0.6875rem] font-medium text-primary">sarah.j</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface">Sarah Jenkins</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">s.jenkins@eduarch.edu</td>
+                <td class="px-6 py-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                </td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Nov 05, 2023, 11:20 AM</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Yesterday</td>
+                <td class="px-6 py-3 text-right">
+                  <button class="p-1 hover:bg-surface-container-highest rounded text-on-surface-variant">
+                    <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-6 py-3 text-[0.6875rem] font-medium text-primary">michael.corp</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface">Michael Thompson</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">m.thompson@eduarch.edu</td>
+                <td class="px-6 py-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-highest text-slate-500 border border-outline-variant">Inactive</span>
+                </td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Jan 15, 2024, 09:00 AM</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Jan 28, 2024</td>
+                <td class="px-6 py-3 text-right">
+                  <button class="p-1 hover:bg-surface-container-highest rounded text-on-surface-variant">
+                    <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-6 py-3 text-[0.6875rem] font-medium text-primary">elena_reg</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface">Elena Rodriguez</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">e.rodriguez@eduarch.edu</td>
+                <td class="px-6 py-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                </td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Feb 02, 2024, 02:15 PM</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Today, 10:12 AM</td>
+                <td class="px-6 py-3 text-right">
+                  <button class="p-1 hover:bg-surface-container-highest rounded text-on-surface-variant">
+                    <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-6 py-3 text-[0.6875rem] font-medium text-primary">david.k</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface">David Kim</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">d.kim@eduarch.edu</td>
+                <td class="px-6 py-3">
+                  <span
+                    class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                </td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Mar 10, 2024, 10:30 AM</td>
+                <td class="px-6 py-3 text-[0.6875rem] text-on-surface-variant">Yesterday</td>
+                <td class="px-6 py-3 text-right">
+                  <button class="p-1 hover:bg-surface-container-highest rounded text-on-surface-variant">
+                    <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

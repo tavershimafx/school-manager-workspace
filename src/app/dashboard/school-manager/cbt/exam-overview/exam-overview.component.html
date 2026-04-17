@@ -1,0 +1,169 @@
+<!-- Breadcrumb & Toolbar -->
+<div class="px-6 py-3 border-b border-outline-variant/10 flex items-center justify-between bg-surface-bright">
+   <div class="flex items-center gap-3">
+      <button
+         class="w-7 h-7 flex items-center justify-center hover:bg-surface-container-high rounded-full text-on-surface-variant transition-colors">
+         <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <nav class="flex items-center gap-2 text-[11px] font-medium uppercase tracking-wide">
+         <span class="text-on-surface-variant">Academics</span>
+         <span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+         <span class="text-on-surface-variant">Results</span>
+         <span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+         <span class="text-primary">JSS 1A FIRST TERM 2025/2026</span>
+      </nav>
+   </div>
+   <div class="flex items-center gap-2">
+      <button
+         class="px-3 py-1.5 bg-primary text-on-primary text-[11px] font-semibold flex items-center gap-2 rounded-sm shadow-sm hover:bg-primary-container transition-all">
+         <span class="material-symbols-outlined text-[14px]">print</span>
+         Export Report
+      </button>
+   </div>
+</div>
+<!-- Dense Filter Toolbar -->
+<div class="px-6 py-2 bg-surface-container-low/50 flex flex-wrap items-center gap-3 border-b border-outline-variant/10">
+   <div class="flex-1 min-w-[200px] relative">
+      <span class="material-symbols-outlined absolute left-2 top-1.5 text-[16px] text-outline">search</span>
+      <input
+         class="w-full pl-8 pr-3 py-1.5 bg-surface-container-lowest border border-outline-variant/40 rounded-sm text-[11px] focus:ring-1 focus:ring-primary outline-none"
+         placeholder="Search students..." type="text" />
+   </div>
+   <div class="flex items-center gap-2">
+      <span class="text-[10px] font-bold text-on-surface-variant uppercase">Search By:</span>
+      <select
+         class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/40 rounded-sm text-[11px] text-on-surface-variant outline-none focus:ring-1 focus:ring-primary">
+         <option>Full Name</option>
+         <option>Student ID</option>
+         <option>Class Position</option>
+      </select>
+   </div>
+   <div class="flex items-center gap-2">
+      <span class="text-[10px] font-bold text-on-surface-variant uppercase">Show:</span>
+      <select
+         class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/40 rounded-sm text-[11px] text-on-surface-variant outline-none focus:ring-1 focus:ring-primary">
+         <option>10</option>
+         <option>50</option>
+         <option selected="">100</option>
+      </select>
+   </div>
+   <button
+      class="px-5 py-1.5 bg-primary-container text-on-primary-container text-[11px] font-bold rounded-sm hover:opacity-90 transition-all border border-primary/20">
+      SEARCH
+   </button>
+</div>
+<!-- Data Table Workspace -->
+<div class="flex-1 overflow-auto custom-scrollbar p-6">
+   <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-sm overflow-hidden">
+      <table class="w-full text-left border-collapse">
+         <thead>
+            <tr class="bg-surface-container-low border-b border-outline-variant/30">
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider w-12">S/N
+               </th>
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Student
+                  Name</th>
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Student ID
+               </th>
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider w-48">
+                  Percent Pass</th>
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider">Total
+                  Score</th>
+               <th class="px-4 py-3 text-[10px] font-black uppercase text-on-surface-variant tracking-wider text-right">
+                  Actions</th>
+            </tr>
+         </thead>
+         <tbody class="divide-y divide-outline-variant/10">
+            <!-- Row 1 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+               <td class="px-4 py-3 text-[11px] font-medium text-outline">1</td>
+               <td class="px-4 py-3 text-[11px] font-bold text-on-surface">Ada Mohammed Emeka</td>
+               <td class="px-4 py-3 text-[11px] font-mono text-primary">000054</td>
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+                        <div class="h-full bg-error w-[10%] rounded-full"></div>
+                     </div>
+                     <span class="text-[10px] font-bold text-error">10%</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3 text-[11px] font-medium">3/30</td>
+               <td class="px-4 py-3 text-right">
+                  <button routerLink="/dashboard/scm/cbt/student-exam-details"
+                  class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">View
+                     Details</button>
+               </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+               <td class="px-4 py-3 text-[11px] font-medium text-outline">2</td>
+               <td class="px-4 py-3 text-[11px] font-bold text-on-surface">Oluwaseun Tobi Adenuga</td>
+               <td class="px-4 py-3 text-[11px] font-mono text-primary">000082</td>
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-[85%] rounded-full"></div>
+                     </div>
+                     <span class="text-[10px] font-bold text-primary">85%</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3 text-[11px] font-medium">25/30</td>
+               <td class="px-4 py-3 text-right">
+                  <button routerLink="/dashboard/scm/cbt/student-exam-details"
+                   class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">View
+                     Details</button>
+               </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+               <td class="px-4 py-3 text-[11px] font-medium text-outline">3</td>
+               <td class="px-4 py-3 text-[11px] font-bold text-on-surface">Fatima Zahra Ahmed</td>
+               <td class="px-4 py-3 text-[11px] font-mono text-primary">000104</td>
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+                        <div class="h-full bg-primary-container w-[72%] rounded-full"></div>
+                     </div>
+                     <span class="text-[10px] font-bold text-primary-container">72%</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3 text-[11px] font-medium">21/30</td>
+               <td class="px-4 py-3 text-right">
+                  <button routerLink="/dashboard/scm/cbt/student-exam-details"
+                   class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight">View
+                     Details</button>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-6 h-10 border-t border-outline-variant/10 flex items-center justify-between bg-surface-container-low/30">
+   <div class="text-[10px] font-medium text-on-surface-variant">
+      Showing 1 - 3 of 124 Items
+   </div>
+   <div class="flex items-center gap-1">
+      <button class="p-1 hover:bg-surface-container-high rounded disabled:opacity-30" disabled="">
+         <span class="material-symbols-outlined text-[16px]">first_page</span>
+      </button>
+      <button class="p-1 hover:bg-surface-container-high rounded disabled:opacity-30" disabled="">
+         <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+      </button>
+      <div class="flex items-center px-2">
+         <span class="px-2 py-0.5 bg-primary text-on-primary text-[10px] font-bold rounded-sm">1</span>
+         <span
+            class="px-2 py-0.5 text-on-surface-variant text-[10px] font-bold hover:bg-surface-container-high rounded-sm cursor-pointer">2</span>
+         <span
+            class="px-2 py-0.5 text-on-surface-variant text-[10px] font-bold hover:bg-surface-container-high rounded-sm cursor-pointer">3</span>
+         <span class="px-2 py-0.5 text-on-surface-variant text-[10px]">...</span>
+         <span
+            class="px-2 py-0.5 text-on-surface-variant text-[10px] font-bold hover:bg-surface-container-high rounded-sm cursor-pointer">13</span>
+      </div>
+      <button class="p-1 hover:bg-surface-container-high rounded">
+         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      </button>
+      <button class="p-1 hover:bg-surface-container-high rounded">
+         <span class="material-symbols-outlined text-[16px]">last_page</span>
+      </button>
+   </div>
+</div>

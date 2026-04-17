@@ -1,0 +1,204 @@
+<div class="flex-1 overflow-hidden flex flex-col bg-surface-container-lowest m-0">
+  <!-- Toolbar -->
+  <div class="p-3 flex items-center justify-between border-b border-outline-variant/15">
+    <div class="flex items-center gap-4">
+      <h1 class="text-sm font-bold text-on-surface tracking-tight">Invoices</h1>
+      <div class="h-4 w-px bg-outline-variant/30"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-[0.6875rem] text-on-surface-variant font-medium">Filter by Status:</span>
+        <div class="flex bg-surface-container rounded-sm p-0.5">
+          <button
+            class="px-2 py-0.5 text-[0.625rem] bg-surface-container-lowest shadow-sm rounded-sm font-semibold">All</button>
+          <button
+            class="px-2 py-0.5 text-[0.625rem] text-on-surface-variant hover:text-on-surface transition-colors">Paid</button>
+          <button
+            class="px-2 py-0.5 text-[0.625rem] text-on-surface-variant hover:text-on-surface transition-colors">Pending</button>
+          <button
+            class="px-2 py-0.5 text-[0.625rem] text-on-surface-variant hover:text-on-surface transition-colors">Overdue</button>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-2 text-outline">
+          <span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+        </span>
+        <input
+          class="h-7 w-48 pl-8 pr-2 text-[0.6875rem] bg-surface-container-low border-transparent focus:border-primary focus:ring-0 rounded-sm"
+          placeholder="Find invoice..." type="text" />
+      </div>
+      <button (click)="newInvoice()"
+        class="flex items-center gap-1.5 px-3 h-7 bg-primary hover:bg-primary-container text-white text-[0.6875rem] font-bold rounded-sm transition-all shadow-sm">
+        <span class="material-symbols-outlined text-xs" data-icon="add">add</span>
+        New Invoice
+      </button>
+      <button
+        class="w-7 h-7 flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:bg-surface-dim transition-colors rounded-sm">
+        <span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+      </button>
+      <button
+        class="w-7 h-7 flex items-center justify-center bg-surface-container-low text-on-surface-variant hover:bg-surface-dim transition-colors rounded-sm">
+        <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+      </button>
+    </div>
+  </div>
+  <!-- Data Table Container -->
+  <div class="flex-1 overflow-auto custom-scrollbar">
+    <table class="w-full border-separate border-spacing-0">
+      <thead class="sticky top-0 bg-surface-container-low z-10">
+        <tr>
+          <th
+            class="px-4 py-2.5 text-left text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            S/N</th>
+          <th
+            class="px-4 py-2.5 text-left text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            ID</th>
+          <th
+            class="px-4 py-2.5 text-left text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Fee Type</th>
+          <th
+            class="px-4 py-2.5 text-right text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Amount</th>
+          <th
+            class="px-4 py-2.5 text-center text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Status</th>
+          <th
+            class="px-4 py-2.5 text-right text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Balance</th>
+          <th
+            class="px-4 py-2.5 text-left text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Due Date</th>
+          <th
+            class="px-4 py-2.5 text-center text-[0.625rem] font-bold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+            Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline-variant/10">
+        <!-- Row 1 -->
+        <tr class="hover:bg-surface-container-low group transition-colors">
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">01</td>
+          <td class="px-4 py-3 text-[0.6875rem] font-semibold text-primary">INV-00000602</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface">2025 First Term fees</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-medium">₦5,000.00</td>
+          <td class="px-4 py-3 text-center">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-bold bg-amber-100 text-amber-800 uppercase tracking-tighter">Pending</span>
+          </td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-semibold text-error">₦5,000.00</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">30 Mar 2026</td>
+          <td class="px-4 py-3 text-center">
+            <button class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+            </button>
+          </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="hover:bg-surface-container-low group transition-colors">
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">02</td>
+          <td class="px-4 py-3 text-[0.6875rem] font-semibold text-primary">INV-00000599</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface">Tuition - Grade 11</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-medium">₦150,000.00</td>
+          <td class="px-4 py-3 text-center">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-bold bg-green-100 text-green-800 uppercase tracking-tighter">Paid</span>
+          </td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-semibold text-on-surface-variant">₦0.00</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">15 Jan 2025</td>
+          <td class="px-4 py-3 text-center">
+            <button class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+            </button>
+          </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="hover:bg-surface-container-low group transition-colors">
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">03</td>
+          <td class="px-4 py-3 text-[0.6875rem] font-semibold text-primary">INV-00000605</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface">Laboratory Fees</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-medium">₦12,500.00</td>
+          <td class="px-4 py-3 text-center">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-bold bg-amber-100 text-amber-800 uppercase tracking-tighter">Pending</span>
+          </td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-semibold text-error">₦12,500.00</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">22 Feb 2025</td>
+          <td class="px-4 py-3 text-center">
+            <button class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+            </button>
+          </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr class="hover:bg-surface-container-low group transition-colors">
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">04</td>
+          <td class="px-4 py-3 text-[0.6875rem] font-semibold text-primary">INV-00000592</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface">Annual Sports Fee</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-medium">₦8,000.00</td>
+          <td class="px-4 py-3 text-center">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-bold bg-red-100 text-red-800 uppercase tracking-tighter">Overdue</span>
+          </td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-semibold text-error">₦8,000.00</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">01 Dec 2024</td>
+          <td class="px-4 py-3 text-center">
+            <button class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+            </button>
+          </td>
+        </tr>
+        <!-- Additional filler rows for density -->
+        <tr class="hover:bg-surface-container-low group transition-colors">
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">05</td>
+          <td class="px-4 py-3 text-[0.6875rem] font-semibold text-primary">INV-00000610</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface">Stationery Bundle</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-medium">₦3,200.00</td>
+          <td class="px-4 py-3 text-center">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6rem] font-bold bg-green-100 text-green-800 uppercase tracking-tighter">Paid</span>
+          </td>
+          <td class="px-4 py-3 text-[0.6875rem] text-right font-semibold text-on-surface-variant">₦0.00</td>
+          <td class="px-4 py-3 text-[0.6875rem] text-on-surface-variant">10 Mar 2025</td>
+          <td class="px-4 py-3 text-center">
+            <button class="p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Table Footer / Pagination -->
+  <div
+    class="px-4 py-2 border-t border-outline-variant/15 flex items-center justify-between bg-surface-container-low shrink-0">
+    <div class="flex items-center gap-4">
+      <span class="text-[0.625rem] font-medium text-on-surface-variant">Showing 1-5 of 128 items</span>
+      <div class="flex items-center gap-1">
+        <span class="text-[0.625rem] text-on-surface-variant">Items per page:</span>
+        <select class="bg-transparent border-none text-[0.625rem] font-bold focus:ring-0 py-0 pr-6">
+          <option>20</option>
+          <option>50</option>
+          <option>100</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex items-center gap-1">
+      <button
+        class="w-6 h-6 flex items-center justify-center text-on-surface-variant hover:bg-surface-dim rounded-sm transition-colors">
+        <span class="material-symbols-outlined text-sm" data-icon="first_page">first_page</span>
+      </button>
+      <button
+        class="w-6 h-6 flex items-center justify-center text-on-surface-variant hover:bg-surface-dim rounded-sm transition-colors">
+        <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+      </button>
+      <span class="px-3 text-[0.625rem] font-bold">1 / 7</span>
+      <button
+        class="w-6 h-6 flex items-center justify-center text-on-surface-variant hover:bg-surface-dim rounded-sm transition-colors">
+        <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+      </button>
+      <button
+        class="w-6 h-6 flex items-center justify-center text-on-surface-variant hover:bg-surface-dim rounded-sm transition-colors">
+        <span class="material-symbols-outlined text-sm" data-icon="last_page">last_page</span>
+      </button>
+    </div>
+  </div>
+</div>

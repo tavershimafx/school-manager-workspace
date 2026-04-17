@@ -1,0 +1,14 @@
+<!-- Sub-navigation & Toolbar -->
+<div class="bg-surface-container-lowest border-b border-outline-variant/20 px-4 pt-4 pb-2 shrink-0">
+   <div class="flex items-center gap-8 mb-4">
+      <div class="relative pb-1 cursor-pointer" routerLink="/dashboard/scm/sections">
+         <span class="text-[12px] font-semibold text-primary">Class Sections</span>
+         <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></div>
+      </div>
+      <div class="relative pb-1 cursor-pointer group" routerLink="/dashboard/scm/sections/settings">
+         <span class="text-[12px] font-medium text-on-surface-variant group-hover:text-on-surface">Section
+            Settings</span>
+      </div>
+   </div>
+   <router-outlet></router-outlet>
+</div>

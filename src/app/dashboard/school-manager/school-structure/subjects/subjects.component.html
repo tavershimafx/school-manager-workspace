@@ -1,0 +1,229 @@
+
+<!-- Action Toolbar -->
+<div class="px-6 py-3 flex flex-wrap items-center justify-between gap-4 shrink-0">
+   <div class="flex items-center gap-2">
+      <button (click)="newSubject()"
+         class="px-3 py-1.5 bg-gradient-to-b from-primary to-primary-container text-white text-[11px] font-bold rounded-sm flex items-center gap-1.5 shadow-sm hover:brightness-110 transition-all">
+         <span class="material-symbols-outlined !text-sm">add</span>
+         New Subject
+      </button>
+      <div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+      <button
+         class="px-3 py-1.5 bg-surface-container-low text-on-surface text-[11px] font-semibold border border-outline-variant/20 rounded-sm flex items-center gap-1.5 hover:bg-surface-container-high transition-colors">
+         <span class="material-symbols-outlined !text-sm">download</span>
+         Download
+      </button>
+      <button
+         class="px-3 py-1.5 bg-surface-container-low text-on-surface text-[11px] font-semibold border border-outline-variant/20 rounded-sm flex items-center gap-1.5 hover:bg-surface-container-high transition-colors">
+         <span class="material-symbols-outlined !text-sm">print</span>
+         Print
+      </button>
+      <button
+         class="px-3 py-1.5 bg-surface-container-low text-on-surface text-[11px] font-semibold border border-outline-variant/20 rounded-sm flex items-center gap-1.5 hover:bg-surface-container-high transition-colors">
+         <span class="material-symbols-outlined !text-sm">upload</span>
+         Upload
+      </button>
+   </div>
+   <div class="relative min-w-[240px]">
+      <span
+         class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined !text-sm text-on-surface-variant">search</span>
+      <input
+         class="w-full bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-sm pl-9 py-1.5 text-xs"
+         placeholder="Filter subjects..." type="text" />
+   </div>
+</div>
+<!-- Table Content Area -->
+<div class="flex-1 overflow-auto custom-scrollbar px-6 pb-6">
+   <div
+      class="bg-surface-container-lowest border border-outline-variant/20 rounded-sm overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+      <table class="w-full text-left border-collapse">
+         <thead>
+            <tr class="bg-surface-container-low border-b border-outline-variant/20">
+               <th class="px-4 py-3 text-[11px] font-bold text-on-surface-variant uppercase tracking-wider w-1/4">Name
+               </th>
+               <th class="px-4 py-3 text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+               <th class="px-4 py-3 text-[11px] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                  Compulsory</th>
+               <th class="px-4 py-3 text-[11px] font-bold text-on-surface-variant uppercase tracking-wider w-1/3">
+                  Description</th>
+               <th class="px-4 py-3 text-[11px] font-bold text-on-surface-variant uppercase tracking-wider text-right">
+                  Actions</th>
+            </tr>
+         </thead>
+         <tbody class="divide-y divide-outline-variant/10">
+            <!-- Row 1 -->
+            <tr class="hover:bg-primary-fixed/5 transition-colors group">
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div
+                        class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-[10px]">
+                        MA</div>
+                     <span class="text-[12px] font-semibold text-on-surface">Mathematics Advanced</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+               </td>
+               <td class="px-4 py-3 text-center">
+                  <span class="material-symbols-outlined !text-lg text-green-600"
+                     style="font-variation-settings: 'wght' 600;">check_circle</span>
+               </td>
+               <td class="px-4 py-3">
+                  <span class="text-[11px] text-on-surface-variant leading-relaxed line-clamp-1">Calculus, linear
+                     algebra, and statistical modeling for senior levels.</span>
+               </td>
+               <td class="px-4 py-3 text-right">
+                  <button class="p-1 hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined !text-sm">edit</span></button>
+                  <button class="p-1 hover:text-error transition-colors"><span
+                        class="material-symbols-outlined !text-sm">delete</span></button>
+               </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr class="hover:bg-primary-fixed/5 transition-colors group">
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div
+                        class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-bold text-[10px]">
+                        EN</div>
+                     <span class="text-[12px] font-semibold text-on-surface">English Literature</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+               </td>
+               <td class="px-4 py-3 text-center">
+                  <span class="material-symbols-outlined !text-lg text-green-600"
+                     style="font-variation-settings: 'wght' 600;">check_circle</span>
+               </td>
+               <td class="px-4 py-3">
+                  <span class="text-[11px] text-on-surface-variant leading-relaxed line-clamp-1">Analysis of classical
+                     and contemporary world literature and composition.</span>
+               </td>
+               <td class="px-4 py-3 text-right">
+                  <button class="p-1 hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined !text-sm">edit</span></button>
+                  <button class="p-1 hover:text-error transition-colors"><span
+                        class="material-symbols-outlined !text-sm">delete</span></button>
+               </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr class="hover:bg-primary-fixed/5 transition-colors group">
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div
+                        class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-[10px]">
+                        CS</div>
+                     <span class="text-[12px] font-semibold text-on-surface">Computer Science</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+               </td>
+               <td class="px-4 py-3 text-center">
+                  <span class="material-symbols-outlined !text-lg text-slate-300">cancel</span>
+               </td>
+               <td class="px-4 py-3">
+                  <span class="text-[11px] text-on-surface-variant leading-relaxed line-clamp-1">Introduction to
+                     algorithms, data structures, and web development.</span>
+               </td>
+               <td class="px-4 py-3 text-right">
+                  <button class="p-1 hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined !text-sm">edit</span></button>
+                  <button class="p-1 hover:text-error transition-colors"><span
+                        class="material-symbols-outlined !text-sm">delete</span></button>
+               </td>
+            </tr>
+            <!-- Row 4 -->
+            <tr class="hover:bg-primary-fixed/5 transition-colors group bg-surface-container-low/20">
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div
+                        class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-[10px]">
+                        CH</div>
+                     <span class="text-[12px] font-semibold text-slate-500">Ancient History</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-tight">Inactive</span>
+               </td>
+               <td class="px-4 py-3 text-center">
+                  <span class="material-symbols-outlined !text-lg text-slate-300">cancel</span>
+               </td>
+               <td class="px-4 py-3">
+                  <span class="text-[11px] text-slate-400 leading-relaxed line-clamp-1">Study of early civilizations and
+                     historical methodologies. Currently archived.</span>
+               </td>
+               <td class="px-4 py-3 text-right">
+                  <button class="p-1 hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined !text-sm">edit</span></button>
+                  <button class="p-1 hover:text-error transition-colors"><span
+                        class="material-symbols-outlined !text-sm">delete</span></button>
+               </td>
+            </tr>
+            <!-- Row 5 -->
+            <tr class="hover:bg-primary-fixed/5 transition-colors group">
+               <td class="px-4 py-3">
+                  <div class="flex items-center gap-3">
+                     <div
+                        class="w-8 h-8 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-[10px]">
+                        PH</div>
+                     <span class="text-[12px] font-semibold text-on-surface">Theoretical Physics</span>
+                  </div>
+               </td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+               </td>
+               <td class="px-4 py-3 text-center">
+                  <span class="material-symbols-outlined !text-lg text-green-600"
+                     style="font-variation-settings: 'wght' 600;">check_circle</span>
+               </td>
+               <td class="px-4 py-3">
+                  <span class="text-[11px] text-on-surface-variant leading-relaxed line-clamp-1">Fundamentals of
+                     mechanics, electromagnetism, and quantum basics.</span>
+               </td>
+               <td class="px-4 py-3 text-right">
+                  <button class="p-1 hover:text-primary transition-colors"><span
+                        class="material-symbols-outlined !text-sm">edit</span></button>
+                  <button class="p-1 hover:text-error transition-colors"><span
+                        class="material-symbols-outlined !text-sm">delete</span></button>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <!-- Pagination footer -->
+   <div class="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant">
+      <div class="flex items-center gap-4">
+         <span>Showing 1-5 of 24 subjects</span>
+         <div class="flex items-center gap-2">
+            <span>Rows per page:</span>
+            <select class="bg-transparent border-none focus:ring-0 py-0 text-[11px] font-bold">
+               <option>10</option>
+               <option>25</option>
+               <option>50</option>
+            </select>
+         </div>
+      </div>
+      <div class="flex items-center gap-2">
+         <button class="p-1 rounded hover:bg-surface-container-high transition-colors"><span
+               class="material-symbols-outlined !text-sm">first_page</span></button>
+         <button class="p-1 rounded hover:bg-surface-container-high transition-colors"><span
+               class="material-symbols-outlined !text-sm">chevron_left</span></button>
+         <div class="flex items-center gap-1">
+            <button class="w-6 h-6 rounded bg-primary text-white font-bold">1</button>
+            <button class="w-6 h-6 rounded hover:bg-surface-container-high">2</button>
+            <button class="w-6 h-6 rounded hover:bg-surface-container-high">3</button>
+         </div>
+         <button class="p-1 rounded hover:bg-surface-container-high transition-colors"><span
+               class="material-symbols-outlined !text-sm">chevron_right</span></button>
+         <button class="p-1 rounded hover:bg-surface-container-high transition-colors"><span
+               class="material-symbols-outlined !text-sm">last_page</span></button>
+      </div>
+   </div>
+</div>

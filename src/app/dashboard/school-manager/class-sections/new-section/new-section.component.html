@@ -1,0 +1,56 @@
+<base-modal title="Create Section" module="School Management" subModule="Class Section">
+  <!-- Modal Body -->
+          <div class="p-6 space-y-6">
+            <form class="space-y-4">
+              <!-- Name Field -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">
+                  Name <span class="text-error">*</span>
+                </label>
+                <input
+                  class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-outline/50"
+                  placeholder="e.g. Undergraduate Core" type="text" value="" />
+              </div>
+              <!-- Status Field -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">
+                  Status
+                </label>
+                <div class="relative">
+                  <select
+                    class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all appearance-none">
+                    <option selected="">Active</option>
+                    <option>Inactive</option>
+                    <option>Archived</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-on-surface-variant">
+                    <span class="material-symbols-outlined">expand_more</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Description Field -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">
+                  Description
+                </label>
+                <textarea
+                  class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-outline/50 resize-none"
+                  placeholder="Enter category details, objectives, or administrative notes..." rows="4"></textarea>
+              </div>
+            </form>
+          </div>
+          <!-- Modal Footer -->
+          <div
+            class="px-6 py-4 bg-surface-container-low/50 flex items-center justify-end gap-3 border-t border-outline-variant/10">
+            <button
+              class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-colors">
+              Cancel
+            </button>
+            <button
+              class="px-6 py-2 text-sm font-bold text-on-primary bg-primary hover:bg-primary-container rounded-sm shadow-sm transition-all flex items-center gap-2">
+              <span>Create</span>
+              <span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+            </button>
+          </div>
+</base-modal>

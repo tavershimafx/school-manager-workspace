@@ -1,0 +1,251 @@
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+   <!-- Header Section -->
+   <div class="flex justify-between items-start">
+      <div>
+         <h1 class="text-2xl font-bold tracking-tight text-on-surface">Students</h1>
+         <p class="text-on-surface-variant text-sm mt-1">Manage students and enrollments for the current academic
+            year.</p>
+      </div>
+      <div class="flex gap-2">
+         <button routerLink="/dashboard/scm/students/new"
+            class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-white px-3 py-1.5 rounded-sm text-xs font-semibold hover:shadow-md transition-shadow">
+            <span class="material-symbols-outlined text-[16px]">add</span>
+            New Student
+         </button>
+      </div>
+   </div>
+   <!-- Search & Filters -->
+   <div class="bg-surface-container-low p-2 rounded flex items-center gap-2 relative">
+      <div class="relative flex-1">
+         <span class="material-symbols-outlined absolute left-2.5 top-1.5 text-outline text-[18px]">search</span>
+         <input
+            class="w-full bg-surface-container-lowest border-none text-xs pl-9 pr-3 py-2 rounded focus:ring-1 focus:ring-primary outline-none"
+            placeholder="Search students by name, registration number or email..." type="text" />
+      </div>
+      <button
+         class="bg-surface-container-lowest px-3 py-2 text-xs font-medium text-on-surface hover:bg-surface-dim transition-colors rounded flex items-center gap-1.5 border border-outline-variant/20">
+         <span class="material-symbols-outlined text-[16px]">filter_list</span>
+         Filters
+      </button>
+      <button
+            class="bg-primary px-3 py-2 text-xs font-medium text-on-primary hover:bg-surface-dim transition-colors rounded flex items-center gap-1.5 border border-outline-variant/20">
+            <span class="material-symbols-outlined text-[16px]">search</span>Search
+         </button>
+      <button
+         class="bg-surface-container-lowest px-3 py-2 text-xs font-medium text-on-surface hover:bg-surface-dim transition-colors rounded flex items-center gap-1.5 border border-outline-variant/20">
+         <span class="material-symbols-outlined text-[16px]">publish</span>
+         Upload
+      </button>
+      <div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+      <!-- ACTIONS DROPDOWN (OPEN) -->
+      <div class="relative z-50">
+         <button dropdown
+            class="bg-surface-container-lowest px-2 py-2 text-xs font-medium text-on-surface hover:bg-surface-dim transition-colors rounded border border-outline-variant/20">
+         <span class="material-symbols-outlined text-[18px]">more_vert</span>
+         </button>
+         <!-- Dropdown Content (Authority: Instruction IMAGE_55) -->
+         <div
+            class="hidden absolute right-0 mt-2 w-64 glass-panel border border-outline-variant/30 rounded-xl shadow-2xl py-2 overflow-hidden z-[100] bg-surface-container-lowest">
+            <div class="px-3 py-1 mb-1 border-b border-outline-variant/10">
+               <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Reports &amp;
+                  Printing</span>
+            </div>
+            <button
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">print</span>
+               Print Basic Details
+            </button>
+            <button
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">description</span>
+               Print Extended Details
+            </button>
+            <button (click)="admissionList()"
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">list_alt</span>
+               Print Admission List
+            </button>
+            <div class="px-3 py-1 my-1 border-y border-outline-variant/10">
+               <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Bulk Management</span>
+            </div>
+            <button (click)="generateEnroll()"
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">table_view</span>
+               Edit In Spreadsheet
+            </button>
+            <button (click)="resetPasswords()"
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">lock_reset</span>
+               Reset Passwords
+            </button>
+            <div class="px-3 py-1 my-1 border-y border-outline-variant/10">
+               <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Process Automation</span>
+            </div>
+            <button (click)="generateEnroll()"
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">person_add</span>
+               Generate Enrollment
+            </button>
+            <button
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-primary/5 text-on-surface group transition-colors">
+               <span class="material-symbols-outlined text-slate-400 group-hover:text-primary">account_circle</span>
+               Generate Accounts
+            </button>
+            <button (click)="clearEnroll()"
+               class="w-full flex items-center gap-3 px-4 py-2 text-xs text-left hover:bg-error/5 text-error group transition-colors">
+               <span class="material-symbols-outlined group-hover:text-error">delete_sweep</span>
+               Clear Enrollment
+            </button>
+         </div>
+      </div>
+   </div>
+   <!-- Data Table Container -->
+   <div class="border border-outline-variant/30 rounded overflow-hidden">
+      <table class="w-full text-left border-collapse">
+         <thead>
+            <tr class="bg-surface-container text-on-surface-variant text-[11px] font-bold uppercase tracking-wider">
+               <th class="px-4 py-2 w-10">S/N</th>
+               <th class="px-2 py-2 w-8"><input class="rounded-sm border-outline-variant text-primary focus:ring-0"
+                     type="checkbox" /></th>
+               <th class="px-4 py-2">Reg Number</th>
+               <th class="px-4 py-2">FullName</th>
+               <th class="px-4 py-2">Email</th>
+               <th class="px-4 py-2">Status</th>
+               <th class="px-4 py-2">Gender</th>
+               <th class="px-4 py-2">Class</th>
+               <th class="px-4 py-2 w-10"></th>
+            </tr>
+         </thead>
+         <tbody class="divide-y divide-outline-variant/10 text-[12px]">
+            <!-- Entry 1 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+               <td class="px-4 py-3 text-on-surface-variant">1</td>
+               <td class="px-2 py-3"><input class="rounded-sm border-outline-variant text-primary focus:ring-0"
+                     type="checkbox" /></td>
+               <td class="px-4 py-3 font-mono font-medium text-primary">USTC0010</td>
+               <td class="px-4 py-3 font-semibold">A-ande Barnabas</td>
+               <td class="px-4 py-3 text-on-surface-variant">a-ande.barnabas@ustcadikpo.com</td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-tighter">Active</span>
+               </td>
+               <td class="px-4 py-3">Male</td>
+               <td class="px-4 py-3"><span class="bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">TE 3
+                     E</span></td>
+               <td class="px-4 py-3 text-right">
+                  <span
+                     class="material-symbols-outlined cursor-pointer text-outline hover:text-on-surface">more_horiz</span>
+               </td>
+            </tr>
+            <!-- Entry 2 -->
+            <tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-lowest">
+               <td class="px-4 py-3 text-on-surface-variant">2</td>
+               <td class="px-2 py-3"><input class="rounded-sm border-outline-variant text-primary focus:ring-0"
+                     type="checkbox" /></td>
+               <td class="px-4 py-3 font-mono font-medium text-primary">USTC0616</td>
+               <td class="px-4 py-3 font-semibold">Aar Suurshater</td>
+               <td class="px-4 py-3 text-on-surface-variant">aar.suurshater@ustcadikpo.com</td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-tighter">Active</span>
+               </td>
+               <td class="px-4 py-3">Male</td>
+               <td class="px-4 py-3"><span class="bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">BE 9
+                     D</span></td>
+               <td class="px-4 py-3 text-right">
+                  <span
+                     class="material-symbols-outlined cursor-pointer text-outline hover:text-on-surface">more_horiz</span>
+               </td>
+            </tr>
+            <!-- Entry 3 -->
+            <tr class="hover:bg-surface-container-low transition-colors group">
+               <td class="px-4 py-3 text-on-surface-variant">3</td>
+               <td class="px-2 py-3"><input class="rounded-sm border-outline-variant text-primary focus:ring-0"
+                     type="checkbox" /></td>
+               <td class="px-4 py-3 font-mono font-medium text-primary">USTC0048</td>
+               <td class="px-4 py-3 font-semibold">Aar Suurshater</td>
+               <td class="px-4 py-3 text-on-surface-variant">suurshater.aar@ustcadikpo.com</td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-tighter">Active</span>
+               </td>
+               <td class="px-4 py-3">Male</td>
+               <td class="px-4 py-3"><span class="bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">TE 3
+                     E</span></td>
+               <td class="px-4 py-3 text-right">
+                  <span
+                     class="material-symbols-outlined cursor-pointer text-outline hover:text-on-surface">more_horiz</span>
+               </td>
+            </tr>
+            <!-- Entry 4 -->
+            <tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-lowest">
+               <td class="px-4 py-3 text-on-surface-variant">4</td>
+               <td class="px-2 py-3"><input class="rounded-sm border-outline-variant text-primary focus:ring-0"
+                     type="checkbox" /></td>
+               <td class="px-4 py-3 font-mono font-medium text-primary">USTC0224</td>
+               <td class="px-4 py-3 font-semibold">Aba Terkuma</td>
+               <td class="px-4 py-3 text-on-surface-variant">aba.terkuma@ustcadikpo.com</td>
+               <td class="px-4 py-3">
+                  <span
+                     class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase tracking-tighter">Active</span>
+               </td>
+               <td class="px-4 py-3">Male</td>
+               <td class="px-4 py-3"><span class="bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">TE 2
+                     D</span></td>
+               <td class="px-4 py-3 text-right">
+                  <span
+                     class="material-symbols-outlined cursor-pointer text-outline hover:text-on-surface">more_horiz</span>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <!-- Pagination / Footer of Table -->
+      <div
+         class="p-3 bg-surface-container-low flex justify-between items-center text-[10px] font-medium text-on-surface-variant">
+         <div>Showing 1 - 4 of 1,248 students</div>
+         <div class="flex gap-1">
+            <button
+               class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/20 rounded-sm disabled:opacity-50"
+               disabled="">Previous</button>
+            <button class="px-2 py-1 bg-primary text-white rounded-sm">1</button>
+            <button class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/20 rounded-sm">2</button>
+            <button class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/20 rounded-sm">3</button>
+            <button
+               class="px-2 py-1 bg-surface-container-lowest border border-outline-variant/20 rounded-sm">Next</button>
+         </div>
+      </div>
+   </div>
+   <!-- Stats/Visual Insight Bento Grid Part -->
+   <div class="grid grid-cols-4 gap-4 mt-2">
+      <div class="bg-blue-50/50 p-4 border border-blue-100 rounded flex flex-col justify-between">
+         <span class="text-[10px] uppercase font-bold text-blue-800 tracking-wider">Total Enrollment</span>
+         <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-2xl font-bold text-on-primary-fixed">1,248</span>
+            <span class="text-[10px] text-green-600 font-bold">+12%</span>
+         </div>
+      </div>
+      <div class="bg-slate-50 p-4 border border-slate-200 rounded flex flex-col justify-between">
+         <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Active Status</span>
+         <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-2xl font-bold text-on-surface">98.2%</span>
+            <span class="text-[10px] text-slate-400">Stable</span>
+         </div>
+      </div>
+      <div class="bg-slate-50 p-4 border border-slate-200 rounded flex flex-col justify-between">
+         <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Gender Ratio</span>
+         <div class="flex items-baseline gap-2 mt-2">
+            <span class="text-2xl font-bold text-on-surface">1.1 : 1</span>
+            <span class="text-[10px] text-slate-400">M/F</span>
+         </div>
+      </div>
+      <div class="relative overflow-hidden bg-slate-900 p-4 rounded text-white flex flex-col justify-between">
+         <div class="relative z-10">
+            <span class="text-[10px] uppercase font-bold opacity-70 tracking-wider">New Registrations</span>
+            <div class="text-2xl font-bold mt-2">42</div>
+         </div>
+         <div class="absolute bottom-0 right-0 w-24 h-12 bg-gradient-to-t from-primary/30 to-transparent blur-xl">
+         </div>
+         <span class="relative z-10 text-[10px] opacity-70">Past 7 days</span>
+      </div>
+   </div>
+</div>

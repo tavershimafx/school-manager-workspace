@@ -1,0 +1,207 @@
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+        <div class="max-w-5xl mx-auto">
+          <div class="mb-8">
+            <h1 class="text-xl font-bold text-on-surface mb-1 tracking-tight">Group Setting Details</h1>
+            <p class="text-[12px] text-on-surface-variant">Configure specific application parameters for this setting
+              group. Changes will propagate across the institution.</p>
+          </div>
+          <form class="space-y-10">
+            <!-- School Identity Section -->
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary">account_balance</span>
+                <h2 class="text-[11px] uppercase font-bold tracking-widest text-on-surface-variant">School Identity
+                  &amp; Presence</h2>
+              </div>
+              <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolName</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none focus:border-primary transition-all"
+                    type="text" value="St. Edwards International Academy" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolMotto</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none focus:border-primary transition-all"
+                    type="text" value="Excellence in Learning and Character" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolAddress</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none focus:border-primary transition-all"
+                    type="text" value="128 Victoria Island, Lagos, Nigeria" />
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolEmail</label>
+                    <input
+                      class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none focus:border-primary transition-all"
+                      type="email" value="admin@stedwards.edu" />
+                  </div>
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolPhone</label>
+                    <input
+                      class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none focus:border-primary transition-all"
+                      type="text" value="+234 803 000 1111" />
+                  </div>
+                </div>
+                <div class="col-span-2 flex gap-8 items-start pt-2">
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">SchoolLogouri</label>
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-16 h-16 bg-surface-container rounded overflow-hidden flex items-center justify-center border border-outline-variant/20">
+                        <img class="w-full h-full object-contain"
+                          data-alt="clean minimalist circular school logo with academic crest in blue and gold on white background"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI-uNny9OAH-J_BHFKSYBq3P4rP8fPq2tpSVMg5rAaiyobprYHbq9gcriLs8oDySm1Woa_K7ApC9-heZNE_UBg3hOxAEpYy6qsg2bWJBEBQ6rUoVXsiXr54SoNzo2uzyXjbVexWmgNH1sC-KVQ9aaOtN7accelblk7f1tpyrkPk3r_fPgO122pVittgVeZ9do5NwXP45nFfYRKP3cfT56XsDAja8pr5aCSc2UUpD9jCoC4CgTtUSQWFJTEzfajF-PjrFVcMxvnByps" />
+                      </div>
+                      <button
+                        class="text-[10px] bg-surface-container-high px-3 py-1.5 rounded hover:bg-surface-dim transition-colors font-medium"
+                        type="button">Update Logo</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Academic Management Section -->
+            <section class="bg-surface-container-low/30 p-6 rounded-lg">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary">school</span>
+                <h2 class="text-[11px] uppercase font-bold tracking-widest text-on-surface-variant">Academic Parameters
+                </h2>
+              </div>
+              <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">CurrentTerm</label>
+                    <select
+                      class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none">
+                      <option selected="">First Term</option>
+                      <option>Second Term</option>
+                      <option>Third Term</option>
+                    </select>
+                  </div>
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">TotalDaysOpened</label>
+                    <input
+                      class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                      type="number" value="114" />
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">NextTermStart</label>
+                    <input
+                      class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                      type="date" value="2024-01-08" />
+                  </div>
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">NextTermEnd</label>
+                    <input
+                      class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                      type="date" value="2024-04-12" />
+                  </div>
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">NextTermFees</label>
+                  <input
+                    class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="text" value="150,000.00" />
+                </div>
+                <div class="flex items-center gap-8 h-full pt-4">
+                  <div class="flex items-center gap-3">
+                    <input checked=""
+                      class="w-4 h-4 rounded text-primary focus:ring-primary bg-surface-container-lowest border-outline-variant"
+                      id="allow_update" type="checkbox" />
+                    <label class="text-[11px] font-medium text-on-surface"
+                      for="allow_update">AllowStudentProfileUpdate</label>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <input
+                      class="w-4 h-4 rounded text-primary focus:ring-primary bg-surface-container-lowest border-outline-variant"
+                      id="pin_check" type="checkbox" />
+                    <label class="text-[11px] font-medium text-on-surface" for="pin_check">CheckResultWithPin</label>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Grading Section -->
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary">analytics</span>
+                <h2 class="text-[11px] uppercase font-bold tracking-widest text-on-surface-variant">Assessment Weighting
+                </h2>
+              </div>
+              <div class="grid grid-cols-4 gap-6">
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">CA1MaxScore</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="number" value="10" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">CA2MaxScore</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="number" value="10" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">CA3MaxScore</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="number" value="10" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">ExamMaxScore</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="number" value="70" />
+                </div>
+              </div>
+            </section>
+            <!-- Leadership Section -->
+            <section class="border-t border-outline-variant/15 pt-10">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary">verified_user</span>
+                <h2 class="text-[11px] uppercase font-bold tracking-widest text-on-surface-variant">Administrative
+                  Authorization</h2>
+              </div>
+              <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                <div class="space-y-1.5">
+                  <label class="block text-[11px] font-semibold text-on-surface-variant">HeadTeacherName</label>
+                  <input
+                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded px-3 py-2 text-[12px] focus:ring-1 focus:ring-primary outline-none"
+                    type="text" value="Mrs. Oladele Adenike" />
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                  <div class="space-y-1.5">
+                    <label
+                      class="block text-[11px] font-semibold text-on-surface-variant">HeadTeacherSignatureUri</label>
+                    <div
+                      class="h-12 w-full bg-surface-container-low border border-dashed border-outline-variant/40 rounded flex items-center justify-center cursor-pointer hover:bg-surface-container transition-colors">
+                      <span class="text-[10px] text-on-surface-variant">sig_oladele_v1.png</span>
+                    </div>
+                  </div>
+                  <div class="space-y-1.5">
+                    <label class="block text-[11px] font-semibold text-on-surface-variant">HeadTeacherStampUri</label>
+                    <div
+                      class="h-12 w-full bg-surface-container-low border border-dashed border-outline-variant/40 rounded flex items-center justify-center cursor-pointer hover:bg-surface-container transition-colors">
+                      <span class="text-[10px] text-on-surface-variant">stamp_official.png</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Form Actions -->
+            <div class="flex items-center justify-end gap-3 pt-6 border-t border-outline-variant/15">
+              <button
+                class="px-6 py-2 text-[11px] font-bold text-on-surface-variant hover:bg-surface-container-high rounded transition-all"
+                type="button">Back</button>
+              <button
+                class="px-8 py-2 text-[11px] font-bold text-on-primary bg-primary hover:bg-primary-container rounded shadow-sm hover:shadow active:scale-95 transition-all"
+                type="submit">Update Settings</button>
+            </div>
+          </form>
+        </div>
+      </div>

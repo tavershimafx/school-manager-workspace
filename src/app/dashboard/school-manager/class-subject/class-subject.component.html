@@ -1,0 +1,169 @@
+<div class="flex-1 overflow-auto p-6 flex flex-col gap-6">
+   <!-- Breadcrumbs & Context -->
+   <div class="flex items-center gap-2 text-[10px] text-on-surface-variant font-medium uppercase tracking-widest">
+      <span>Academic Configuration</span>
+      <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+      <span class="text-primary">Subject Allocation</span>
+   </div>
+   <!-- Header -->
+   <div class="flex justify-between items-end">
+      <div>
+         <h1 class="text-2xl font-bold tracking-tight text-on-surface">Subject Class-Category</h1>
+         <p class="text-sm text-on-surface-variant">Assign and manage subjects for specific class groups</p>
+      </div>
+      <div class="flex gap-2">
+         <button
+            class="px-4 py-2 bg-white border border-outline-variant text-on-surface text-[12px] font-semibold rounded-sm hover:bg-surface-container-low transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">add</span> Add Subject
+         </button>
+         <button
+            class="px-6 py-2 bg-gradient-to-r from-primary to-primary-container text-white text-[12px] font-bold rounded-sm shadow-sm hover:opacity-90 transition-all">
+            Update
+         </button>
+      </div>
+   </div>
+   <!-- Control Bar -->
+   <div class="bg-surface-container-low p-3 rounded-lg flex flex-wrap items-center gap-4">
+      <div class="flex-1 min-w-[150px]">
+         <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Class Category</label>
+         <select
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 text-[13px] py-1.5 px-3 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+            <option>Basic Education 7 (JSS 1)</option>
+            <option>Basic Education 8 (JSS 2)</option>
+            <option>Basic Education 9 (JSS 3)</option>
+            <option>Senior Secondary 1</option>
+         </select>
+      </div>
+      <div class="flex items-end h-full pt-5">
+         <button
+            class="bg-primary text-white text-[12px] font-bold px-4 py-1.5 rounded-sm hover:bg-primary-container transition-colors">
+            Populate
+         </button>
+      </div>
+      <div class="flex-1 min-w-[150px]">
+         <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Select Subject</label>
+         <select
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 text-[13px] py-1.5 px-3 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none">
+            <option>Basic Education 7 (JSS 1)</option>
+            <option>Basic Education 8 (JSS 2)</option>
+            <option>Basic Education 9 (JSS 3)</option>
+            <option>Senior Secondary 1</option>
+         </select>
+      </div>
+      <div class="flex items-end h-full pt-5">
+         <button
+            class="bg-primary text-white text-[12px] font-bold px-4 py-1.5 rounded-sm hover:bg-primary-container transition-colors">
+            Add Subject
+         </button>
+      </div>
+      <!-- <div class="flex-1 min-w-[200px] relative">
+         <label class="block text-[10px] font-bold text-on-surface-variant uppercase mb-1">Search Subjects</label>
+         <div class="relative">
+            <input
+               class="w-full bg-surface-container-lowest border border-outline-variant/30 text-[13px] py-1.5 pl-8 pr-3 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none"
+               placeholder="Filter assigned subjects..." type="text" />
+            <span
+               class="material-symbols-outlined absolute left-2 top-1.5 text-on-surface-variant/50 text-[18px]">search</span>
+         </div>
+      </div> -->
+   </div>
+   <!-- Data Table -->
+   <div class="flex-1 border border-outline-variant/20 rounded-lg overflow-hidden flex flex-col">
+      <div
+         class="grid grid-cols-[1fr_120px_80px] bg-surface-container text-[10px] font-extrabold uppercase tracking-wider text-on-surface-variant px-4 py-2 border-b border-outline-variant/20">
+         <div>Subject Name</div>
+         <div class="text-center">Compulsory</div>
+         <div class="text-right">Actions</div>
+      </div>
+      <div class="flex-1 overflow-y-auto bg-surface-container-lowest">
+         <!-- Row 1 -->
+         <div
+            class="grid grid-cols-[1fr_120px_80px] items-center px-4 py-3 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+            <div class="flex flex-col">
+               <span class="text-[13px] font-semibold text-on-surface">English Language</span>
+               <span class="text-[11px] text-on-surface-variant">Core Literacy &amp; Communication</span>
+            </div>
+            <div class="flex justify-center">
+               <span class="material-symbols-outlined text-primary"
+                  style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div class="flex justify-end">
+               <button
+                  class="p-1.5 text-error opacity-0 group-hover:opacity-100 hover:bg-error-container/20 rounded transition-all">
+                  <span class="material-symbols-outlined">delete</span>
+               </button>
+            </div>
+         </div>
+         <!-- Row 2 -->
+         <div
+            class="grid grid-cols-[1fr_120px_80px] items-center px-4 py-3 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+            <div class="flex flex-col">
+               <span class="text-[13px] font-semibold text-on-surface">Mathematics</span>
+               <span class="text-[11px] text-on-surface-variant">Core Numerical Logic</span>
+            </div>
+            <div class="flex justify-center">
+               <span class="material-symbols-outlined text-primary"
+                  style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div class="flex justify-end">
+               <button
+                  class="p-1.5 text-error opacity-0 group-hover:opacity-100 hover:bg-error-container/20 rounded transition-all">
+                  <span class="material-symbols-outlined">delete</span>
+               </button>
+            </div>
+         </div>
+         <!-- Row 3 -->
+         <div
+            class="grid grid-cols-[1fr_120px_80px] items-center px-4 py-3 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+            <div class="flex flex-col">
+               <span class="text-[13px] font-semibold text-on-surface">Basic Science</span>
+               <span class="text-[11px] text-on-surface-variant">Integrated Natural Sciences</span>
+            </div>
+            <div class="flex justify-center">
+               <span class="material-symbols-outlined text-primary"
+                  style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div class="flex justify-end">
+               <button
+                  class="p-1.5 text-error opacity-0 group-hover:opacity-100 hover:bg-error-container/20 rounded transition-all">
+                  <span class="material-symbols-outlined">delete</span>
+               </button>
+            </div>
+         </div>
+         <!-- Row 4 -->
+         <div
+            class="grid grid-cols-[1fr_120px_80px] items-center px-4 py-3 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+            <div class="flex flex-col">
+               <span class="text-[13px] font-semibold text-on-surface">Business Studies</span>
+               <span class="text-[11px] text-on-surface-variant">Elective Commerce Pathway</span>
+            </div>
+            <div class="flex justify-center">
+               <span class="material-symbols-outlined text-outline-variant">circle</span>
+            </div>
+            <div class="flex justify-end">
+               <button
+                  class="p-1.5 text-error opacity-0 group-hover:opacity-100 hover:bg-error-container/20 rounded transition-all">
+                  <span class="material-symbols-outlined">delete</span>
+               </button>
+            </div>
+         </div>
+         <!-- Row 5 -->
+         <div
+            class="grid grid-cols-[1fr_120px_80px] items-center px-4 py-3 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+            <div class="flex flex-col">
+               <span class="text-[13px] font-semibold text-on-surface">French Language</span>
+               <span class="text-[11px] text-on-surface-variant">Foreign Language Elective</span>
+            </div>
+            <div class="flex justify-center">
+               <span class="material-symbols-outlined text-outline-variant">circle</span>
+            </div>
+            <div class="flex justify-end">
+               <button
+                  class="p-1.5 text-error opacity-0 group-hover:opacity-100 hover:bg-error-container/20 rounded transition-all">
+                  <span class="material-symbols-outlined">delete</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

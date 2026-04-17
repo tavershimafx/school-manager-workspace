@@ -1,0 +1,232 @@
+<!-- Toolbar / Action Bar -->
+<div
+   class="px-6 py-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-outline-variant/10">
+   <div class="flex items-center space-x-2">
+      <div class="relative w-64">
+         <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+            <span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+         </span>
+         <input
+            class="w-full bg-surface-container-low border-none rounded-lg text-xs py-2 pl-9 pr-4 focus:ring-1 focus:ring-primary focus:bg-white outline-none"
+            placeholder="Filter staff..." type="text" />
+      </div>
+      <button
+         class="px-3 py-2 bg-surface-container-high text-on-surface rounded-lg text-xs font-semibold flex items-center hover:bg-surface-container-highest transition-colors">
+         All Gender
+         <span class="material-symbols-outlined text-sm ml-2" data-icon="expand_more">expand_more</span>
+      </button>
+   </div>
+   <div class="flex items-center space-x-2">
+      <button routerLink="/dashboard/scm/staff/new"
+         class="px-4 py-2 bg-primary text-white rounded-lg text-xs font-bold flex items-center shadow-sm hover:bg-primary-container transition-all active:scale-95">
+         <span class="material-symbols-outlined text-sm mr-2" data-icon="add">add</span>
+         New Staff
+      </button>
+      <div class="flex rounded-lg overflow-hidden border border-outline-variant/30">
+         <button
+            class="px-4 py-2 bg-surface-container-lowest text-on-surface text-xs font-semibold flex items-center hover:bg-surface-container-high border-r border-outline-variant/30 transition-colors">
+            <span class="material-symbols-outlined text-sm mr-2" data-icon="print">print</span>
+            Print
+         </button>
+         <button
+            class="px-2 py-2 bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors">
+            <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+         </button>
+      </div>
+      <button
+         class="px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant/30 rounded-lg text-xs font-semibold flex items-center hover:bg-surface-container-high transition-colors">
+         <span class="material-symbols-outlined text-sm mr-2" data-icon="cloud_upload">cloud_upload</span>
+         Upload
+      </button>
+   </div>
+</div>
+<!-- High-Density Data Table Area -->
+<div class="flex-1 overflow-auto bg-surface-container-lowest">
+   <table class="w-full text-left border-collapse min-w-[800px]">
+      <thead class="sticky top-0 bg-surface-container-lowest z-10">
+         <tr class="border-b border-outline-variant/20 shadow-sm">
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">S/N</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">FullName</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Email</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Gender</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant text-center">
+               Num Of Subjects</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Status</th>
+            <th class="px-6 py-3 text-[10px] font-bold uppercase tracking-wider text-on-surface-variant text-right">
+               Actions</th>
+         </tr>
+      </thead>
+      <tbody class="divide-y divide-outline-variant/10">
+         <tr class="hover:bg-primary-fixed/30 group transition-colors">
+            <td class="px-6 py-3.5 text-xs text-on-surface">1</td>
+            <td class="px-6 py-3.5">
+               <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex-shrink-0">
+                     <img alt="Sarah Johnson" class="w-full h-full object-cover"
+                        data-alt="professional portrait of a middle-aged female teacher with glasses smiling against a soft gray school hallway background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIQMw8m1WFmwHJW-MTVFLV6QUKWqX3i_W3Yhg7qm2voJkffe2_JjbU9kiP0TOIFiruB12XqoMpVp_qESwKBGASB1IS4Q0e7fJch6m8vrmNCKZLUF2C6eeM4VfNsLfFp70OfMTz6Emn1cLMHZ-ztfaicMny1m-cccNf43dbi4UsglLMjc0qGTzczF--a-Vcee7uaceoOkh6nSAEQ565gmIXQBJh4-kgDAoedFdczzMt6onzuLNKtZPhHWic07VMwAY3Jj_DJWaTrunG" />
+                  </div>
+                  <span class="text-xs font-bold text-on-surface">Sarah Johnson</span>
+               </div>
+            </td>
+            <td class="px-6 py-3.5 text-xs text-on-surface-variant">s.johnson@eduarch.org</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface">Female</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface text-center">4</td>
+            <td class="px-6 py-3.5">
+               <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                  <span class="w-1 h-1 rounded-full bg-green-500 mr-1.5"></span>
+                  Active
+               </span>
+            </td>
+            <td class="px-6 py-3.5 text-right">
+               <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant">
+                  <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+               </button>
+            </td>
+         </tr>
+         <tr class="hover:bg-primary-fixed/30 group transition-colors">
+            <td class="px-6 py-3.5 text-xs text-on-surface">2</td>
+            <td class="px-6 py-3.5">
+               <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex-shrink-0">
+                     <img alt="Marcus Chen" class="w-full h-full object-cover"
+                        data-alt="close-up of a young male educator with a short beard and professional attire in a bright office setting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOdEByjZbg7Djt5f1oiYfAIdpKEOFVkAm0WM1wu184HgrERW0G-zyjr0Wc5oF9cUimbRdSPEczOIY4FbDQowqI82ZMj2Bue7Dp8zb62fVx9pa_y5-Kd8jOwfKGt2waIv1tDSVYFG9PUuEIvuD8wjyXURimzhJRRoJim6whRJgL5i-FOp3p1qeMRERSzdjuEFGEds2i0OFDJNABFLbK23UvQmDMgsyCEweDGtPQr7UL4-yY4Od6WpbNUZL0mdES9d-XK_bVIieon4jB" />
+                  </div>
+                  <span class="text-xs font-bold text-on-surface">Marcus Chen</span>
+               </div>
+            </td>
+            <td class="px-6 py-3.5 text-xs text-on-surface-variant">m.chen@eduarch.org</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface">Male</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface text-center">3</td>
+            <td class="px-6 py-3.5">
+               <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                  <span class="w-1 h-1 rounded-full bg-green-500 mr-1.5"></span>
+                  Active
+               </span>
+            </td>
+            <td class="px-6 py-3.5 text-right">
+               <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant">
+                  <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+               </button>
+            </td>
+         </tr>
+         <tr class="hover:bg-primary-fixed/30 group transition-colors">
+            <td class="px-6 py-3.5 text-xs text-on-surface">3</td>
+            <td class="px-6 py-3.5">
+               <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex-shrink-0">
+                     <img alt="Elena Rodriguez" class="w-full h-full object-cover"
+                        data-alt="portrait of a woman teacher with curly hair and a warm expression in a sunlit classroom"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_R5rufJt4trkThAPIPE3xezFG7HBq3ztHTWSI7wJcfxgxeaRdeiQMUQa-V5tWPctriNAxThpvtAlt4yXkeqbSIisUh3QeAD0Ue2R6cy02whiEIXFFvPvAscLsEV2vA6HascAf2goZT7lJxBWxTHqE7BOKoJPGNw0P-9M42AXBjrit0VOoL-zMqpqAZrIC76zAbpCaOsClt4sjMQaNjvbCIsfpGbsOJ1A-58F5deTCgXmBEHyk93ia7D562eNM8ONN1XSsmJgn65fy" />
+                  </div>
+                  <span class="text-xs font-bold text-on-surface">Elena Rodriguez</span>
+               </div>
+            </td>
+            <td class="px-6 py-3.5 text-xs text-on-surface-variant">e.rod@eduarch.org</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface">Female</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface text-center">5</td>
+            <td class="px-6 py-3.5">
+               <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+                  <span class="w-1 h-1 rounded-full bg-slate-400 mr-1.5"></span>
+                  Inactive
+               </span>
+            </td>
+            <td class="px-6 py-3.5 text-right">
+               <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant">
+                  <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+               </button>
+            </td>
+         </tr>
+         <tr class="hover:bg-primary-fixed/30 group transition-colors">
+            <td class="px-6 py-3.5 text-xs text-on-surface">4</td>
+            <td class="px-6 py-3.5">
+               <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex-shrink-0">
+                     <img alt="David Miller" class="w-full h-full object-cover"
+                        data-alt="professional corporate headshot of a smiling man with neat hair and a light blue dress shirt"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzq4T6f_dYz_smLocYE5vdzHvxP2bJcOxwJwt-jNISwBj-SrDOeE-iNazTckWiOp28dIEJ1LnPVvK69zAP7d6yf1j4m_zXaFHtNUG9VO0kw9KsZMzotxmhpWtaEE3h6ODmr82jufBUfOdXt-d7EkbRdd8X9TYKqso70OEH51guF8tWZNK1UTZURuzVV1EhkjQRtVEWYKutIVjLPLB25D-QnptdzKtlIgfJ8kR4LjBs4RVMT4kQOq-d4BmoQQ0qhZY9afR59wyvQoZ" />
+                  </div>
+                  <span class="text-xs font-bold text-on-surface">David Miller</span>
+               </div>
+            </td>
+            <td class="px-6 py-3.5 text-xs text-on-surface-variant">d.miller@eduarch.org</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface">Male</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface text-center">2</td>
+            <td class="px-6 py-3.5">
+               <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                  <span class="w-1 h-1 rounded-full bg-green-500 mr-1.5"></span>
+                  Active
+               </span>
+            </td>
+            <td class="px-6 py-3.5 text-right">
+               <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant">
+                  <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+               </button>
+            </td>
+         </tr>
+         <tr class="hover:bg-primary-fixed/30 group transition-colors">
+            <td class="px-6 py-3.5 text-xs text-on-surface">5</td>
+            <td class="px-6 py-3.5">
+               <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex-shrink-0">
+                     <img alt="Anita Desai" class="w-full h-full object-cover"
+                        data-alt="confident professional woman of south asian descent with glasses looking directly at the camera in a modern office"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuByUczjoEVdgZljepm1ib916JnI_Yx9W-EEpmSqUmm8MbYGZun6XWnsUvHbmY5hHb4hKfDqDa8dGDUpinRXZkJ-EKopxveQ8p_BRTT78VhiZa32ln-RCpcQJwSxkN1UvpTqDCyv0c6D6-ExVRfV6bkGtT-QGZSJDD7sRXKCbDSt8RNoB6aLxLw0gTSwuzVC7aexw0mNvNTEMtJggGEcEGAwKZy-mCypNaVvSYHRyB4kq1GORqb5Y8Lxo2N2MnmSvxTVpE3C9mCY8HKb" />
+                  </div>
+                  <span class="text-xs font-bold text-on-surface">Anita Desai</span>
+               </div>
+            </td>
+            <td class="px-6 py-3.5 text-xs text-on-surface-variant">a.desai@eduarch.org</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface">Female</td>
+            <td class="px-6 py-3.5 text-xs text-on-surface text-center">6</td>
+            <td class="px-6 py-3.5">
+               <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                  <span class="w-1 h-1 rounded-full bg-green-500 mr-1.5"></span>
+                  Active
+               </span>
+            </td>
+            <td class="px-6 py-3.5 text-right">
+               <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant">
+                  <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+               </button>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+<!-- Pagination/Footer Context -->
+<div
+   class="h-10 border-t border-outline-variant/10 px-6 flex items-center justify-between bg-surface-container-low text-[10px] font-medium text-on-surface-variant">
+   <div class="flex items-center space-x-4">
+      <span>Showing 5 of 142 staff</span>
+      <div class="flex items-center space-x-1">
+         <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-primary transition-colors"
+            data-icon="first_page">first_page</span>
+         <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-primary transition-colors"
+            data-icon="chevron_left">chevron_left</span>
+         <span class="px-1.5 bg-primary text-white rounded-sm font-bold">1</span>
+         <span class="px-1.5 hover:bg-surface-container-high rounded-sm cursor-pointer">2</span>
+         <span class="px-1.5 hover:bg-surface-container-high rounded-sm cursor-pointer">3</span>
+         <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-primary transition-colors"
+            data-icon="chevron_right">chevron_right</span>
+         <span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-primary transition-colors"
+            data-icon="last_page">last_page</span>
+      </div>
+   </div>
+   <div class="flex items-center space-x-2">
+      <span>Items per page:</span>
+      <select
+         class="bg-transparent border-none py-0 pl-0 pr-4 text-[10px] font-bold text-on-surface outline-none cursor-pointer">
+         <option>10</option>
+         <option>25</option>
+         <option selected="">50</option>
+         <option>100</option>
+      </select>
+   </div>
+</div>

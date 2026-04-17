@@ -1,0 +1,209 @@
+<div class="flex-1 overflow-y-auto bg-surface-container-lowest">
+  <div class="max-w-7xl mx-auto p-8">
+    <!-- Content Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-on-surface tracking-tight">Bank Connections</h2>
+        <p class="text-on-surface-variant text-sm mt-1 max-w-xl">
+          Manage connections to several banks for streamlined payment collections. Monitor transaction health and
+          synchronization status.
+        </p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+          <input
+            class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant/20 rounded-sm text-sm focus:ring-1 focus:ring-primary focus:border-primary w-64"
+            placeholder="Search connections..." type="text" />
+        </div>
+        <button (click)="newConnection()"
+          class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-5 py-2 rounded-sm text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <span class="material-symbols-outlined text-sm">add</span>
+          Add New
+        </button>
+      </div>
+    </div>
+    <!-- Bento Grid Layout for Bank Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Bank Card 1 -->
+      <div
+        class="group bg-surface-container-low border border-outline-variant/10 rounded-lg p-5 hover:bg-surface-container-high transition-all duration-200">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm">
+              <img alt="Bank Logo" class="w-8 h-8 object-contain"
+                data-alt="minimalist logo for First Bank of Nigeria with blue and gold elements"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsfKjR-tcfrwBiPnSk-7RBICe7Y5-KYSpWIKSWAMBIJOqYKyIfKnOMyWVCC1altbbdjmApmDBcMl-Af7A7LV10U-WeJVHvJxZMoSEWUv0310hDHRpNouJqUNePA7k4j1HieMLlWxzZU3mjT-MDs7xpf0oddb27F5qepG3X9emRswWhsxGdyc2PrVqFMzZBoexBDPyRZP7zpZcFw9Du--XWBMQS6FEbWVYIQxrO5TYNdU_8_Qh5Ceq-HK0k2OlKrgU1H2pGjRXB1g0L" />
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-on-surface uppercase tracking-wide">First Bank of Nigeria</h3>
+              <p class="text-[11px] font-semibold text-primary">DASHBOARD BANK CONNECTION</p>
+            </div>
+          </div>
+          <button class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+          Primary settlement account for tuition and infrastructure levies. Linked to the central bursary dashboard.
+        </p>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between text-[10px] font-bold">
+            <span class="text-on-surface-variant">SYNC STATUS</span>
+            <span class="text-primary">85% COMPLETE</span>
+          </div>
+          <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+            <div class="bg-primary h-full w-[85%]"></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+          <span class="text-[11px] text-on-surface-variant">Last activity: <span
+              class="font-semibold text-on-surface">03 Mar 2026</span></span>
+          <a class="text-primary flex items-center gap-1 text-[11px] font-bold group-hover:translate-x-1 transition-transform"
+            href="#">
+            VIEW DETAILS
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Bank Card 2 -->
+      <div
+        class="group bg-surface-container-low border border-outline-variant/10 rounded-lg p-5 hover:bg-surface-container-high transition-all duration-200">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm">
+              <img alt="Bank Logo" class="w-8 h-8 object-contain"
+                data-alt="modern minimalist bank logo with orange highlights for GT Bank"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc5WtMmxy4a9DBoixNTXMK3jKcDHvVtOorFixSDx62RlOn71H4A7M0Qg_cxsBG3me3j4Dn7TDa5200srFBwBk5owefrs3shCD9DxLcKGK-2qrJ3MEA8rOmDLdS_dPi9HxJHW5I2EaMP3EJ9XCGwYNUC3AAVNdwNtiMR0PlxD8dL6qFgidDXZ1BfOjkMjePmZ_X6iu8Swj7Ud7Jfgi7A1vDccLt4ot3mtCJ-_Xww7gwgSV4Kcl2d3oIyCVU8Mug2z6iK6qm0lpF4KYG" />
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-on-surface uppercase tracking-wide">GT BANK</h3>
+              <p class="text-[11px] font-semibold text-primary">PAYMENT GATEWAY 01</p>
+            </div>
+          </div>
+          <button class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+          Used for student activities and auxiliary service payments. Real-time API integration enabled.
+        </p>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between text-[10px] font-bold">
+            <span class="text-on-surface-variant">SYNC STATUS</span>
+            <span class="text-primary">100% HEALTHY</span>
+          </div>
+          <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+            <div class="bg-primary h-full w-[100%]"></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+          <span class="text-[11px] text-on-surface-variant">Last activity: <span
+              class="font-semibold text-on-surface">02 Mar 2026</span></span>
+          <a class="text-primary flex items-center gap-1 text-[11px] font-bold group-hover:translate-x-1 transition-transform"
+            href="#">
+            VIEW DETAILS
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Bank Card 3 -->
+      <div
+        class="group bg-surface-container-low border border-outline-variant/10 rounded-lg p-5 hover:bg-surface-container-high transition-all duration-200">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm">
+              <img alt="Bank Logo" class="w-8 h-8 object-contain"
+                data-alt="classic bank logo with red branding for United Bank for Africa"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEGZ3BnEcAlOrhGPcVXKvYySlSjxgwaYf-vXh1jTo621IFPMGnAYSK9nAZTXIEB4ZhhMmSOwn31CUxzjrgBMu4eobXI6D_XKKmVvhD_8nBLvzzSfUQq2Jy15yzpWqd0QGhiIFKuX8cCaqGGIfwulETsbcfvbqela3QEoUmg6tRguUqx_1iCX9MqBjVx8S_oG6VBYgBV5bTdsWcf3F9u5VQXmgdroyC38izdk4zdGLOJZvcmZWfoq4yRKJI5eboxXpJY5B5MqkZ9Vau" />
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-on-surface uppercase tracking-wide">UBA GROUP</h3>
+              <p class="text-[11px] font-semibold text-primary">CORPORATE SALARY ACC</p>
+            </div>
+          </div>
+          <button class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+          Dedicated payroll account for academic and non-academic staff. Monthly automated disbursements.
+        </p>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between text-[10px] font-bold">
+            <span class="text-on-surface-variant">SYNC STATUS</span>
+            <span class="text-error font-bold tracking-tight">ATTENTION REQUIRED</span>
+          </div>
+          <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+            <div class="bg-error h-full w-[40%]"></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+          <span class="text-[11px] text-on-surface-variant">Last activity: <span
+              class="font-semibold text-on-surface">28 Feb 2026</span></span>
+          <a class="text-primary flex items-center gap-1 text-[11px] font-bold group-hover:translate-x-1 transition-transform"
+            href="#">
+            RE-AUTHENTICATE
+            <span class="material-symbols-outlined text-[14px]">sync</span>
+          </a>
+        </div>
+      </div>
+      <!-- Bank Card 4 -->
+      <div
+        class="group bg-surface-container-low border border-outline-variant/10 rounded-lg p-5 hover:bg-surface-container-high transition-all duration-200">
+        <div class="flex items-start justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm">
+              <img alt="Bank Logo" class="w-8 h-8 object-contain"
+                data-alt="minimalist red and white bank logo for Zenith Bank"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMBqIBLYsCDONmkh-ascfsSp8spiMPtiW4RVfhQFEM-k7Vim2N53yWFHSYSzaEqyhlFFvsfpmW1iSiLaZMNXE0exT9ckmxxHlZKXYI4jPghXAWLBYZj529MNTeqxfqxZJLXTXHj1IZPuWLmNdnl7L3SWpG74LRLRfIekY65DAqF_t7WyVLdJQIdaGx7hZi1F4zk5NK7gzHx_zG-0slBiyyH_j12ZgHdb_vtkuB9PvlpIBhLAuxLh8UidB6alEeulAvY4DDALF11fFA" />
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-on-surface uppercase tracking-wide">Zenith Bank</h3>
+              <p class="text-[11px] font-semibold text-primary">PROJECT ENDOWMENT</p>
+            </div>
+          </div>
+          <button class="text-on-surface-variant hover:text-primary">
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+        <p class="text-xs text-on-surface-variant line-clamp-2 mb-6 leading-relaxed">
+          Endowment fund management and research grant collections. Long-term capital tracking.
+        </p>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between text-[10px] font-bold">
+            <span class="text-on-surface-variant">SYNC STATUS</span>
+            <span class="text-primary">92% SYNCED</span>
+          </div>
+          <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+            <div class="bg-primary h-full w-[92%]"></div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+          <span class="text-[11px] text-on-surface-variant">Last activity: <span
+              class="font-semibold text-on-surface">01 Mar 2026</span></span>
+          <a class="text-primary flex items-center gap-1 text-[11px] font-bold group-hover:translate-x-1 transition-transform"
+            href="#">
+            VIEW DETAILS
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Empty State Card / Template -->
+      <div
+        class="group bg-surface-container-low border-2 border-dashed border-outline-variant/30 rounded-lg p-5 flex flex-col items-center justify-center text-center hover:bg-surface-container-high hover:border-primary/50 transition-all duration-200 cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-slate-400">add_card</span>
+        </div>
+        <h3 class="text-sm font-bold text-on-surface mb-1">Link New Institution</h3>
+        <p class="text-[11px] text-on-surface-variant max-w-[180px]">Connect another bank account to expand your
+          collection channels.</p>
+      </div>
+    </div>
+  </div>
+</div>

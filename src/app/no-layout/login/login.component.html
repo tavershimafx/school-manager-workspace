@@ -1,0 +1,89 @@
+<div class="bg-background font-body text-on-background min-h-screen flex flex-col">
+  <!-- Top Navigation Suppression: Not rendered for Login flow as per "Shell Visibility & Relevance" rule -->
+  <main class="flex-grow flex items-center justify-center p-6 relative overflow-hidden">
+    <!-- Subtle Architectural Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-secondary rounded-full blur-[100px]"></div>
+    </div>
+    <!-- Central Login Card -->
+    <div class="w-full max-w-[420px] z-10">
+      <div
+        class="bg-surface-container-lowest border border-outline-variant/15 shadow-[0px_8px_24px_rgba(26,28,28,0.06)] rounded-lg p-8">
+        <!-- Branding Anchor -->
+        <div class="flex flex-col items-center mb-8">
+          <div class="w-12 h-12 bg-primary flex items-center justify-center rounded-sm mb-4">
+            <span class="material-symbols-outlined text-white text-3xl" data-icon="architecture">architecture</span>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tighter text-primary">Rushcoq</h1>
+          <p class="text-on-surface-variant text-sm mt-1">School Management Workspace</p>
+        </div>
+        <!-- Form -->
+        <form class="space-y-5">
+          <!-- Email Field -->
+          <div class="space-y-1.5">
+            <label class="block text-[11px] font-bold uppercase tracking-widest text-on-surface-variant"
+              for="email">Email Address</label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl"
+                data-icon="mail">mail</span>
+              <input
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-sm text-sm transition-all duration-200 outline-none"
+                id="email" name="email" placeholder="name@school.edu" type="email" />
+            </div>
+          </div>
+          <!-- Password Field -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center">
+              <label class="block text-[11px] font-bold uppercase tracking-widest text-on-surface-variant"
+                for="password">Password</label>
+              <a class="text-[10px] font-bold text-primary hover:underline uppercase tracking-tight"
+                routerLink="/forgot-password">Forgot Password?</a>
+            </div>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl"
+                data-icon="lock">lock</span>
+              <input
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-sm text-sm transition-all duration-200 outline-none"
+                id="password" name="password" placeholder="••••••••" type="password" />
+            </div>
+          </div>
+          <!-- Remember Me -->
+          <div class="flex items-center">
+            <input class="w-4 h-4 text-primary border-outline-variant rounded-sm focus:ring-primary" id="remember"
+              type="checkbox" />
+            <label class="ml-2 text-xs text-on-surface-variant select-none" for="remember">Remember this device for 30
+              days</label>
+          </div>
+          <!-- Sign In Button -->
+          <button
+            class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold text-sm rounded-sm shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200 uppercase tracking-widest"
+            type="submit">
+            Sign In
+          </button>
+        </form>
+        <!-- Footer Links -->
+        <div class="mt-8 pt-6 border-t border-outline-variant/10 text-center">
+          <p class="text-xs text-on-surface-variant">
+            Don't have an account?
+            <a class="text-primary font-bold hover:underline" href="#">Register Here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Shared Component: Footer (Execution of JSON Instructions) -->
+  <nolayout-footer></nolayout-footer>
+  <!-- Structural Decoration: Left-side "Solution Explorer" Ghost Silhouette -->
+  <div
+    class="hidden lg:block absolute left-0 top-0 h-full w-64 bg-surface-container-low/30 border-r border-outline-variant/5 pointer-events-none">
+    <div class="p-6 space-y-4">
+      <div class="h-4 w-32 bg-outline-variant/10 rounded-full"></div>
+      <div class="space-y-2 ml-4">
+        <div class="h-3 w-48 bg-outline-variant/10 rounded-full"></div>
+        <div class="h-3 w-40 bg-outline-variant/10 rounded-full"></div>
+        <div class="h-3 w-44 bg-outline-variant/10 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+</div>

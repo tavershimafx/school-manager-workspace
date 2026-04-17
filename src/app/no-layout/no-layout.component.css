@@ -1,0 +1,175 @@
+.dashboard{
+    height: 100%;
+    width: 100%;
+}
+
+.dashboard .side-bar{
+    position: relative;
+    width: 17%;
+    height: 100%;
+    top: 0;
+    background-color: var(--theme-background);
+    transition: all 0.5s ease-in-out;
+}
+
+.dashboard .main-area{
+    position: fixed;
+    width: 83%;
+    height: 100%;
+    top: 0;
+    left: 17%;
+    background-color: var(--grey-scale-50);
+}
+
+.full-pages{
+    position: relative;
+    height: calc(100vh - 94px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.fade-view{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 500;
+    background: rgba(255,255,255,0.2);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.notify-view{
+    position: absolute;
+    min-width: 200px;
+    max-width: 300px;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.notify-view > p{
+    margin: 0;
+    display: inline-block;
+    color: #FFF;
+}
+
+.notify-view > p span{
+    color: #FFF;
+    vertical-align: middle;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.notify-view > p.sub{
+    width: 90%;
+    font-size: 14px;
+    font-family: "Roboto-Medium";
+}
+
+.notify-view > p.close{
+    text-align: right;
+}
+
+.notify-view > div{
+    margin-top: 8px;
+    color: #FFF;
+}
+
+.async-loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(100deg, transparent 30%, var(--theme) 50%, transparent 70%);
+    background-size: 400%;
+    animation: marque-scroll 1.2s ease-in-out infinite;
+}
+
+@keyframes marque-scroll {
+    0%{
+        background-position: 100%;
+    }
+    
+    100%{
+        background-position: 0;
+    }
+}
+/*********************************************************************/
+/***************************Small Laptops*****************************/
+/*********************************************************************/
+@media only screen and (min-width: 992px)and (max-width: 1199.98px) {
+    /* All small laptops*/
+    
+}
+
+/**************************************************************************/
+/*****************************iPad Pro 12"*********************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+    .dashboard .side-bar{
+        width: 8%;
+        z-index: 10;
+     }
+ 
+     .dashboard .main-area{
+         width: 92%;
+         left: 8%;
+     }
+ 
+     .dashboard .side-bar.out{
+         width: 8%;
+     }
+ 
+     .dashboard .side-bar.in{
+         width: 250px;
+     }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991.98px){
+    .dashboard .side-bar{
+       width: 10%;
+       z-index: 10;
+    }
+
+    .dashboard .main-area{
+        width: 90%;
+        left: 10%;
+    }
+
+    .dashboard .side-bar.out{
+        width: 10%;
+    }
+
+    .dashboard .side-bar.in{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 575.98px) and (orientation:portrait) {
+    .dashboard .side-bar{
+        position: absolute;
+        top: 0;
+        width: 220px;
+        z-index: 10;
+        transform: translateY(-100%);
+    }
+
+    .dashboard .main-area{
+        width: 100%;
+        left: 0;
+    }
+
+    .dashboard .side-bar.out{
+        transform: translateY(-100%);
+    }
+
+    .dashboard .side-bar.in{
+        transform: translateY(0);
+    }
+}

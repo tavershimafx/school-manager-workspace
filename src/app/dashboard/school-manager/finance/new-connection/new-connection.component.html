@@ -1,0 +1,88 @@
+<base-modal title="Add Bank Connection" module="Student Management" subModule="Bank Connections">
+  <div class="p-6 space-y-5">
+    <div class="grid grid-cols-2 gap-4">
+      <div class="col-span-1">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase mb-1.5 tracking-wider">Bank
+          Name</label>
+        <div class="relative">
+          <select
+            class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-on-surface">
+            <option>Select institutional partner...</option>
+            <option>Chase Institutional Banking</option>
+            <option>Wells Fargo Education</option>
+            <option>Bank of America Schools</option>
+            <option>Citibank Public Sector</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+        </div>
+      </div>
+      <div class="col-span-1">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase mb-1.5 tracking-wider">Connection
+          Title</label>
+        <input
+          class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-on-surface"
+          placeholder="e.g. District Payroll Alpha" type="text" />
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="col-span-1">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase mb-1.5 tracking-wider">Account
+          Type</label>
+        <div class="relative">
+          <select
+            class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-on-surface">
+            <option>Primary</option>
+            <option>Secondary</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+        </div>
+      </div>
+      <div class="col-span-1">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase mb-1.5 tracking-wider">Connection
+          Date</label>
+        <div class="relative">
+          <input
+            class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-on-surface"
+            type="date" value="2023-10-27" />
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="block text-[11px] font-bold text-on-surface-variant uppercase mb-1.5 tracking-wider">Integration
+        Key</label>
+      <div class="relative">
+        <input
+          class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-on-surface"
+          type="password" value="************************" />
+        <span
+          class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant cursor-pointer hover:text-primary transition-colors">visibility</span>
+      </div>
+      <p class="mt-1 text-[10px] text-on-surface-variant/70 italic">Keys are encrypted using AES-256 standard
+        and never stored in plain text.</p>
+    </div>
+    <div
+      class="flex items-center justify-between p-3 bg-surface-container-low rounded-sm border border-outline-variant/15">
+      <div>
+        <h4 class="text-xs font-bold text-on-surface">Connection Status</h4>
+        <p class="text-[10px] text-on-surface-variant">Set initial state for automated polling</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-bold text-on-surface-variant uppercase">Inactive</span>
+        <button class="w-10 h-5 bg-primary rounded-full relative px-1 flex items-center">
+          <div class="w-3.5 h-3.5 bg-white rounded-full translate-x-4"></div>
+        </button>
+        <span class="text-[10px] font-bold text-primary uppercase">Active</span>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Footer -->
+  <div
+    class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/20 flex justify-end items-center gap-3">
+    <button
+      class="px-5 py-2 text-xs font-bold text-on-surface-variant hover:text-on-surface transition-colors">Cancel</button>
+    <button
+      class="px-6 py-2 bg-gradient-to-r from-primary to-primary-container text-white text-xs font-bold rounded-sm shadow-md hover:brightness-110 active:scale-95 transition-all">Connect</button>
+  </div>
+</base-modal>

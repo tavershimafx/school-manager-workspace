@@ -1,0 +1,225 @@
+ <div class="flex-1 flex flex-col bg-surface-container-lowest p-0 overflow-hidden relative">
+        <!-- Tool Bar / Filters -->
+        <div
+          class="h-12 border-b border-outline-variant/10 flex items-center justify-between px-4 bg-surface-container-lowest shrink-0">
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center bg-surface-container-low border border-outline-variant/20 rounded-sm px-2 py-1 h-8 w-64 group focus-within:border-primary/50 transition-all">
+              <span
+                class="material-symbols-outlined !text-sm text-outline group-focus-within:text-primary mr-2">person_search</span>
+              <input class="bg-transparent border-none text-[11px] focus:ring-0 w-full p-0"
+                placeholder="Search by user or email..." type="text" />
+            </div>
+            <div
+              class="flex items-center bg-surface-container-low border border-outline-variant/20 rounded-sm px-2 py-1 h-8 cursor-pointer hover:border-outline transition-all">
+              <span class="material-symbols-outlined !text-sm text-outline mr-2">calendar_month</span>
+              <span class="text-[11px] text-on-surface-variant">Last 24 Hours</span>
+              <span class="material-symbols-outlined !text-sm text-outline ml-4">expand_more</span>
+            </div>
+            <div
+              class="flex items-center bg-surface-container-low border border-outline-variant/20 rounded-sm px-2 py-1 h-8 cursor-pointer hover:border-outline transition-all">
+              <span class="material-symbols-outlined !text-sm text-outline mr-2">filter_alt</span>
+              <span class="text-[11px] text-on-surface-variant">Action Type: All</span>
+              <span class="material-symbols-outlined !text-sm text-outline ml-4">expand_more</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              class="h-8 px-3 flex items-center gap-2 bg-primary text-white text-[11px] font-bold rounded-sm hover:brightness-110 transition-all">
+              <span class="material-symbols-outlined !text-sm">download</span>
+              Export CSV
+            </button>
+            <button
+              class="h-8 w-8 flex items-center justify-center border border-outline-variant/30 rounded-sm hover:bg-surface-container-low">
+              <span class="material-symbols-outlined !text-sm text-outline">refresh</span>
+            </button>
+          </div>
+        </div>
+        <!-- Data Table Container -->
+        <div class="flex-1 overflow-auto custom-scrollbar">
+          <table class="w-full text-left border-collapse min-w-[1000px]">
+            <thead class="sticky top-0 bg-surface-container-lowest z-10">
+              <tr class="border-b border-outline-variant/10">
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">Timestamp</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">Method</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">Status</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">User/Email</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">Action</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline">IP Address</th>
+                <th class="px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-outline w-1/4">Detailed
+                  Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/5">
+              <!-- Row 1 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-4 py-3 text-[11px] font-mono text-on-surface-variant">2023-11-24 14:22:05</td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-1.5 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black rounded-sm border border-emerald-200 uppercase">POST</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    200 OK
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-[9px] font-bold text-blue-700">
+                      JD</div>
+                    <div class="flex flex-col">
+                      <span class="text-[11px] font-bold leading-none">John Doe</span>
+                      <span class="text-[9px] text-outline leading-tight">j.doe@devcore.edu</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-[11px] font-semibold text-on-surface">Staff login success</td>
+                <td class="px-4 py-3 text-[11px] font-mono text-outline">192.168.1.104</td>
+                <td class="px-4 py-3 text-[11px] text-outline italic leading-snug">User successfully authenticated via
+                  LDAP from terminal T04</td>
+              </tr>
+              <!-- Row 2 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-4 py-3 text-[11px] font-mono text-on-surface-variant">2023-11-24 14:18:12</td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-1.5 py-0.5 bg-amber-100 text-amber-700 text-[9px] font-black rounded-sm border border-amber-200 uppercase">PUT</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    204 No Content
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <img alt="User Avatar" class="w-5 h-5 rounded-full"
+                      data-alt="Close up of a female administrative officer with professional styling and neutral background"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpST72W7pmv4RWJTVNZpSoxbN2e7tuvNo2hVFqXYfe8RYqHdaiaszxuXNK8J-VzhFsNcnYU_9qFcilgN4XknXtAPOylxMiNxDl70PtGQ4GEwynshRNDOrPilWvorS8Iugh67C5IKX2E8q1DcgtEM0ut48MilYFvnDgxSMv5zpldefQ3TmdaZqiyMa52czhReglUSswuQnV9PimA3vI44kRytuL7Ri8Mk7yBi9a8Zew-_hCkGEEJeOhfuPKrbhqgync9ZzS0MFSdnO5" />
+                    <div class="flex flex-col">
+                      <span class="text-[11px] font-bold leading-none">Sarah Chen</span>
+                      <span class="text-[9px] text-outline leading-tight">s.chen@devcore.edu</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-[11px] font-semibold text-on-surface">Assessment updated</td>
+                <td class="px-4 py-3 text-[11px] font-mono text-outline">45.23.120.12</td>
+                <td class="px-4 py-3 text-[11px] text-outline italic leading-snug">Modified grading rubric for 'Final
+                  Calculus Examination' v2.1</td>
+              </tr>
+              <!-- Row 3 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group bg-error/5">
+                <td class="px-4 py-3 text-[11px] font-mono text-on-surface-variant">2023-11-24 14:15:33</td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-1.5 py-0.5 bg-blue-100 text-blue-700 text-[9px] font-black rounded-sm border border-blue-200 uppercase">GET</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-error">
+                    <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    401 Unauthorized
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-5 h-5 rounded-full bg-slate-200 flex items-center justify-center text-[9px] font-bold text-slate-500">
+                      ?</div>
+                    <div class="flex flex-col">
+                      <span class="text-[11px] font-bold leading-none">Anonymous</span>
+                      <span class="text-[9px] text-outline leading-tight">external.req@host.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-[11px] font-semibold text-on-surface">Resource access blocked</td>
+                <td class="px-4 py-3 text-[11px] font-mono text-outline">12.231.54.99</td>
+                <td class="px-4 py-3 text-[11px] text-outline italic leading-snug">Attempted to fetch
+                  '/api/v1/finance/salaries' without Bearer token</td>
+              </tr>
+              <!-- Row 4 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-4 py-3 text-[11px] font-mono text-on-surface-variant">2023-11-24 14:12:01</td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-1.5 py-0.5 bg-blue-100 text-blue-700 text-[9px] font-black rounded-sm border border-blue-200 uppercase">GET</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    200 OK
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <img alt="User Avatar" class="w-5 h-5 rounded-full"
+                      data-alt="Professional male staff member in a business casual environment with blurred office background"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAtxLFFaGWlHcitmZgmZRm5gLo7C8VVLOYcXSLQS439l6UreXwrnLfc3qMghtKTY5ywTRI5hFkAJBqLAIE85UwnUpM4ZfaHUw1vfe69mIPZI83APkR3UeFw9E-EEoauL8SzGKpUeI3euSwWPnM_2Gt-gPpjbI3bSMhwj4tEUTmYXgK99cLqsty8wUi5giLuSDt7NsvrAK9FYnQbsw2iO1IQHbtar45UJ5m4W7Kg6PHucVTQB5s2VwFR3xBAdS7oMmrBXgJCdbzbeE-" />
+                    <div class="flex flex-col">
+                      <span class="text-[11px] font-bold leading-none">Mark Wilson</span>
+                      <span class="text-[9px] text-outline leading-tight">m.wilson@devcore.edu</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-[11px] font-semibold text-on-surface">Staff viewed assessment</td>
+                <td class="px-4 py-3 text-[11px] font-mono text-outline">192.168.1.155</td>
+                <td class="px-4 py-3 text-[11px] text-outline italic leading-snug">Viewed student performance report for
+                  'Physics Dept' Semester 1</td>
+              </tr>
+              <!-- Row 5 -->
+              <tr class="hover:bg-primary-fixed/30 transition-colors group">
+                <td class="px-4 py-3 text-[11px] font-mono text-on-surface-variant">2023-11-24 14:05:44</td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-1.5 py-0.5 bg-rose-100 text-rose-700 text-[9px] font-black rounded-sm border border-rose-200 uppercase">DELETE</span>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="flex items-center gap-1 text-[11px] font-bold text-emerald-600">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    200 OK
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center text-[9px] font-bold text-purple-700">
+                      AK</div>
+                    <div class="flex flex-col">
+                      <span class="text-[11px] font-bold leading-none">Admin Root</span>
+                      <span class="text-[9px] text-outline leading-tight">sysadmin@devcore.edu</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-[11px] font-semibold text-on-surface">Log retention purge</td>
+                <td class="px-4 py-3 text-[11px] font-mono text-outline">127.0.0.1</td>
+                <td class="px-4 py-3 text-[11px] text-outline italic leading-snug">Automated task: Purged audit logs
+                  older than 365 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination/Footer Information -->
+        <div
+          class="h-8 border-t border-outline-variant/10 bg-surface-container-low px-4 flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] text-outline">Showing 1-25 of 1,482 entries</span>
+            <div class="flex items-center gap-1">
+              <button class="w-5 h-5 flex items-center justify-center text-outline hover:text-primary"><span
+                  class="material-symbols-outlined !text-[14px]">chevron_left</span></button>
+              <span class="text-[10px] font-bold px-1.5 bg-primary text-white rounded-sm">1</span>
+              <span class="text-[10px] px-1.5 text-outline cursor-pointer hover:bg-surface-dim">2</span>
+              <span class="text-[10px] px-1.5 text-outline cursor-pointer hover:bg-surface-dim">3</span>
+              <span class="text-[10px] px-1.5 text-outline">...</span>
+              <button class="w-5 h-5 flex items-center justify-center text-outline hover:text-primary"><span
+                  class="material-symbols-outlined !text-[14px]">chevron_right</span></button>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] text-outline flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> System Monitoring: Active
+            </span>
+            <span class="text-[10px] text-outline">v4.2.1-stable</span>
+          </div>
+        </div>
+      </div>

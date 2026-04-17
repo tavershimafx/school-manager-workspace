@@ -1,0 +1,284 @@
+<div class="flex-grow flex overflow-hidden">
+  <!-- Left Panel: Main Form & Question Builder -->
+  <section
+    class="flex-grow overflow-y-auto p-6 flex flex-col space-y-8 max-w-5xl border-r border-outline-variant/10 bg-surface-container-lowest">
+    <!-- Form Header Section -->
+    <div class="flex justify-between items-start">
+      <div class="space-y-1">
+        <h1 class="text-xl font-extrabold tracking-tight text-on-surface">Exam Configuration</h1>
+        <p class="text-on-surface-variant text-xs">Define basic parameters and instructions for the computer-based
+          test.</p>
+      </div>
+      <button
+        class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2 text-xs font-bold rounded-sm shadow-md flex items-center gap-2 transition-all">
+        <span class="material-symbols-outlined" data-icon="send">send</span>
+        Submit Exam
+      </button>
+    </div>
+    <!-- Core Metadata Form -->
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 md:col-span-8 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Exam Title</label>
+        <input
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all"
+          type="text" value="JSS 1A FIRST TERM 2025/2026" />
+      </div>
+      <div class="col-span-12 md:col-span-4 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Exam Date</label>
+        <input
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all"
+          type="date" value="2025-10-12" />
+      </div>
+      <div class="col-span-12 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Instructions</label>
+        <textarea
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all"
+          placeholder="Enter specific instructions for students..." rows="3"></textarea>
+      </div>
+      <!-- Dropdowns -->
+      <div class="col-span-6 md:col-span-3 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Session</label>
+        <select
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary">
+          <option>2025/2026</option>
+          <option>2024/2025</option>
+        </select>
+      </div>
+      <div class="col-span-6 md:col-span-3 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Class</label>
+        <select
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary">
+          <option>JSS 1A</option>
+          <option>JSS 1B</option>
+        </select>
+      </div>
+      <div class="col-span-6 md:col-span-3 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Term</label>
+        <select
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary">
+          <option>First Term</option>
+          <option>Second Term</option>
+          <option>Third Term</option>
+        </select>
+      </div>
+      <div class="col-span-6 md:col-span-3 space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Subject</label>
+        <select
+          class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm p-2.5 rounded-sm focus:ring-1 focus:ring-primary focus:border-primary">
+          <option>Mathematics</option>
+          <option>English Language</option>
+          <option>Basic Science</option>
+        </select>
+      </div>
+    </div>
+    <!-- Configuration Toggles -->
+    <div
+      class="bg-surface-container-low/50 p-4 border border-outline-variant/20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex flex-col space-y-3">
+        <div class="flex items-center space-x-2">
+          <input checked="" class="rounded-sm border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox" />
+          <span class="text-xs font-medium text-on-surface">Same mark for all?</span>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Marks Per
+            Q</label>
+          <input class="w-20 bg-surface-container-lowest border border-outline-variant/30 text-xs p-1.5 rounded-sm"
+            type="number" value="2" />
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input class="rounded-sm border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox" />
+        <span class="text-xs font-medium text-on-surface">Randomize Questions</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <input class="rounded-sm border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox" />
+        <span class="text-xs font-medium text-on-surface">Is Practice Exam</span>
+      </div>
+      <div class="flex flex-col space-y-1">
+        <label class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Duration
+          (Mins)</label>
+        <input class="w-full bg-surface-container-lowest border border-outline-variant/30 text-xs p-1.5 rounded-sm"
+          type="number" value="60" />
+      </div>
+    </div>
+    <!-- Section A Header & Content -->
+    <div class="space-y-6 pt-4">
+      <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+        <div class="flex items-center space-x-2">
+          <span class="material-symbols-outlined text-primary" data-icon="layers">layers</span>
+          <h2 class="text-sm font-bold uppercase tracking-widest text-on-surface">Section A: General Objective
+          </h2>
+        </div>
+        <button
+          class="text-[11px] font-bold text-primary flex items-center gap-1 bg-primary-fixed/30 px-3 py-1.5 rounded-sm hover:bg-primary-fixed/50 transition-colors">
+          <span class="material-symbols-outlined text-[16px]" data-icon="file_upload">file_upload</span>
+          Import Questions
+        </button>
+      </div>
+      <!-- Question Builder Cards -->
+      <div class="space-y-4">
+        <!-- Question 1 Card -->
+        <div
+          class="bg-surface-container-lowest border border-outline-variant/20 p-4 rounded-sm shadow-sm relative group hover:border-primary/30 transition-all">
+          <div class="absolute -left-3 top-4 bg-primary text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-sm">
+            Q1</div>
+          <div class="flex flex-col space-y-4">
+            <div class="flex justify-between">
+              <textarea
+                class="w-full bg-background/50 border-none text-sm p-2 rounded-sm focus:ring-1 focus:ring-primary/20 italic"
+                placeholder="Type question here..." rows="2">What is the square root of 144?</textarea>
+              <div class="flex space-x-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary"
+                  data-icon="content_copy">content_copy</button>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-error"
+                  data-icon="delete">delete</button>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="flex items-center space-x-2 bg-surface-container-low p-2 rounded-sm">
+                <input class="text-primary focus:ring-primary h-3.5 w-3.5" name="q1" type="radio" />
+                <input class="flex-grow bg-transparent border-none text-xs p-0 focus:ring-0" type="text" value="10" />
+                <span class="text-[10px] text-on-surface-variant font-bold">A</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-primary-fixed/20 p-2 rounded-sm ring-1 ring-primary/20">
+                <input checked="" class="text-primary focus:ring-primary h-3.5 w-3.5" name="q1" type="radio" />
+                <input class="flex-grow bg-transparent border-none text-xs p-0 focus:ring-0 font-bold" type="text"
+                  value="12" />
+                <span class="text-[10px] text-primary font-bold">B</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-surface-container-low p-2 rounded-sm">
+                <input class="text-primary focus:ring-primary h-3.5 w-3.5" name="q1" type="radio" />
+                <input class="flex-grow bg-transparent border-none text-xs p-0 focus:ring-0" type="text" value="14" />
+                <span class="text-[10px] text-on-surface-variant font-bold">C</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-surface-container-low p-2 rounded-sm">
+                <input class="text-primary focus:ring-primary h-3.5 w-3.5" name="q1" type="radio" />
+                <input class="flex-grow bg-transparent border-none text-xs p-0 focus:ring-0" type="text" value="16" />
+                <span class="text-[10px] text-on-surface-variant font-bold">D</span>
+              </div>
+            </div>
+            <button class="self-start text-[10px] font-bold text-primary flex items-center space-x-1 hover:underline">
+              <span class="material-symbols-outlined text-[14px]" data-icon="add_circle">add_circle</span>
+              <span>Add Option</span>
+            </button>
+          </div>
+        </div>
+        <!-- Question 2 Card -->
+        <div
+          class="bg-surface-container-lowest border border-outline-variant/20 p-4 rounded-sm shadow-sm relative group hover:border-primary/30 transition-all opacity-80">
+          <div class="absolute -left-3 top-4 bg-outline text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-sm">
+            Q2</div>
+          <div class="flex flex-col space-y-4">
+            <textarea
+              class="w-full bg-background/50 border-none text-sm p-2 rounded-sm focus:ring-1 focus:ring-primary/20"
+              placeholder="Type question here..." rows="2">Which of these is a prime number?</textarea>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="flex items-center space-x-2 bg-surface-container-low p-2 rounded-sm">
+                <input class="text-primary focus:ring-primary h-3.5 w-3.5" name="q2" type="radio" />
+                <span class="text-xs text-on-surface-variant flex-grow">4</span>
+                <span class="text-[10px] text-on-surface-variant font-bold">A</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-surface-container-low p-2 rounded-sm">
+                <input class="text-primary focus:ring-primary h-3.5 w-3.5" name="q2" type="radio" />
+                <span class="text-xs text-on-surface-variant flex-grow">9</span>
+                <span class="text-[10px] text-on-surface-variant font-bold">B</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Question Trigger -->
+      <button
+        class="w-full py-4 border-2 border-dashed border-outline-variant/30 rounded-sm text-on-surface-variant hover:border-primary/40 hover:text-primary transition-all flex flex-col items-center justify-center space-y-1 group">
+        <span class="material-symbols-outlined text-3xl transition-transform group-hover:scale-110"
+          data-icon="add_box">add_box</span>
+        <span class="text-xs font-bold uppercase tracking-wider">Add New Question</span>
+      </button>
+    </div>
+  </section>
+  <!-- Right Side Property Panel -->
+  <aside class="w-80 bg-surface-container-low p-4 flex flex-col space-y-6 overflow-y-auto shrink-0">
+    <!-- Section Management -->
+    <div class="space-y-3">
+      <div class="flex justify-between items-center">
+        <h3 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Section Explorer</h3>
+        <button
+          class="material-symbols-outlined text-primary hover:bg-primary-fixed/40 p-1 rounded-full transition-colors"
+          data-icon="add">add</button>
+      </div>
+      <div class="space-y-2">
+        <div
+          class="bg-surface-container-lowest p-2.5 rounded-sm border-l-2 border-primary flex justify-between items-center shadow-sm">
+          <div class="flex items-center space-x-2">
+            <span class="material-symbols-outlined text-sm text-primary" data-icon="list_alt">list_alt</span>
+            <span class="text-[11px] font-bold text-on-surface">Section A</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span
+              class="material-symbols-outlined text-[16px] text-on-surface-variant hover:text-primary cursor-pointer"
+              data-icon="edit">edit</span>
+            <span class="material-symbols-outlined text-[16px] text-on-surface-variant hover:text-error cursor-pointer"
+              data-icon="delete">delete</span>
+          </div>
+        </div>
+        <div
+          class="bg-surface-container-high/50 p-2.5 rounded-sm border border-outline-variant/10 flex justify-between items-center group hover:bg-surface-container-lowest transition-colors cursor-pointer">
+          <div class="flex items-center space-x-2">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary"
+              data-icon="article">article</span>
+            <span class="text-[11px] font-medium text-on-surface-variant group-hover:text-on-surface">Section
+              B</span>
+          </div>
+          <span class="material-symbols-outlined text-[16px] text-on-surface-variant/40" data-icon="lock">lock</span>
+        </div>
+      </div>
+    </div>
+    <!-- Statistics Card -->
+    <div class="bg-primary text-on-primary p-4 rounded-sm shadow-lg space-y-4">
+      <div class="flex items-center space-x-2">
+        <span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+        <h3 class="text-xs font-bold uppercase tracking-wider">Live Statistics</h3>
+      </div>
+      <div class="space-y-4 pt-2">
+        <div class="flex justify-between items-end">
+          <span class="text-[10px] font-medium opacity-80 uppercase tracking-tighter">Questions Added</span>
+          <span class="text-xl font-black leading-none">24 / 60</span>
+        </div>
+        <div class="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+          <div class="bg-white h-full w-[40%]"></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <div class="text-[9px] font-bold opacity-70 uppercase">Total Marks</div>
+            <div class="text-lg font-extrabold leading-tight">48.00</div>
+          </div>
+          <div>
+            <div class="text-[9px] font-bold opacity-70 uppercase">Avg Time/Q</div>
+            <div class="text-lg font-extrabold leading-tight">2.5m</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quick Tools / Meta -->
+    <div class="space-y-3 pt-2">
+      <h3 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Metadata Context</h3>
+      <div class="bg-surface-container-highest/30 p-3 border border-outline-variant/15 rounded-sm space-y-2">
+        <div class="flex justify-between text-[10px]">
+          <span class="text-on-surface-variant font-medium">Created By</span>
+          <span class="text-on-surface font-bold">Admin_JohnD</span>
+        </div>
+        <div class="flex justify-between text-[10px]">
+          <span class="text-on-surface-variant font-medium">Last Modified</span>
+          <span class="text-on-surface font-bold">2 mins ago</span>
+        </div>
+        <div class="flex justify-between text-[10px]">
+          <span class="text-on-surface-variant font-medium">Status</span>
+          <span class="text-secondary font-bold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Drafting
+          </span>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>

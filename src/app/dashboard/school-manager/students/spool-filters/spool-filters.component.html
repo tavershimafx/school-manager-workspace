@@ -1,0 +1,92 @@
+<base-modal title="Student Filters" module="Student Management" subModule="Student Filters">
+    <!-- Modal Body -->
+    <div class="p-6 space-y-6">
+        <!-- Class Dropdown -->
+        <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Class</label>
+            <div class="relative">
+                <select
+                    class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-2 pl-3 pr-10 text-xs appearance-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all outline-none">
+                    <option>All Classes</option>
+                    <option>Architectural Design III</option>
+                    <option>Structural Systems</option>
+                    <option>Sustainable Materials</option>
+                    <option>Urban Planning 101</option>
+                </select>
+                <span
+                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+            </div>
+        </div>
+        <!-- Status Multi-select -->
+        <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Status</label>
+            <div class="grid grid-cols-3 gap-2">
+                <button
+                    class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border border-primary bg-primary-fixed text-on-primary-fixed font-semibold text-xs transition-all">
+                    <span class="material-symbols-outlined text-[14px]"
+                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Active
+                </button>
+                <button
+                    class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border border-outline-variant/30 text-on-surface-variant font-medium text-xs hover:bg-surface-container transition-all">
+                    Inactive
+                </button>
+                <button
+                    class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border border-outline-variant/30 text-on-surface-variant font-medium text-xs hover:bg-surface-container transition-all">
+                    Suspended
+                </button>
+            </div>
+        </div>
+        <!-- Enrollment Date Range -->
+        <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Enrollment
+                Date Range</label>
+            <div class="flex items-center gap-3">
+                <div class="relative flex-1">
+                    <input
+                        class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-2 px-3 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        type="date" />
+                    <span
+                        class="text-[9px] absolute -top-1.5 left-2 px-1 bg-surface-bright text-on-surface-variant">FROM</span>
+                </div>
+                <span class="material-symbols-outlined text-outline-variant">trending_flat</span>
+                <div class="relative flex-1">
+                    <input
+                        class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-2 px-3 text-xs focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none"
+                        type="date" />
+                    <span
+                        class="text-[9px] absolute -top-1.5 left-2 px-1 bg-surface-bright text-on-surface-variant">TO</span>
+                </div>
+            </div>
+        </div>
+        <!-- Gender Toggle Group -->
+        <div class="space-y-2">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Gender</label>
+            <div class="flex p-1 bg-surface-container rounded-lg">
+                <button
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-semibold bg-surface-container-lowest shadow-sm text-on-surface">All</button>
+                <button
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">Male</button>
+                <button
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">Female</button>
+                <button
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">Other</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Footer -->
+    <div
+        class="flex items-center justify-between gap-3 p-5 bg-surface-container-low border-t border-outline-variant/10 rounded-b-lg">
+        <button
+            class="px-6 py-2 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-base">restart_alt</span>
+            Reset
+        </button>
+        <div class="flex gap-2">
+            <button
+                class="px-6 py-2 bg-primary text-white text-xs font-bold rounded-lg shadow-[0px_2px_4px_rgba(0,97,163,0.3)] hover:bg-primary-container transition-all active:scale-95">
+                Apply Filters
+            </button>
+        </div>
+    </div>
+</base-modal>

@@ -1,0 +1,177 @@
+<div class="flex-1 overflow-y-auto bg-surface-container-lowest p-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-8">
+          <h2 class="text-xl font-bold text-on-surface mb-1">Staff Information</h2>
+          <p class="text-xs text-on-surface-variant">Precision registration for academic and non-academic personnel.</p>
+        </div>
+        <form class="space-y-8">
+          <!-- Photo and Primary Details Grid -->
+          <div class="grid grid-cols-12 gap-8">
+            <!-- Passport Column -->
+            <div class="col-span-12 md:col-span-3 flex flex-col items-center">
+              <label
+                class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-3 w-full">Passport
+                Upload</label>
+              <div
+                class="w-40 h-48 bg-surface-container-low border border-dashed border-outline-variant rounded flex flex-col items-center justify-center relative group overflow-hidden">
+                <span
+                  class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary transition-colors">add_a_photo</span>
+                <p class="text-[10px] mt-2 text-on-surface-variant font-medium">Select Passport</p>
+                <input class="absolute inset-0 opacity-0 cursor-pointer" type="file" />
+              </div>
+              <p class="mt-2 text-[10px] text-on-surface-variant text-center leading-relaxed">Accepted: JPG, PNG.
+                <br />Max size: 2MB.</p>
+            </div>
+            <!-- Main Form Fields Grid -->
+            <div class="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-4">
+              <!-- Row 1 -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">First
+                  Name</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. John" type="text" />
+              </div>
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Middle
+                  Name</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. Alexander" type="text" />
+              </div>
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Last
+                  Name</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. Doe" type="text" />
+              </div>
+              <!-- Row 2 -->
+              <div class="space-y-1.5">
+                <label
+                  class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Gender</label>
+                <select
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2 appearance-none">
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="space-y-1.5">
+                <label
+                  class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Nationality</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. Nigerian" type="text" />
+              </div>
+              <div class="space-y-1.5">
+                <label
+                  class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">State</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. Lagos" type="text" />
+              </div>
+              <!-- Row 3 -->
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">LGA</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="e.g. Ikeja" type="text" />
+              </div>
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Staff
+                  Status</label>
+                <select
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2 appearance-none">
+                  <option value="">Select Status</option>
+                  <option value="full-time">Full-Time</option>
+                  <option value="part-time">Part-Time</option>
+                  <option value="contract">Contract</option>
+                </select>
+              </div>
+              <div class="space-y-1.5">
+                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Date of
+                  Employment</label>
+                <input
+                  class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  type="date" />
+              </div>
+            </div>
+          </div>
+          <!-- Contact and Address Block -->
+          <div class="pt-6 border-t border-outline-variant/15 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Email</label>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-2 top-1.5 text-[16px] text-outline-variant">mail</span>
+                <input
+                  class="w-full h-8 pl-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                  placeholder="staff@school.com" type="email" />
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Assigned
+                User</label>
+              <select
+                class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2 appearance-none">
+                <option value="">Select User Profile</option>
+                <option value="1">U-8821 (Doe, John)</option>
+                <option value="2">U-9902 (Smith, Jane)</option>
+              </select>
+            </div>
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Emergency
+                Contact Name</label>
+              <input
+                class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                placeholder="Full legal name" type="text" />
+            </div>
+            <div class="space-y-1.5">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Emergency
+                Contact Phone</label>
+              <input
+                class="w-full h-8 text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2"
+                placeholder="+1 (000) 000-0000" type="tel" />
+            </div>
+            <div class="md:col-span-2 space-y-1.5">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Residential
+                Address</label>
+              <textarea
+                class="w-full text-sm bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded px-2 py-1.5"
+                placeholder="Enter complete home address..." rows="2"></textarea>
+            </div>
+          </div>
+          <!-- Signature Block -->
+          <div class="pt-6 border-t border-outline-variant/15">
+            <div class="max-w-xs">
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-3">Signature
+                Upload</label>
+              <div
+                class="h-24 bg-surface-container-low border border-dashed border-outline-variant rounded flex items-center justify-center relative group overflow-hidden">
+                <div class="text-center">
+                  <span
+                    class="material-symbols-outlined text-2xl text-outline-variant group-hover:text-primary transition-colors">draw</span>
+                  <p class="text-[10px] text-on-surface-variant font-medium">Select Signature Image</p>
+                </div>
+                <input class="absolute inset-0 opacity-0 cursor-pointer" type="file" />
+              </div>
+            </div>
+          </div>
+          <!-- Action Bar -->
+          <div class="pt-10 flex items-center justify-end space-x-3">
+            <button routerLink="/dashboard/scm/staff"
+              class="px-5 h-8 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant hover:bg-surface-dim transition-colors rounded"
+              type="button">
+              Cancel
+            </button>
+            <button
+              class="px-8 h-8 text-[11px] font-bold uppercase tracking-widest text-on-primary bg-gradient-to-r from-primary to-primary-container hover:opacity-90 transition-opacity rounded shadow-sm"
+              type="submit">
+              Create Staff
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>

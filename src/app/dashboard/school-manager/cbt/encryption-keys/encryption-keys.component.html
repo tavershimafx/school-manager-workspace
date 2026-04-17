@@ -1,0 +1,198 @@
+<div class="flex-1 p-6 overflow-y-auto">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <!-- Header Section -->
+    <div class="flex justify-between items-end">
+      <div>
+        <nav class="flex items-center gap-1 text-[10px] text-outline uppercase tracking-wider mb-1">
+          <span>Security</span>
+          <span class="material-symbols-outlined" style="font-size: 12px;">chevron_right</span>
+          <span class="text-primary font-bold">Key Management</span>
+        </nav>
+        <h1 class="text-2xl font-extrabold text-on-surface tracking-tight">Encryption Key Repository</h1>
+        <p class="text-on-surface-variant text-sm mt-1">Manage RSA and AES keys for the production encryption
+          cluster.</p>
+      </div>
+      <div class="flex gap-2">
+        <button
+          class="flex items-center gap-2 px-4 py-2 border border-outline-variant text-on-surface text-sm font-semibold rounded-sm hover:bg-surface-container-low transition-all">
+          <span class="material-symbols-outlined">refresh</span> Rotate All
+        </button>
+        <button
+          class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-primary-container text-white text-sm font-semibold rounded-sm shadow-sm hover:opacity-90 transition-all">
+          <span class="material-symbols-outlined">add</span> New Key Version
+        </button>
+      </div>
+    </div>
+    <!-- Stats Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-surface-container-low p-4 border border-outline-variant/10 rounded-lg">
+        <div class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Active Keys</div>
+        <div class="text-2xl font-extrabold text-primary">12</div>
+      </div>
+      <div class="bg-surface-container-low p-4 border border-outline-variant/10 rounded-lg">
+        <div class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Revoked</div>
+        <div class="text-2xl font-extrabold text-error">3</div>
+      </div>
+      <div class="bg-surface-container-low p-4 border border-outline-variant/10 rounded-lg">
+        <div class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Total Versions</div>
+        <div class="text-2xl font-extrabold text-on-surface">48</div>
+      </div>
+      <div class="bg-surface-container-low p-4 border border-outline-variant/10 rounded-lg">
+        <div class="text-[10px] text-outline font-bold uppercase tracking-widest mb-1">Last Sync</div>
+        <div class="text-sm font-semibold text-on-surface-variant mt-2">2 min ago</div>
+      </div>
+    </div>
+    <!-- Search & Action Bar -->
+    <div class="flex items-center gap-4 bg-surface-container-low p-3 rounded-lg border border-outline-variant/15">
+      <div class="relative flex-1">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+        <input
+          class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-primary text-sm pl-10 pr-4 py-2 rounded-sm outline-none transition-all"
+          placeholder="Search versions, serial numbers..." type="text" />
+      </div>
+      <button class="p-2 hover:bg-surface-container-highest rounded text-outline transition-colors">
+        <span class="material-symbols-outlined">filter_list</span>
+      </button>
+    </div>
+    <!-- Versions Table -->
+    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg overflow-hidden">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-container-low border-b border-outline-variant/20">
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider w-12">S/N</th>
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider">Filename</th>
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider">Size</th>
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider">Date Created</th>
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider">Status</th>
+            <th class="px-6 py-3 text-[11px] font-bold text-outline uppercase tracking-wider text-right">Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/10 text-sm">
+          <tr class="hover:bg-primary-fixed/30 transition-colors group">
+            <td class="px-6 py-4 font-mono text-outline-variant">001</td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">security</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-on-surface">center_public_v1.2.0.key</div>
+                  <div class="text-[10px] text-outline">SHA-256: 8f2d...4a12</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 text-on-surface-variant font-medium">2.4 KB</td>
+            <td class="px-6 py-4 text-on-surface-variant">Oct 24, 2023, 14:32</td>
+            <td class="px-6 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-700 uppercase">Active</span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 hover:bg-surface-container-high rounded transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-primary-fixed/30 transition-colors group">
+            <td class="px-6 py-4 font-mono text-outline-variant">002</td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-outline">
+                  <span class="material-symbols-outlined">history</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-on-surface">center_public_v1.1.0.key</div>
+                  <div class="text-[10px] text-outline">SHA-256: 3c1a...9e01</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 text-on-surface-variant font-medium">2.4 KB</td>
+            <td class="px-6 py-4 text-on-surface-variant">Sep 12, 2023, 09:15</td>
+            <td class="px-6 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-high text-on-surface-variant uppercase">Archived</span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 hover:bg-surface-container-high rounded transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <tr class="hover:bg-primary-fixed/30 transition-colors group">
+            <td class="px-6 py-4 font-mono text-outline-variant">003</td>
+            <td class="px-6 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-error/10 flex items-center justify-center text-error">
+                  <span class="material-symbols-outlined">cancel</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-on-surface">center_public_v1.0.0.key</div>
+                  <div class="text-[10px] text-outline">SHA-256: 1f5e...bc33</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-6 py-4 text-on-surface-variant font-medium">2.2 KB</td>
+            <td class="px-6 py-4 text-on-surface-variant">Jun 04, 2023, 18:45</td>
+            <td class="px-6 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-error-container text-on-error-container uppercase">Revoked</span>
+            </td>
+            <td class="px-6 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 hover:bg-surface-container-high rounded transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Footer Visualization / Bento -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-surface-container-low border border-outline-variant/15 rounded-lg p-5">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">analytics</span> Usage Analytics
+        </h3>
+        <div class="h-32 flex items-end gap-2 px-2">
+          <div class="flex-1 bg-primary/20 rounded-t h-[30%]"></div>
+          <div class="flex-1 bg-primary/20 rounded-t h-[45%]"></div>
+          <div class="flex-1 bg-primary/40 rounded-t h-[60%]"></div>
+          <div class="flex-1 bg-primary/30 rounded-t h-[50%]"></div>
+          <div class="flex-1 bg-primary rounded-t h-[90%]"></div>
+          <div class="flex-1 bg-primary/70 rounded-t h-[75%]"></div>
+          <div class="flex-1 bg-primary/20 rounded-t h-[40%]"></div>
+        </div>
+        <div class="flex justify-between mt-3 text-[10px] text-outline font-medium">
+          <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+        </div>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant/15 rounded-lg p-5">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">verified_user</span> Security Policy
+        </h3>
+        <div class="space-y-3">
+          <div
+            class="flex items-center justify-between p-2 bg-surface-container-lowest rounded border border-outline-variant/10">
+            <span class="text-xs font-semibold">Auto-rotation (90 days)</span>
+            <span class="material-symbols-outlined text-green-600"
+              style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          </div>
+          <div
+            class="flex items-center justify-between p-2 bg-surface-container-lowest rounded border border-outline-variant/10">
+            <span class="text-xs font-semibold">Hardware Security Module (HSM)</span>
+            <span class="material-symbols-outlined text-green-600"
+              style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          </div>
+          <div
+            class="flex items-center justify-between p-2 bg-surface-container-lowest rounded border border-outline-variant/10">
+            <span class="text-xs font-semibold">Dual-Authorization Control</span>
+            <span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

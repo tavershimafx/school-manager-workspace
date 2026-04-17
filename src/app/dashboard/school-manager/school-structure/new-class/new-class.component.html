@@ -1,0 +1,96 @@
+<base-modal title="Create Class" module="School Management" subModule="Create Class">
+   <!-- Modal Body -->
+   <div class="p-6 space-y-5">
+      <div class="grid grid-cols-2 gap-x-6 gap-y-4">
+         <!-- Class Name -->
+         <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-semibold text-on-surface-variant flex items-center gap-1">
+               Name <span class="text-error text-[10px]">*</span>
+            </label>
+            <input
+               class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder:text-on-surface-variant/30"
+               placeholder="e.g. Grade 10 - Mathematics" type="text" />
+         </div>
+         <!-- Status -->
+         <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-semibold text-on-surface-variant">Status</label>
+            <div class="relative">
+               <select
+                  class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all">
+                  <option>Active</option>
+                  <option>Inactive</option>
+                  <option>Archived</option>
+               </select>
+               <span
+                  class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant/60">expand_more</span>
+            </div>
+         </div>
+         <!-- Class Section -->
+         <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-semibold text-on-surface-variant">Class Section</label>
+            <div class="relative">
+               <select
+                  class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all">
+                  <option value="">Select Section</option>
+                  <option>Secondary A</option>
+                  <option>Secondary B</option>
+                  <option>Higher Secondary</option>
+               </select>
+               <span
+                  class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant/60">expand_more</span>
+            </div>
+         </div>
+         <!-- Can Promote To -->
+         <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-semibold text-on-surface-variant">Can Promote To</label>
+            <div class="relative">
+               <select
+                  class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all">
+                  <option value="">Select Next Class</option>
+                  <option>Grade 11</option>
+                  <option>Grade 12</option>
+                  <option>N/A - Final Class</option>
+               </select>
+               <span
+                  class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant/60">expand_more</span>
+            </div>
+         </div>
+         <!-- Hierarchical Order -->
+         <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] font-semibold text-on-surface-variant">Hierarchical Order</label>
+            <input
+               class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
+               type="number" value="1" />
+         </div>
+         <!-- Final Class Checkbox -->
+         <div class="flex items-center gap-2 mt-auto pb-2">
+            <div class="relative flex items-center">
+               <input
+                  class="peer h-4 w-4 rounded-sm border-outline-variant/40 text-primary focus:ring-primary/20 transition-all cursor-pointer"
+                  id="is_final" type="checkbox" />
+            </div>
+            <label class="text-[11px] font-medium text-on-surface cursor-pointer select-none" for="is_final">Is
+               Final/Graduation Class</label>
+         </div>
+      </div>
+      <!-- Description -->
+      <div class="flex flex-col gap-1.5">
+         <label class="text-[11px] font-semibold text-on-surface-variant">Description</label>
+         <textarea
+            class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-[12px] text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all resize-none placeholder:text-on-surface-variant/30"
+            placeholder="Enter class details and objectives..." rows="3"></textarea>
+      </div>
+   </div>
+   <!-- Modal Footer -->
+   <div
+      class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex justify-end items-center gap-3 rounded-b-lg">
+      <button
+         class="px-4 py-1.5 text-[11px] font-semibold text-on-surface-variant hover:bg-surface-dim transition-colors rounded-sm">
+         Cancel
+      </button>
+      <button
+         class="px-5 py-1.5 bg-gradient-to-r from-primary to-primary-container text-on-primary text-[11px] font-bold rounded-sm shadow-md hover:brightness-110 active:scale-[0.98] transition-all">
+         Create Class
+      </button>
+   </div>
+</base-modal>

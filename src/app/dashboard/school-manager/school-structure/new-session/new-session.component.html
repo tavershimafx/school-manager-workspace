@@ -1,0 +1,76 @@
+<base-modal title="Create Session" module="School Management" subModule="Create Session">
+   <!-- Modal Body -->
+   <div class="p-6 space-y-5 overflow-y-auto max-h-[716px]">
+      <!-- Name Input -->
+      <div class="space-y-1.5">
+         <label class="block text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Name</label>
+         <input
+            class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400"
+            placeholder="e.g. 2025 Summer Intensive" type="text" />
+      </div>
+      <!-- Status Dropdown -->
+      <div class="space-y-1.5">
+         <label class="block text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Status</label>
+         <div class="relative">
+            <select
+               class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all cursor-pointer">
+               <option selected="">Active</option>
+               <option>Inactive</option>
+               <option>Pending</option>
+               <option>Closed</option>
+            </select>
+            <span class="material-symbols-outlined absolute right-3 top-2.5 pointer-events-none text-slate-500"
+               data-icon="expand_more">expand_more</span>
+         </div>
+      </div>
+      <!-- Checkbox Group -->
+      <div class="grid grid-cols-2 gap-4 py-2">
+         <label class="flex items-center gap-3 cursor-pointer group">
+            <div class="relative flex items-center">
+               <input
+                  class="peer h-4 w-4 border-outline-variant/60 rounded-lg text-primary focus:ring-primary/20 appearance-none bg-surface-container-lowest border transition-all checked:bg-primary checked:border-primary"
+                  type="checkbox" />
+               <span
+                  class="material-symbols-outlined absolute text-[12px] text-white opacity-0 peer-checked:opacity-100 left-0.5"
+                  data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+            </div>
+            <span
+               class="text-[0.6875rem] font-medium text-on-surface-variant group-hover:text-on-surface transition-colors">Archived</span>
+         </label>
+         <label class="flex items-center gap-3 cursor-pointer group">
+            <div class="relative flex items-center">
+               <input
+                  class="peer h-4 w-4 border-outline-variant/60 rounded-lg text-primary focus:ring-primary/20 appearance-none bg-surface-container-lowest border transition-all checked:bg-primary checked:border-primary"
+                  type="checkbox" />
+               <span
+                  class="material-symbols-outlined absolute text-[12px] text-white opacity-0 peer-checked:opacity-100 left-0.5"
+                  data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+            </div>
+            <span
+               class="text-[0.6875rem] font-medium text-on-surface-variant group-hover:text-on-surface transition-colors">Is
+               Current Session</span>
+         </label>
+      </div>
+      <!-- Description Textarea -->
+      <div class="space-y-1.5">
+         <label
+            class="block text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider">Description</label>
+         <textarea
+            class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400 resize-none"
+            placeholder="Enter session objectives and notes..." rows="3"></textarea>
+      </div>
+   </div>
+   <!-- Modal Footer -->
+   <div
+      class="px-6 py-4 bg-surface-container-low/50 border-t border-outline-variant/15 flex justify-end items-center gap-3">
+      <button
+         class="px-4 py-1.5 text-xs font-bold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors rounded-lg">
+         Cancel
+      </button>
+      <button
+         class="px-5 py-1.5 text-xs font-bold bg-primary text-on-primary hover:bg-primary-container shadow-sm transition-all rounded-lg flex items-center gap-2">
+         <span>Create Session</span>
+         <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+      </button>
+   </div>
+</base-modal>

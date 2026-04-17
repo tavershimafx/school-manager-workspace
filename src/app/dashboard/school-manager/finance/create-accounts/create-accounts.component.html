@@ -1,0 +1,50 @@
+<base-modal title="Create Accounts" module="Finance" subModule="Accounts">
+  <div class="p-6">
+    <form class="space-y-5">
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Bank
+          Connection</label>
+        <div class="relative">
+          <select
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm appearance-none focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none">
+            <option value="">Select a connected bank...</option>
+            <option value="bank_a">Standard Chartered - Corporate</option>
+            <option value="bank_b">HSBC - Global Payments</option>
+            <option value="bank_c">DBS - Institutional</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Class</label>
+        <div class="relative">
+          <select
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm py-2 px-3 text-sm appearance-none focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none">
+            <option value="">Select target class...</option>
+            <option value="10a">Grade 10-A</option>
+            <option value="10b">Grade 10-B</option>
+            <option value="11a">Grade 11-A</option>
+            <option value="12c">Grade 12-C</option>
+            <option value="all">All Active Students</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+        </div>
+        <p class="mt-2 text-[10px] text-on-surface-variant/80 italic">Virtual accounts will be generated
+          automatically for all students in the selected group who do not currently have one.</p>
+      </div>
+    </form>
+  </div>
+  <!-- Modal Footer -->
+  <div class="px-6 py-4 bg-surface-container-low flex justify-end gap-3">
+    <button
+      class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high rounded-sm transition-colors">
+      Cancel
+    </button>
+    <button
+      class="px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary to-primary-container hover:brightness-110 rounded-sm shadow-sm transition-all">
+      Create
+    </button>
+  </div>
+</base-modal>

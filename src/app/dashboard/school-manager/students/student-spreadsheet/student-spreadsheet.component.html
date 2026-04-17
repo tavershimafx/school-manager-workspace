@@ -1,0 +1,412 @@
+<!-- Spreadsheet Toolbar -->
+<div class="flex items-center justify-between px-4 py-2 border-b border-outline-variant/20 bg-surface-container-lowest">
+   <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+         <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Class:</label>
+         <div class="relative">
+            <select
+               class="appearance-none bg-surface-container-low border border-outline-variant/40 text-[11px] font-semibold px-3 py-1 pr-8 rounded-sm focus:outline-none focus:border-primary">
+               <option>BE 7 A</option>
+               <option>BE 7 B</option>
+               <option>BE 8 A</option>
+            </select>
+            <span
+               class="material-symbols-outlined absolute right-1 top-1 text-sm pointer-events-none">expand_more</span>
+         </div>
+      </div>
+   </div>
+   <div class="flex items-center gap-2">
+      <button
+         class="flex items-center gap-1.5 bg-[#4CAF50] hover:bg-[#43a047] text-white px-3 py-1.5 rounded-sm text-[11px] font-bold transition-colors shadow-sm">
+         <span class="material-symbols-outlined text-[16px]">file_download</span>
+         Populate
+      </button>
+      <button
+         class="flex items-center gap-1.5 bg-primary hover:bg-primary-container text-white px-3 py-1.5 rounded-sm text-[11px] font-bold transition-colors shadow-sm">
+         <span class="material-symbols-outlined text-[16px]">save</span>
+         Update
+      </button>
+   </div>
+</div>
+<!-- Spreadsheet Canvas -->
+<div class="flex-1 overflow-auto spreadsheet-container bg-surface-container-lowest">
+   <!-- Edited Indicator Border -->
+   <div class="sticky top-0 z-30 w-full h-[3px] bg-[#FF9800]"></div>
+   <table class="w-full border-collapse table-fixed min-w-[1200px]">
+      <thead class="sticky top-[3px] z-20">
+         <tr class="bg-surface-container-low">
+            <th
+               class="w-10 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-medium p-0">
+            </th>
+            <th
+               class="w-12 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter">
+               S/N</th>
+            <th
+               class="w-32 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Student ID</th>
+            <th
+               class="w-40 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Surname</th>
+            <th
+               class="w-40 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Firstname</th>
+            <th
+               class="w-40 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Middlename</th>
+            <th
+               class="w-20 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Gender</th>
+            <th
+               class="w-28 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               DOB</th>
+            <th
+               class="w-32 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Nationality</th>
+            <th
+               class="w-32 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               State</th>
+            <th
+               class="w-32 border-r border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               LGA</th>
+            <th
+               class="w-36 border-b border-outline-variant/40 text-[10px] text-on-surface-variant font-bold p-2 uppercase tracking-tighter text-left">
+               Class Admitted</th>
+         </tr>
+      </thead>
+      <tbody class="text-[12px]">
+         <!-- Row 1 (Unedited) -->
+         <tr class="group hover:bg-surface-dim/20 transition-colors">
+            <td class="bg-[#4CAF50] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant">
+               1</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-001" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="ADEDAYO" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Oluwaseun" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Emmanuel" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Male" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="12/05/2011" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Lagos" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Ikeja" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 2 (Edited) -->
+         <tr class="group bg-orange-50/30 hover:bg-orange-100/40 transition-colors">
+            <td class="bg-[#FF9800] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant font-bold">
+               2</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-002" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none text-[#FF9800] font-bold"
+                  type="text" value="CHUKWUMA" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nneka" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Joy" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Female" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="04/09/2010" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Anambra" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Onitsha" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 3 (Unedited) -->
+         <tr class="group hover:bg-surface-dim/20 transition-colors">
+            <td class="bg-[#4CAF50] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant">
+               3</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-003" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="MOHAMMED" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Ibrahim" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Aliyu" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Male" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="22/01/2012" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Kano" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Dala" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 4 (Edited) -->
+         <tr class="group bg-orange-50/30 hover:bg-orange-100/40 transition-colors">
+            <td class="bg-[#FF9800] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant font-bold">
+               4</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-004" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="WILLIAMS" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Sarah" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Grace" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Female" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="15/11/2011" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none text-[#FF9800] font-bold"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Rivers" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Obio-Akpor" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- More placeholder rows for high density -->
+         <tr class="group hover:bg-surface-dim/20 transition-colors">
+            <td class="bg-[#4CAF50] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant">
+               5</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-005" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="OKORO" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Chidi" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Paul" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Male" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="09/07/2011" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Enugu" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nkanu East" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 1 (Unedited) -->
+         <tr class="group hover:bg-surface-dim/20 transition-colors">
+            <td class="bg-[#4CAF50] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant">
+               1</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-001" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="ADEDAYO" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Oluwaseun" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Emmanuel" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Male" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="12/05/2011" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Lagos" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Ikeja" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 2 (Edited) -->
+         <tr class="group bg-orange-50/30 hover:bg-orange-100/40 transition-colors">
+            <td class="bg-[#FF9800] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant font-bold">
+               2</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-002" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none text-[#FF9800] font-bold"
+                  type="text" value="CHUKWUMA" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nneka" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Joy" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Female" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="04/09/2010" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Anambra" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Onitsha" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 3 (Unedited) -->
+         <tr class="group hover:bg-surface-dim/20 transition-colors">
+            <td class="bg-[#4CAF50] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant">
+               3</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-003" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="MOHAMMED" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Ibrahim" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Aliyu" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Male" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="22/01/2012" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Kano" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Dala" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+         <!-- Row 4 (Edited) -->
+         <tr class="group bg-orange-50/30 hover:bg-orange-100/40 transition-colors">
+            <td class="bg-[#FF9800] border-b border-outline-variant/20 p-0 w-1"></td>
+            <td
+               class="bg-surface-container-low/50 border-r border-b border-outline-variant/20 p-2 text-center text-on-surface-variant font-bold">
+               4</td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="STU-2023-004" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="WILLIAMS" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Sarah" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Grace" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Female" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="15/11/2011" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none text-[#FF9800] font-bold"
+                  type="text" value="Nigerian" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Rivers" /></td>
+            <td class="border-r border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="Obio-Akpor" /></td>
+            <td class="border-b border-outline-variant/20 p-0"><input
+                  class="w-full h-full p-2 border-0 focus:ring-1 focus:ring-primary focus:bg-white bg-transparent outline-none"
+                  type="text" value="BE 7 A" /></td>
+         </tr>
+      </tbody>
+   </table>
+</div>

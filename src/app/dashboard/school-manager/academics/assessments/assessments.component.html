@@ -1,0 +1,154 @@
+<!-- Spreadsheet Toolbar -->
+<div
+  class="h-10 bg-surface-container-lowest border-b border-outline-variant/15 flex items-center px-4 justify-between flex-shrink-0">
+  <div class="flex items-center gap-4">
+    <div
+      class="flex items-center gap-1 group cursor-pointer hover:bg-surface-container-high px-2 py-1 rounded transition-colors">
+      <span class="material-symbols-outlined text-[18px] text-primary">save</span>
+      <span class="text-[11px] font-medium text-on-surface">Save All</span>
+    </div>
+    <div class="h-4 w-[1px] bg-outline-variant/30"></div>
+    <div
+      class="flex items-center gap-1 group cursor-pointer hover:bg-surface-container-high px-2 py-1 rounded transition-colors">
+      <span class="material-symbols-outlined text-[18px]">filter_alt</span>
+      <span class="text-[11px] font-medium text-on-surface">Filter</span>
+    </div>
+    <div
+      class="flex items-center gap-1 group cursor-pointer hover:bg-surface-container-high px-2 py-1 rounded transition-colors">
+      <span class="material-symbols-outlined text-[18px]">sort_by_alpha</span>
+      <span class="text-[11px] font-medium text-on-surface">Sort</span>
+    </div>
+  </div>
+  <div class="relative">
+    <button dropdown
+      class="flex items-center gap-1 bg-primary text-on-primary px-3 py-1 rounded-sm shadow-sm hover:bg-primary-container transition-colors">
+      <span class="text-[11px] font-semibold">More Actions</span>
+      <span class="material-symbols-outlined text-[16px]">expand_more</span>
+    </button>
+    <!-- Dropdown Menu -->
+    <div
+      class="absolute hidden bg-on-primary-container right-0 mt-1 w-48 glass-panel border border-outline-variant/30 rounded-lg shadow-xl z-50 p-1 flex flex-col">
+      <button (click)="moveAssess()"
+        class="flex items-center gap-3 px-3 py-2 hover:bg-primary-fixed/30 text-[11px] text-on-surface rounded transition-colors text-left">
+        <span class="material-symbols-outlined text-[16px]">download</span>
+        Export as CSV
+      </button>
+      <button (click)="uploadAssess()"
+        class="flex items-center gap-3 px-3 py-2 hover:bg-primary-fixed/30 text-[11px] text-on-surface rounded transition-colors text-left">
+        <span class="material-symbols-outlined text-[16px]">upload</span>
+        Import Scores
+      </button>
+      <div class="h-[1px] bg-outline-variant/15 my-1"></div>
+      <button (click)="deleteAssess()"
+        class="flex items-center gap-3 px-3 py-2 hover:bg-error-container/30 text-[11px] text-error rounded transition-colors text-left">
+        <span class="material-symbols-outlined text-[16px]">refresh</span>
+        Reset All
+      </button>
+      <button
+        class="flex items-center gap-3 px-3 py-2 hover:bg-primary-fixed/30 text-[11px] text-on-surface rounded transition-colors text-left font-semibold">
+        <span class="material-symbols-outlined text-[16px]">check_circle</span>
+        Finalize Scores
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Spreadsheet Grid -->
+<div class="flex-1 overflow-auto custom-scrollbar">
+  <table class="w-full border-collapse text-[11px]">
+    <thead class="sticky top-0 z-20 bg-surface-container-low shadow-sm">
+      <tr class="h-8">
+        <th class="w-10 border-r border-outline-variant/15 font-semibold text-on-surface-variant text-center">S/N
+        </th>
+        <th class="w-24 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-left">
+          Student ID</th>
+        <th class="border-r border-outline-variant/15 font-semibold text-on-surface-variant px-3 text-left">Full
+          Name</th>
+        <th class="w-20 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-center">
+          CA1 (10)</th>
+        <th class="w-20 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-center">
+          CA2 (10)</th>
+        <th class="w-20 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-center">
+          CA3 (10)</th>
+        <th class="w-20 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-center">
+          Exam (70)</th>
+        <th class="w-24 border-r border-outline-variant/15 font-semibold text-on-surface-variant px-2 text-center">
+          Total (100)</th>
+        <th class="w-24 font-semibold text-on-surface-variant px-2 text-center">Grade</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-outline-variant/10">
+      <!-- Unchanged Row -->
+      <tr class="h-8 group hover:bg-surface-container-low transition-colors border-l-[3px] border-l-green-500">
+        <td class="text-center text-on-surface-variant border-r border-outline-variant/10">01</td>
+        <td class="px-2 font-medium border-r border-outline-variant/10">STU-2024-001</td>
+        <td class="px-3 border-r border-outline-variant/10">Adewale Thompson</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">08</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">07</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">09</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">54</td>
+        <td class="px-2 text-center font-bold border-r border-outline-variant/10">78</td>
+        <td class="px-2 text-center font-bold text-primary">A</td>
+      </tr>
+      <!-- Edited Row -->
+      <tr class="h-8 group bg-orange-50/30 hover:bg-orange-100/30 transition-colors border-l-[3px] border-l-orange-500">
+        <td class="text-center text-on-surface-variant border-r border-outline-variant/10">02</td>
+        <td class="px-2 font-medium border-r border-outline-variant/10">STU-2024-002</td>
+        <td class="px-3 border-r border-outline-variant/10">Chukwuemeka Okoro</td>
+        <td class="px-2 text-center border-r border-outline-variant/10 relative">
+          <input
+            class="w-full h-full bg-transparent border-none text-center focus:ring-1 focus:ring-primary p-0 text-[11px] font-bold text-orange-600"
+            type="text" value="09" />
+        </td>
+        <td class="px-2 text-center border-r border-outline-variant/10">06</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">08</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">45</td>
+        <td class="px-2 text-center font-bold border-r border-outline-variant/10">68</td>
+        <td class="px-2 text-center font-bold text-secondary">B</td>
+      </tr>
+      <!-- Unchanged Row -->
+      <tr class="h-8 group hover:bg-surface-container-low transition-colors border-l-[3px] border-l-green-500">
+        <td class="text-center text-on-surface-variant border-r border-outline-variant/10">03</td>
+        <td class="px-2 font-medium border-r border-outline-variant/10">STU-2024-003</td>
+        <td class="px-3 border-r border-outline-variant/10">Fatima Ibrahim</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">07</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">07</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">07</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">32</td>
+        <td class="px-2 text-center font-bold border-r border-outline-variant/10">53</td>
+        <td class="px-2 text-center font-bold text-on-surface-variant">C</td>
+      </tr>
+      <!-- Edited Row -->
+      <tr class="h-8 group bg-orange-50/30 hover:bg-orange-100/30 transition-colors border-l-[3px] border-l-orange-500">
+        <td class="text-center text-on-surface-variant border-r border-outline-variant/10">04</td>
+        <td class="px-2 font-medium border-r border-outline-variant/10">STU-2024-004</td>
+        <td class="px-3 border-r border-outline-variant/10">Blessing Udoh</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">05</td>
+        <td class="px-2 text-center border-r border-outline-variant/10">04</td>
+        <td class="px-2 text-center border-r border-outline-variant/10 relative">
+          <input
+            class="w-full h-full bg-transparent border-none text-center focus:ring-1 focus:ring-primary p-0 text-[11px] font-bold text-orange-600"
+            type="text" value="06" />
+        </td>
+        <td class="px-2 text-center border-r border-outline-variant/10">21</td>
+        <td class="px-2 text-center font-bold border-r border-outline-variant/10">36</td>
+        <td class="px-2 text-center font-bold text-error">F</td>
+      </tr>
+      <!-- Mock data for density -->
+      <!-- @for (i of Array.fill(10); track $index) {
+          
+      <tr class="h-8 group hover:bg-surface-container-low transition-colors border-l-[3px] border-l-green-500">
+          <td class="text-center text-on-surface-variant border-r border-outline-variant/10">${i.toString().padStart(2, '0')}</td>
+          <td class="px-2 font-medium border-r border-outline-variant/10">STU-2024-${i.toString().padStart(3, '0')}</td>
+          <td class="px-3 border-r border-outline-variant/10">${names[i % names.length]}</td>
+          <td class="px-2 text-center border-r border-outline-variant/10">${Math.floor(Math.random() * 10)}</td>
+          <td class="px-2 text-center border-r border-outline-variant/10">${Math.floor(Math.random() * 10)}</td>
+          <td class="px-2 text-center border-r border-outline-variant/10">${Math.floor(Math.random() * 10)}</td>
+          <td class="px-2 text-center border-r border-outline-variant/10">${Math.floor(Math.random() * 70)}</td>
+          <td class="px-2 text-center font-bold border-r border-outline-variant/10">${Math.floor(Math.random() * 100)}</td>
+          <td class="px-2 text-center font-bold text-on-surface-variant">B</td>
+      </tr>
+                                
+        } -->
+    </tbody>
+  </table>
+</div>

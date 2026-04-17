@@ -1,0 +1,155 @@
+<!-- Action Bar -->
+        <div class="flex items-center justify-between px-6 py-4">
+          <div class="flex items-center space-x-2">
+            <button (click)="newClass()"
+              class="flex items-center px-3 py-1.5 bg-gradient-to-r from-primary to-primary-container text-white text-[11px] font-semibold rounded-sm shadow-sm hover:brightness-110 transition-all">
+              <span class="material-symbols-outlined mr-1.5 text-[14px]" data-icon="add">add</span>
+              New Class
+            </button>
+            <div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+            <button
+              class="flex items-center px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-colors text-[11px]">
+              <span class="material-symbols-outlined mr-1.5 text-[14px]" data-icon="download">download</span>
+              Download
+            </button>
+            <button
+              class="flex items-center px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-colors text-[11px]">
+              <span class="material-symbols-outlined mr-1.5 text-[14px]" data-icon="print">print</span>
+              Print
+            </button>
+            <button
+              class="flex items-center px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-colors text-[11px]">
+              <span class="material-symbols-outlined mr-1.5 text-[14px]" data-icon="upload">upload</span>
+              Upload
+            </button>
+          </div>
+          <div class="relative w-64">
+            <span
+              class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]"
+              data-icon="search">search</span>
+            <input
+              class="w-full pl-9 pr-3 py-1.5 bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-sm text-[11px] outline-none transition-all"
+              placeholder="Filter classes..." type="text" />
+          </div>
+        </div>
+        <!-- High Density Table -->
+        <div class="flex-1 px-6 pb-6 overflow-auto">
+          <div class="min-w-full inline-block align-middle">
+            <div class="overflow-hidden border border-outline-variant/15 rounded-sm bg-surface-container-lowest">
+              <table class="min-w-full divide-y divide-outline-variant/15">
+                <thead class="bg-surface-container-low">
+                  <tr>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Name</th>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Status</th>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Class Section</th>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Can Promote To</th>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Hierarchical Order</th>
+                    <th
+                      class="px-3 py-2 text-left text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Description</th>
+                    <th
+                      class="px-3 py-2 text-right text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                      scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10 text-[11px]">
+                  <!-- Row 1 -->
+                  <tr class="hover:bg-primary-fixed/30 transition-colors">
+                    <td class="px-3 py-2.5 font-medium text-on-surface">Grade 10 - Mathematics</td>
+                    <td class="px-3 py-2.5">
+                      <span
+                        class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                    </td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Secondary A</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Grade 11 - Advanced Math</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">1001</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant max-w-xs truncate">Core mathematics curriculum for
+                      secondary level sophomore year students.</td>
+                    <td class="px-3 py-2.5 text-right">
+                      <button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined"
+                          data-icon="edit">edit</span></button>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr class="bg-surface-container-low/30 hover:bg-primary-fixed/30 transition-colors">
+                    <td class="px-3 py-2.5 font-medium text-on-surface">Grade 10 - Physics</td>
+                    <td class="px-3 py-2.5">
+                      <span
+                        class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                    </td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Science Wing</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Grade 11 - Physics II</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">1002</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant max-w-xs truncate">Introductory mechanics and
+                      thermodynamics.</td>
+                    <td class="px-3 py-2.5 text-right">
+                      <button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined"
+                          data-icon="edit">edit</span></button>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr class="hover:bg-primary-fixed/30 transition-colors">
+                    <td class="px-3 py-2.5 font-medium text-on-surface">Grade 09 - World History</td>
+                    <td class="px-3 py-2.5">
+                      <span
+                        class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-slate-200 text-slate-600 border border-slate-300">Inactive</span>
+                    </td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Humanities</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Grade 10 - Modern History</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">0901</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant max-w-xs truncate">Comprehensive overview of ancient
+                      to early modern civilizations.</td>
+                    <td class="px-3 py-2.5 text-right">
+                      <button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined"
+                          data-icon="edit">edit</span></button>
+                    </td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr class="bg-surface-container-low/30 hover:bg-primary-fixed/30 transition-colors">
+                    <td class="px-3 py-2.5 font-medium text-on-surface">Grade 12 - Computer Science</td>
+                    <td class="px-3 py-2.5">
+                      <span
+                        class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                    </td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Tech Hub</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Graduation</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">1205</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant max-w-xs truncate">Advanced algorithms and data
+                      structures using Python and C++.</td>
+                    <td class="px-3 py-2.5 text-right">
+                      <button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined"
+                          data-icon="edit">edit</span></button>
+                    </td>
+                  </tr>
+                  <!-- Row 5 -->
+                  <tr class="hover:bg-primary-fixed/30 transition-colors">
+                    <td class="px-3 py-2.5 font-medium text-on-surface">Grade 11 - Literature</td>
+                    <td class="px-3 py-2.5">
+                      <span
+                        class="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-green-100 text-green-800 border border-green-200">Active</span>
+                    </td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Library Hall</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">Grade 12 - Senior Seminar</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant">1104</td>
+                    <td class="px-3 py-2.5 text-on-surface-variant max-w-xs truncate">Critical analysis of classical and
+                      contemporary world literature.</td>
+                    <td class="px-3 py-2.5 text-right">
+                      <button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined"
+                          data-icon="edit">edit</span></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>

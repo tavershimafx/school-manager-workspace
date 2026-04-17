@@ -1,0 +1,83 @@
+<base-modal title="Generate Enrollment Numbers" module="School Management" subModule="Enrollment Numbers">
+  <!-- Modal Body -->
+      <div class="p-6 space-y-8">
+        <!-- Instructional Text -->
+        <div class="flex gap-3 items-start p-4 bg-primary-fixed/30 rounded border border-primary/10">
+          <span class="material-symbols-outlined text-primary mt-0.5">info</span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Generate student enrollment/registration numbers which uniquely identifies each student in the
+            school/academic system.
+          </p>
+        </div>
+        <!-- Form Section -->
+        <form class="space-y-6">
+          <!-- Toggle Section -->
+          <div class="flex items-center justify-between p-4 bg-surface-container-low rounded">
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold text-on-surface">Toggle on to generate for all classes</span>
+              <span class="text-xs text-on-surface-variant">This will apply sequential numbers across the entire
+                institution.</span>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input class="sr-only peer" type="checkbox" value="" />
+              <div
+                class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+              </div>
+            </label>
+          </div>
+          <!-- Input Grid -->
+          <div class="grid grid-cols-2 gap-x-6 gap-y-5">
+            <!-- Target Class -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">Target Class</label>
+              <div class="relative">
+                <select
+                  class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary appearance-none cursor-pointer">
+                  <option>Select a class...</option>
+                  <option>Grade 10 - Alpha</option>
+                  <option>Grade 11 - Beta</option>
+                  <option>Grade 12 - Gamma</option>
+                </select>
+                <span
+                  class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+              </div>
+            </div>
+            <!-- Start Number -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">Start Number</label>
+              <input
+                class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/60"
+                placeholder="Start generating from" type="number" />
+            </div>
+            <!-- Identifier -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">Identifier</label>
+              <input
+                class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/60"
+                placeholder="A constant identifier placed at the..." type="text" />
+            </div>
+            <!-- Minimum Characters -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] font-bold text-on-surface-variant uppercase tracking-tight">Minimum
+                Characters</label>
+              <input
+                class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/60"
+                placeholder="Minimum number of characters to" type="number" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Modal Footer -->
+      <div
+        class="px-6 py-5 bg-surface-container-high/30 flex justify-end items-center gap-3 border-t border-outline-variant/10">
+        <button
+          class="px-5 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-sm">
+          Cancel
+        </button>
+        <button
+          class="px-6 py-2 bg-primary hover:bg-primary-container text-white text-sm font-bold rounded-sm shadow-sm transition-all flex items-center gap-2">
+          <span class="material-symbols-outlined !text-[16px]">bolt</span>
+          Generate
+        </button>
+      </div>
+</base-modal>

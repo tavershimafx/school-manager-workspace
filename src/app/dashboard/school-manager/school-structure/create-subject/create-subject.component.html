@@ -1,0 +1,72 @@
+<base-modal [title]="data?.modalTitle" module="School Management" subModule="Create Subject">
+<!-- Modal Body -->
+      <form class="p-6 space-y-5">
+         <div class="grid grid-cols-2 gap-4">
+            <!-- Name Input -->
+            <div class="space-y-1.5">
+               <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Name</label>
+               <input
+                  class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none transition-all placeholder:text-on-surface-variant/40"
+                  placeholder="e.g. Applied Chemistry" type="text" />
+            </div>
+            <!-- Short Name Input -->
+            <div class="space-y-1.5">
+               <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Short
+                  Name</label>
+               <input
+                  class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none transition-all placeholder:text-on-surface-variant/40"
+                  placeholder="e.g. CHEM-101" type="text" />
+            </div>
+         </div>
+         <div class="grid grid-cols-2 gap-4">
+            <!-- Status Select -->
+            <div class="space-y-1.5">
+               <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Status</label>
+               <div class="relative">
+                  <select
+                     class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:border-primary outline-none cursor-pointer">
+                     <option>Active</option>
+                     <option>Inactive</option>
+                     <option>Archived</option>
+                  </select>
+                  <span
+                     class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]"
+                     data-icon="expand_more">expand_more</span>
+               </div>
+            </div>
+            <!-- Checkbox -->
+            <div class="flex items-end pb-2">
+               <label class="flex items-center gap-3 cursor-pointer group">
+                  <div class="relative flex items-center justify-center">
+                     <input checked=""
+                        class="peer appearance-none w-5 h-5 border border-outline-variant/40 rounded-sm bg-surface-container-lowest checked:bg-primary checked:border-primary transition-all"
+                        type="checkbox" />
+                     <span
+                        class="material-symbols-outlined absolute text-white text-[16px] opacity-0 peer-checked:opacity-100"
+                        data-icon="check">check</span>
+                  </div>
+                  <span class="text-sm font-medium text-on-surface">Is Compulsory Subject</span>
+               </label>
+            </div>
+         </div>
+         <!-- Description Textarea -->
+         <div class="space-y-1.5">
+            <label
+               class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">Description</label>
+            <textarea
+               class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary/20 outline-none transition-all placeholder:text-on-surface-variant/40 resize-none"
+               placeholder="Enter detailed subject objectives and syllabus overview..." rows="4"></textarea>
+         </div>
+      </form>
+      <!-- Modal Footer Actions -->
+      <div class="px-6 py-4 bg-surface-container-low flex justify-end gap-3 border-t border-outline-variant/10">
+         <button
+            class="px-5 py-2 text-xs font-bold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all rounded-sm border border-outline-variant/40">
+            Cancel
+         </button>
+         <button
+            class="px-8 py-2 text-xs font-bold text-white bg-gradient-to-r from-primary to-primary-container hover:brightness-110 active:scale-95 transition-all rounded-sm shadow-sm">
+            Create
+         </button>
+      </div>
+</base-modal>

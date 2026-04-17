@@ -1,0 +1,190 @@
+<div class="flex-1 overflow-y-auto p-8 max-w-5xl mx-auto w-full">
+        <header class="mb-8">
+          <h1 class="text-xl font-bold tracking-tight text-on-surface mb-1">Create New Role</h1>
+          <p class="text-xs text-on-surface-variant">Configure permissions and access levels for system resources.</p>
+        </header>
+        <div class="space-y-8">
+          <!-- General Information -->
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-[0.6875rem] font-bold uppercase tracking-wider text-on-surface-variant">Role
+                Name</label>
+              <input
+                class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all"
+                placeholder="e.g. Senior Administrator" type="text" />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="block text-[0.6875rem] font-bold uppercase tracking-wider text-on-surface-variant">Status</label>
+              <select
+                class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all appearance-none cursor-pointer">
+                <option>Active</option>
+                <option>Inactive</option>
+                <option>Draft</option>
+              </select>
+            </div>
+            <div class="md:col-span-2 space-y-2">
+              <label
+                class="block text-[0.6875rem] font-bold uppercase tracking-wider text-on-surface-variant">Description</label>
+              <textarea
+                class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all"
+                placeholder="Describe the responsibilities associated with this role..." rows="2"></textarea>
+            </div>
+          </section>
+          <!-- Permissions Grid -->
+          <section>
+            <div class="flex items-center justify-between mb-4">
+              <label class="text-[0.6875rem] font-bold uppercase tracking-wider text-on-surface-variant">Resource
+                Permissions</label>
+              <div class="flex items-center space-x-4">
+                <button class="text-[0.6875rem] text-primary hover:underline">Check All</button>
+                <button class="text-[0.6875rem] text-on-surface-variant hover:underline">Uncheck All</button>
+              </div>
+            </div>
+            <div class="border border-outline-variant/20 rounded overflow-hidden">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-low border-b border-outline-variant/20">
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider w-1/4">
+                      Resource</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      View</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      Create</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      Update</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      Delete</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      Import</th>
+                    <th
+                      class="px-4 py-3 text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-wider text-center">
+                      Export</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                  <tr class="hover:bg-surface-container-low transition-colors">
+                    <td class="px-4 py-3 text-sm font-medium">Dashboard</td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+                    <td class="px-4 py-3 text-sm font-medium">Administration</td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low transition-colors">
+                    <td class="px-4 py-3 text-sm font-medium">Users</td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+                    <td class="px-4 py-3 text-sm font-medium">Admin Roles</td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                  </tr>
+                  <tr class="hover:bg-surface-container-low transition-colors">
+                    <td class="px-4 py-3 text-sm font-medium">Academic Records</td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                    <td class="px-4 py-3 text-center"><input checked=""
+                        class="rounded-sm text-primary focus:ring-primary/20 h-4 w-4 border-outline-variant/40"
+                        type="checkbox" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <!-- Sticky Actions -->
+          <footer class="flex items-center justify-end space-x-3 pt-6 border-t border-outline-variant/10">
+            <button
+              class="px-6 py-2 rounded-sm text-on-surface-variant hover:bg-surface-container-high transition-colors font-semibold text-xs border border-outline-variant/30">Cancel</button>
+            <button
+              class="px-6 py-2 rounded-sm bg-primary text-white hover:brightness-110 transition-all font-semibold text-xs shadow-sm">Update
+              Role</button>
+          </footer>
+        </div>
+      </div>

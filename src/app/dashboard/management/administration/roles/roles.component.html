@@ -1,0 +1,222 @@
+<div class="flex-1 p-6 overflow-y-auto">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header Section -->
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-xl font-bold text-on-surface tracking-tight">Roles</h1>
+        <p class="text-sm text-on-surface-variant mt-1">Manage user roles and their associated system permissions.
+        </p>
+      </div>
+      <button routerLink="/dashboard/mgmt/admin/new-role"
+        class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-container text-white rounded-sm text-sm font-semibold transition-all shadow-sm active:scale-95">
+        <span class="material-symbols-outlined">add</span>
+        New Role
+      </button>
+    </div>
+    <!-- Search and Filter Bar -->
+    <div class="mb-6 flex items-center justify-between">
+      <div class="relative flex items-center w-full max-w-md">
+        <span class="material-symbols-outlined absolute left-3 text-on-surface-variant/60">search</span>
+        <input
+          class="w-full bg-surface-container-low border border-outline-variant/20 rounded-sm pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all"
+          placeholder="Filter roles..." type="text" />
+      </div>
+    </div>
+    <!-- Roles Table -->
+    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-sm overflow-hidden shadow-sm">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface-container-low border-b border-outline-variant/20">
+            <th class="px-4 py-3 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">
+              Name</th>
+            <th class="px-4 py-3 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">
+              Status</th>
+            <th class="px-4 py-3 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant">
+              Description</th>
+            <th
+              class="px-4 py-3 text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant text-right">
+              Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant/10">
+          <!-- Row 1: Super Admin -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-primary/10 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">admin_panel_settings</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Super Admin</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">Full system access, including configuration,
+                user management, and permissions.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <!-- Row 2: Security Guard -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-slate-100 flex items-center justify-center text-slate-500">
+                  <span class="material-symbols-outlined">security</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Security Guard</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">Access to gate management, visitor logs, and
+                basic emergency protocols.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <!-- Row 3: IT Support -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-blue-50 flex items-center justify-center text-blue-600">
+                  <span class="material-symbols-outlined">construction</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">IT Support</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">Technical role for resolving system issues,
+                backups, and data synchronization.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <!-- Row 4: Principal -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-purple-50 flex items-center justify-center text-purple-600">
+                  <span class="material-symbols-outlined">school</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Principal</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">School head with access to all academic and
+                student reports but limited system control.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <!-- Row 5: Chief Security -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-slate-100 flex items-center justify-center text-slate-500">
+                  <span class="material-symbols-outlined">verified_user</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Chief Security</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">Oversees the security team, manages incident
+                reporting and shift schedules.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+          <!-- Row 6: Store Keeper -->
+          <tr class="hover:bg-surface-container/30 transition-colors group">
+            <td class="px-4 py-4">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-sm bg-amber-50 flex items-center justify-center text-amber-600">
+                  <span class="material-symbols-outlined">inventory_2</span>
+                </div>
+                <span class="text-sm font-semibold text-on-surface">Store Keeper</span>
+              </div>
+            </td>
+            <td class="px-4 py-4">
+              <span
+                class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">
+                Active
+              </span>
+            </td>
+            <td class="px-4 py-4">
+              <p class="text-xs text-on-surface-variant max-w-md">Responsible for inventory management, stock
+                orders, and laboratory equipment tracking.</p>
+            </td>
+            <td class="px-4 py-4 text-right">
+              <button
+                class="p-1.5 opacity-0 group-hover:opacity-100 text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-all">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Pagination -->
+    <div class="mt-4 flex items-center justify-between">
+      <p class="text-[0.6875rem] text-on-surface-variant">Showing 1 to 6 of 12 roles</p>
+      <div class="flex gap-1">
+        <button
+          class="px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-tight bg-surface-container-low text-on-surface-variant rounded-sm opacity-50 cursor-not-allowed">Prev</button>
+        <button
+          class="px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-tight bg-primary text-white rounded-sm">1</button>
+        <button
+          class="px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-tight bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-sm">2</button>
+        <button
+          class="px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-tight bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-sm">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
