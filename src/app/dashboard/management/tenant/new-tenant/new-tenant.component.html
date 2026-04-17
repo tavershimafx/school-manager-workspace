@@ -1,0 +1,69 @@
+<base-modal title="Add Tenant" module="Tenant Management" subModule="Add/UpdateTenants">
+  <div class="p-6 space-y-5">
+    <div class="grid grid-cols-1 gap-5">
+      <!-- Tenant Name -->
+      <div class="space-y-1.5">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Tenant
+          Name</label>
+        <input
+          class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-primary focus:ring-1 placeholder:text-on-surface-variant/40"
+          placeholder="Enter formal organization name" type="text" />
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Primary Domain -->
+        <div class="space-y-1.5">
+          <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Primary
+            Domain</label>
+          <input
+            class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-primary focus:ring-1 placeholder:text-on-surface-variant/40"
+            placeholder="institution.edu" type="text" />
+        </div>
+        <!-- Tenant Code -->
+        <div class="space-y-1.5">
+          <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Tenant
+            Code</label>
+          <input
+            class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-primary focus:ring-1 placeholder:text-on-surface-variant/40"
+            placeholder="e.g. INST-01" type="text" />
+        </div>
+      </div>
+      <!-- Superuser Email Address -->
+      <div class="space-y-1.5">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Superuser
+          Email Address</label>
+        <div class="relative">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 !text-[16px]">mail</span>
+          <input
+            class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-sm pl-9 pr-3 py-2 text-sm focus:ring-primary focus:ring-1 placeholder:text-on-surface-variant/40"
+            placeholder="admin@domain.com" type="email" />
+        </div>
+      </div>
+      <!-- Status Dropdown -->
+      <div class="space-y-1.5">
+        <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Initial
+          Status</label>
+        <div class="relative">
+          <select
+            class="w-full appearance-none bg-surface-container-lowest border-none ring-1 ring-outline-variant/30 rounded-sm px-3 py-2 text-sm focus:ring-primary focus:ring-1 text-on-surface">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Footer / Actions -->
+  <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex justify-end gap-3">
+    <button
+      class="px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-highest rounded-sm transition-colors">
+      Cancel
+    </button>
+    <button
+      class="px-4 py-2 text-sm font-bold text-on-primary bg-gradient-to-r from-primary to-primary-container hover:shadow-lg hover:shadow-primary/20 rounded-sm transition-all transform active:scale-[0.98]">
+      Create Tenant
+    </button>
+  </div>
+</base-modal>

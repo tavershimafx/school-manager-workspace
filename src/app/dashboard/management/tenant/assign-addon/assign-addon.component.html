@@ -1,0 +1,77 @@
+<base-modal title="Assign Addon" module="Student Management" subModule="Reset Student Passwords">
+  <div class="p-6 space-y-5">
+    <div class="grid grid-cols-1 gap-5">
+      <!-- Field: Selected Addon (Readonly) -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Selected
+          Addon</label>
+        <div class="relative group">
+          <input
+            class="w-full bg-surface-container-low border-transparent text-sm text-on-surface px-3 py-2 cursor-not-allowed focus:ring-0 focus:border-transparent rounded-sm"
+            readonly="" type="text" value="CBT Module" />
+          <span
+            class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-base">lock</span>
+        </div>
+      </div>
+      <!-- Field: Select Tenant -->
+      <div class="flex flex-col gap-1.5">
+        <label class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Select
+          Tenant</label>
+        <div class="relative">
+          <span
+            class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-base">search</span>
+          <input
+            class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm text-on-surface pl-10 pr-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-sm transition-all outline-none"
+            placeholder="Search by Tenant Name or ID..." type="text" />
+        </div>
+      </div>
+      <!-- Date Pickers Grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Activation
+            Date</label>
+          <div class="relative">
+            <input
+              class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm text-on-surface px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-sm transition-all outline-none"
+              type="date" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Expiry
+            Date</label>
+          <div class="relative">
+            <input
+              class="w-full bg-surface-container-lowest border border-outline-variant/30 text-sm text-on-surface px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-sm transition-all outline-none"
+              type="date" />
+          </div>
+        </div>
+      </div>
+      <!-- Field: Configuration JSON -->
+      <div class="flex flex-col gap-1.5">
+        <div class="flex justify-between items-center">
+          <label class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Configuration
+            JSON</label>
+          <span class="text-[10px] text-primary font-mono cursor-pointer hover:underline">Format JSON</span>
+        </div>
+        <div class="relative bg-[#1e1e1e] p-1 rounded-sm border border-outline-variant/30">
+          <textarea
+            class="w-full bg-transparent border-none text-[12px] font-mono text-blue-300 resize-none focus:ring-0 custom-scrollbar leading-relaxed"
+            rows="4" spellcheck="false">&#123;
+              "max_concurrent_sessions": 50,
+              "enable_proctoring": true,
+              "storage_quota_mb": 1024,
+              "features": ["auto-grading", "video-sync"]
+            &#125;</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Footer -->
+  <div class="bg-surface-container-high px-6 py-4 flex justify-end gap-3 border-t border-outline-variant/10">
+    <button
+      class="px-5 py-2 text-sm font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-dim transition-colors rounded-sm">Cancel</button>
+    <button
+      class="px-6 py-2 bg-primary hover:bg-primary-container text-white text-sm font-semibold rounded-sm shadow-sm transition-all active:scale-95">Confirm
+      Assignment</button>
+  </div>
+</base-modal>

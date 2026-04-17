@@ -5,6 +5,8 @@ import { ResultClassesComponent } from './result-classes/result-classes.componen
 import { ResultSessionsComponent } from './result-sessions/result-sessions.component';
 import { ResultTermsComponent } from './result-terms/result-terms.component';
 import { GradingComponent } from './grading/grading.component';
+import { GroupActionsComponent } from './group-actions/group-actions.component';
+import { GroupActionsNewComponent } from './group-actions-new/group-actions-new.component';
 
 const routes: Routes = [
   { path: "", component: AssessmentsComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: "result-classes", component: ResultClassesComponent },
   { path: "result-sessions", component: ResultSessionsComponent },
   { path: "result-terms", component: ResultTermsComponent },
+  { path: "group-actions", component: GroupActionsComponent },
+  { path: "group-actions-new", component: GroupActionsNewComponent },
 ]
 
 @NgModule({

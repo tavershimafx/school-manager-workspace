@@ -1,0 +1,153 @@
+<div class="h-10 border-b border-outline-variant/10 flex items-center px-4 justify-between bg-surface-container-lowest">
+  <div class="flex items-center gap-4">
+    <div class="relative">
+      <span
+        class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+      <input
+        class="pl-8 pr-3 py-1 bg-surface-container-low border-none rounded-lg text-xs w-64 focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all"
+        placeholder="Search addons..." type="text" />
+    </div>
+    <div class="h-4 w-px bg-outline-variant/30 mx-1"></div>
+    <button
+      class="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined text-[18px]">filter_alt</span>
+      Filter
+    </button>
+  </div>
+  <div class="flex items-center gap-2">
+    <button
+      class="bg-primary text-on-primary px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+      <span class="material-symbols-outlined text-[16px]">add_box</span>
+      Create New Addon
+    </button>
+  </div>
+</div>
+<!-- Data Content (High Density Table) -->
+<div class="flex-1 overflow-auto p-4 bg-surface">
+  <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-surface-container-low border-b border-outline-variant/15">
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider w-12 text-center">S/N
+          </th>
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider">Addon Name</th>
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider w-24">Version</th>
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider">Description</th>
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider w-28">Status</th>
+          <th class="px-4 py-2.5 text-[11px] font-bold text-outline uppercase tracking-wider text-right">Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline-variant/10">
+        <!-- Row 1 -->
+        <tr class="hover:bg-primary-fixed/5 transition-colors group">
+          <td class="px-4 py-3 text-xs text-outline text-center font-medium">01</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">sms</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-on-surface">SMS Messaging</p>
+                <p class="text-[10px] text-outline">Utility • Integrated</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-xs font-mono text-on-surface-variant">v2.4.1</td>
+          <td class="px-4 py-3 text-xs text-on-surface-variant leading-relaxed max-w-xs">Bulk notification engine
+            for automated attendance and result alerts.</td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+          </td>
+          <td class="px-4 py-3 text-right">
+            <button (click)="assignAddon()"
+              class="bg-primary hover:bg-primary-container text-on-primary px-3 py-1.5 rounded text-[11px] font-bold transition-all shadow-sm">Assign
+              to Tenant</button>
+          </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="hover:bg-primary-fixed/5 transition-colors group">
+          <td class="px-4 py-3 text-xs text-outline text-center font-medium">02</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined">quiz</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-on-surface">CBT Module</p>
+                <p class="text-[10px] text-outline">Academic • Core</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-xs font-mono text-on-surface-variant">v1.0.8</td>
+          <td class="px-4 py-3 text-xs text-on-surface-variant leading-relaxed max-w-xs">Computer Based Testing
+            environment with anti-cheat monitoring.</td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-tight">Beta</span>
+          </td>
+          <td class="px-4 py-3 text-right">
+            <button (click)="assignAddon()"
+              class="bg-primary hover:bg-primary-container text-on-primary px-3 py-1.5 rounded text-[11px] font-bold transition-all shadow-sm">Assign
+              to Tenant</button>
+          </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="hover:bg-primary-fixed/5 transition-colors group">
+          <td class="px-4 py-3 text-xs text-outline text-center font-medium">03</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-tertiary/10 flex items-center justify-center text-tertiary">
+                <span class="material-symbols-outlined">library_books</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-on-surface">E-Library</p>
+                <p class="text-[10px] text-outline">Resource • Media</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-xs font-mono text-on-surface-variant">v3.0.0</td>
+          <td class="px-4 py-3 text-xs text-on-surface-variant leading-relaxed max-w-xs">Digital asset management
+            system for textbooks and research papers.</td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+          </td>
+          <td class="px-4 py-3 text-right">
+            <button (click)="assignAddon()"
+              class="bg-primary hover:bg-primary-container text-on-primary px-3 py-1.5 rounded text-[11px] font-bold transition-all shadow-sm">Assign
+              to Tenant</button>
+          </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr class="hover:bg-primary-fixed/5 transition-colors group">
+          <td class="px-4 py-3 text-xs text-outline text-center font-medium">04</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-error/10 flex items-center justify-center text-error">
+                <span class="material-symbols-outlined">payments</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-on-surface">Fee Manager Pro</p>
+                <p class="text-[10px] text-outline">Finance • Module</p>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-xs font-mono text-on-surface-variant">v4.1.2</td>
+          <td class="px-4 py-3 text-xs text-on-surface-variant leading-relaxed max-w-xs">Advanced ledger
+            management with multi-currency payment support.</td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tight">Active</span>
+          </td>
+          <td class="px-4 py-3 text-right">
+            <button (click)="assignAddon()"
+              class="bg-primary hover:bg-primary-container text-on-primary px-3 py-1.5 rounded text-[11px] font-bold transition-all shadow-sm">Assign
+              to Tenant</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

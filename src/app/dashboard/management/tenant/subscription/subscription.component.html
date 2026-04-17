@@ -1,0 +1,236 @@
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container-lowest gap-4">
+  <div class="flex items-center gap-4 flex-1">
+    <div class="relative w-full max-w-sm">
+      <span
+        class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">filter_list</span>
+      <input
+        class="w-full bg-surface-container-low border border-outline-variant/30 rounded-sm text-xs py-1.5 pl-9 pr-4 focus:ring-1 focus:ring-primary outline-none"
+        placeholder="Search subscriptions (e.g. status:active institution:Nexus)..." type="text" />
+    </div>
+    <button
+      class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-high hover:bg-surface-dim rounded-sm transition-colors">
+      <span class="material-symbols-outlined text-[16px]">sync</span>
+      <span class="text-[11px] font-medium uppercase tracking-tight">Refresh</span>
+    </button>
+    <button
+      class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-high hover:bg-surface-dim rounded-sm transition-colors">
+      <span class="material-symbols-outlined text-[16px]">file_download</span>
+      <span class="text-[11px] font-medium uppercase tracking-tight">Export CSV</span>
+    </button>
+  </div>
+  <button
+    class="flex items-center gap-2 px-4 py-1.5 bg-primary hover:bg-primary-container text-white rounded-sm shadow-sm transition-all active:scale-95">
+    <span class="material-symbols-outlined text-[18px]">add</span>
+    <span class="text-xs font-semibold">+ New Subscription</span>
+  </button>
+</div>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-auto p-4">
+  <div class="bg-surface-container-lowest rounded-sm border border-outline-variant/20 shadow-sm overflow-hidden">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-surface-container-low border-b border-outline-variant/30">
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant w-32">Tenant
+            ID</th>
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Institution
+            Name</th>
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant w-40">
+            Subscription Plan</th>
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant w-32">Status
+          </th>
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant w-40">Next
+            Billing Date</th>
+          <th class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant w-24">
+            Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline-variant/10">
+        <!-- Row 1 -->
+        <tr class="hover:bg-primary-fixed/30 transition-colors group">
+          <td class="px-4 py-3 text-[11px] font-mono text-primary font-medium">TN-8921-A</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                <img alt="Nexus University Logo" class="w-full h-full object-cover"
+                  data-alt="minimalist abstract logo for a modern tech university with clean lines and corporate colors"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0v6GEfkMe3TNaDbVKBsuC8LBUUy84mNOxrBGX0E7j_xlqU2zJdOk7lzYylThr-bjhuU74jHNuyFIfxVLpnXX4qoRNWU5AY7z7Dhp5UFGV9MwrGvPemQgnoKfwGMM5P5Ea6Xb-ZQrPVu4mg35QXT3rZ1YHRKCM-jqJ7vjbQcU0qbYrs3JIZBp_I-SOmNOPHathVfufDiywDuYUPQMZeW0YoOV69M-5fNixKmVO8Gg8mnUgjUucHokIkBLSUsUxiaQlZRet3UjPxFPN" />
+              </div>
+              <span class="text-xs font-semibold">Nexus University</span>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-[10px] font-bold uppercase border border-purple-200">Enterprise
+              Plus</span>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class="text-[11px] font-medium text-green-700">Active</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-[11px] text-on-surface-variant">Oct 24, 2024</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">edit</span></button>
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">more_vert</span></button>
+            </div>
+          </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="hover:bg-primary-fixed/30 transition-colors group">
+          <td class="px-4 py-3 text-[11px] font-mono text-primary font-medium">TN-4412-K</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                <img alt="Apex Academy Logo" class="w-full h-full object-cover"
+                  data-alt="modern geometric shield logo for an academy in blue and silver flat design"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-p_q3sGxPSKSGdND6Im4YCdrG7wiCE_-fWb0le-cuZt7ooZikRMFOouIyFhXFREefVngSXacQ45F1yjB76kCQnPZ4zRno9AkvT2T9ymPr7UR1_wSpxwKadVQsg7qjtfUrcRc6wQF5mPTzjdWuVl8gpFJbb1WlHqYpN9Jx4MQb9tMeO1_Epb1ETsbZxKT2eXsImKfBvusJz4HhCzbdUmUZRzvon4jacw_H36hxbFovIZAMFjW2nEWWu1FiBqmhPjKarOBkZKR3maOA" />
+              </div>
+              <span class="text-xs font-semibold">Apex Global Academy</span>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase border border-blue-200">Standard</span>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-error"></div>
+              <span class="text-[11px] font-medium text-error">Expired</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-[11px] text-on-surface-variant">Sep 12, 2023</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">edit</span></button>
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">more_vert</span></button>
+            </div>
+          </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="hover:bg-primary-fixed/30 transition-colors group">
+          <td class="px-4 py-3 text-[11px] font-mono text-primary font-medium">TN-0019-B</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                <img alt="Summit Tech Logo" class="w-full h-full object-cover"
+                  data-alt="abstract mountain logo for a creative studio minimalist line art"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgdPoQtNylJ-0ijHMyfCP8kH2n6lTpTFyJHdrqe4ZSMmKyUtqdciGyKHaJSu8wim4U6ikDZs0nxWqEQLFkzTmqwBWlsE05EP3xyR6FWWHHSKfpVd9hyQybJOH23N-nvjzaC9KlEqdB4cPB5HV_Q9mcySpiNLrPQEheSsCokhTLcYLMTvZ8sG56N66aI58MsAHDvRI1T44YSl3SBZ_TTHsf05yxW2s8lrdLJRhHCNgA-99__U8xXr2CQyFc0tPzpTiXfviuDz0ZMTd5" />
+              </div>
+              <span class="text-xs font-semibold">Summit Technical Institute</span>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[10px] font-bold uppercase border border-slate-300">Starter</span>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class="text-[11px] font-medium text-green-700">Active</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-[11px] text-on-surface-variant">Jan 05, 2025</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">edit</span></button>
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">more_vert</span></button>
+            </div>
+          </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr class="hover:bg-primary-fixed/30 transition-colors group">
+          <td class="px-4 py-3 text-[11px] font-mono text-primary font-medium">TN-3005-X</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                <img alt="Horizon Research Logo" class="w-full h-full object-cover"
+                  data-alt="futuristic orb logo with glowing core for a research facility"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEL7SMJ7HSdaYQl2Ex2NWI5rcmaPqsrbo4k-D5Y08tFhqkbPuvjXVR6HhuUuqd5JLxBHiSXgWUahHYEc2kDcnZPVeJ-PzNyxYfUGnh0xlQps2LHQXmn544xRzbiS8D2IiflBylwErfpGyvscj2vVk6ckxqxwUI06WfmBMHupxqfjvhSCwjzb8EsnhdsYfOJTGbDTXxY7nUhVo0qweLL1OBAu-N_F8v8gaL2OTDrO96r9Py8xK6YUw-20FtOl6LiNN7p4Eu4kuIxb04" />
+              </div>
+              <span class="text-xs font-semibold">Horizon Research Hub</span>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 text-[10px] font-bold uppercase border border-purple-200">Enterprise</span>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+              <span class="text-[11px] font-medium text-yellow-700">Grace Period</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-[11px] text-on-surface-variant">Nov 11, 2024</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">edit</span></button>
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">more_vert</span></button>
+            </div>
+          </td>
+        </tr>
+        <!-- Row 5 -->
+        <tr class="hover:bg-primary-fixed/30 transition-colors group">
+          <td class="px-4 py-3 text-[11px] font-mono text-primary font-medium">TN-6671-M</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                <img alt="BioLink Labs Logo" class="w-full h-full object-cover"
+                  data-alt="simple DNA helix logo for a bioscience company clean and modern"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCtXN-83g24jStDv_fC4oItoH3hftu9Hsr74T0O6Cab77v8zcAGhTqXL2-U0VJGNrn4p9Z3B913MptB4zPFm80SLFobjv1CxBgauSnRID53UnEbbMPU2Z4wUacpkJEqDACppv5M8OVT5cf9YqbnTB23Ehp2Li9Phs6biDvooUNpIVD0YH5A55cGVZD05hsR91B1XcEY2u74G4w1WzLFPjhUeBc4PZeiL_kKeJy3GweBACCT5edmDd-1UdW4ERbzmCFv-GBPr2UV5Va" />
+              </div>
+              <span class="text-xs font-semibold">BioLink Labs</span>
+            </div>
+          </td>
+          <td class="px-4 py-3">
+            <span
+              class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase border border-blue-200">Professional</span>
+          </td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-green-500"></div>
+              <span class="text-[11px] font-medium text-green-700">Active</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-[11px] text-on-surface-variant">Dec 20, 2024</td>
+          <td class="px-4 py-3">
+            <div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">edit</span></button>
+              <button class="p-1 hover:bg-surface-container-high rounded text-on-surface-variant"><span
+                  class="material-symbols-outlined text-[16px]">more_vert</span></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination footer -->
+  <div class="mt-4 flex items-center justify-between">
+    <span class="text-[11px] text-on-surface-variant">Showing 1 to 5 of 124 tenants</span>
+    <div class="flex gap-1">
+      <button class="p-1.5 rounded bg-surface-container-high text-on-surface-variant disabled:opacity-50"><span
+          class="material-symbols-outlined text-[16px]">chevron_left</span></button>
+      <button
+        class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-[11px] font-bold">1</button>
+      <button
+        class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-[11px]">2</button>
+      <button
+        class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-[11px]">3</button>
+      <span class="px-1 text-on-surface-variant self-center">...</span>
+      <button
+        class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-[11px]">25</button>
+      <button class="p-1.5 rounded bg-surface-container-high text-on-surface-variant"><span
+          class="material-symbols-outlined text-[16px]">chevron_right</span></button>
+    </div>
+  </div>
+</div>

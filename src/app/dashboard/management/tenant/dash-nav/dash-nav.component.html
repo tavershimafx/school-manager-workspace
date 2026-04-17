@@ -1,0 +1,207 @@
+<div class="flex-1 flex overflow-hidden h-screen">
+  <!-- PANE 1: Hierarchy (Tree View) -->
+  <section class="w-72 bg-surface-container-low flex flex-col shrink-0 border-r border-outline-variant/15">
+    <div class="p-2 px-3 flex items-center justify-between bg-surface-container/30 border-b border-outline-variant/15">
+      <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Dashboard
+        Hierarchy</span>
+      <div class="flex gap-1">
+        <span class="material-symbols-outlined text-[16px] text-slate-400 cursor-pointer">unfold_less</span>
+        <span class="material-symbols-outlined text-[16px] text-slate-400 cursor-pointer">filter_list</span>
+      </div>
+    </div>
+    <div class="flex-1 overflow-y-auto custom-scrollbar py-1">
+      <!-- Root Category -->
+      <div
+        class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700">
+        <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+        <span class="material-symbols-outlined text-[16px] mr-1">admin_panel_settings</span>
+        Administration
+      </div>
+      <!-- Children -->
+      <div class="ml-6 border-l border-outline-variant/20">
+        <div
+          class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700">
+          <span class="material-symbols-outlined text-[14px] invisible">expand_more</span>
+          <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+          <span class="material-symbols-outlined text-[16px] mr-1">settings_applications</span>
+          System Settings
+        </div>
+        <!-- ACTIVE ITEM -->
+        <div
+          class="group flex items-center gap-1 px-2 py-0.5 bg-primary-fixed text-on-primary-fixed cursor-pointer text-[0.6875rem]">
+          <span class="material-symbols-outlined text-[14px] invisible">expand_more</span>
+          <span class="material-symbols-outlined text-[14px] opacity-40">drag_indicator</span>
+          <span class="material-symbols-outlined text-[16px] mr-1 text-primary">navigation</span>
+          Navigation Config
+        </div>
+        <div
+          class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700">
+          <span class="material-symbols-outlined text-[14px] invisible">expand_more</span>
+          <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+          <span class="material-symbols-outlined text-[16px] mr-1">history_edu</span>
+          Audit Logs
+        </div>
+      </div>
+      <!-- Root Category -->
+      <div
+        class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700 mt-1">
+        <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+        <span class="material-symbols-outlined text-[16px] mr-1">school</span>
+        Academic Configuration
+      </div>
+      <div class="ml-6 border-l border-outline-variant/20">
+        <div
+          class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700">
+          <span class="material-symbols-outlined text-[14px] invisible">expand_more</span>
+          <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+          <span class="material-symbols-outlined text-[16px] mr-1">class</span>
+          Class Management
+        </div>
+      </div>
+      <!-- Root Category -->
+      <div
+        class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700 mt-1">
+        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+        <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+        <span class="material-symbols-outlined text-[16px] mr-1">person</span>
+        Students
+      </div>
+      <div
+        class="group flex items-center gap-1 px-2 py-0.5 hover:bg-surface-dim cursor-pointer text-[0.6875rem] text-slate-700 mt-1">
+        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+        <span class="material-symbols-outlined text-[14px] text-slate-400">drag_indicator</span>
+        <span class="material-symbols-outlined text-[16px] mr-1">badge</span>
+        Staff
+      </div>
+    </div>
+  </section>
+  <!-- PANE 2: Visual Preview -->
+  <section class="flex-1 bg-surface-container-lowest flex flex-col">
+    <div class="p-2 px-3 flex items-center justify-between bg-surface-container/10 border-b border-outline-variant/15">
+      <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Live Visual
+        Preview</span>
+      <div class="flex gap-2">
+        <span class="text-[9px] text-slate-400 flex items-center gap-1"><span
+            class="w-2 h-2 rounded-full bg-green-500"></span> ACTIVE VIEW</span>
+      </div>
+    </div>
+    <div class="flex-1 flex items-center justify-center bg-slate-100/50 p-12">
+      <!-- Simulated Sidebar Container -->
+      <div class="w-56 h-[480px] bg-white shadow-2xl rounded flex flex-col overflow-hidden border border-slate-200">
+        <div class="h-10 flex items-center px-4 gap-3 bg-slate-50 border-b border-slate-100">
+          <div class="w-5 h-5 bg-blue-600 rounded-sm"></div>
+          <div class="w-24 h-2 bg-slate-300 rounded"></div>
+        </div>
+        <div class="p-3 space-y-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 p-1.5 px-3 rounded bg-blue-50">
+              <span class="material-symbols-outlined text-[18px] text-blue-600">admin_panel_settings</span>
+              <div class="w-20 h-1.5 bg-blue-600/30 rounded"></div>
+            </div>
+            <div class="ml-6 space-y-1">
+              <div class="flex items-center gap-2 p-1.5">
+                <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+                <div class="w-16 h-1.5 bg-slate-300 rounded"></div>
+              </div>
+              <div class="flex items-center gap-2 p-1.5 border-l-2 border-blue-600 bg-slate-50">
+                <div class="w-2 h-2 rounded-full bg-blue-600"></div>
+                <div class="w-16 h-1.5 bg-blue-600 rounded"></div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 p-1.5 px-3">
+              <span class="material-symbols-outlined text-[18px] text-slate-400">school</span>
+              <div class="w-24 h-1.5 bg-slate-200 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PANE 3: Properties -->
+  <section class="w-72 bg-surface-container flex flex-col shrink-0 border-l border-outline-variant/15">
+    <div
+      class="p-2 px-3 flex items-center justify-between bg-surface-container-high border-b border-outline-variant/15">
+      <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Properties</span>
+      <div class="flex gap-1">
+        <span class="material-symbols-outlined text-[16px] text-slate-400 cursor-pointer">sort_by_alpha</span>
+        <span class="material-symbols-outlined text-[16px] text-slate-400 cursor-pointer">list</span>
+      </div>
+    </div>
+    <div class="flex-1 overflow-y-auto custom-scrollbar text-[0.6875rem]">
+      <!-- Property Category -->
+      <div class="bg-surface-container-high/50 p-1 px-2 font-bold text-on-surface-variant flex items-center">
+        <span class="material-symbols-outlined text-[14px] mr-1">expand_more</span> General
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">
+          DisplayText</div>
+        <div class="p-1.5"><input class="w-full bg-transparent border-none p-0 focus:ring-0 text-[0.6875rem]"
+            type="text" value="Navigation Config" /></div>
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">Link
+        </div>
+        <div class="p-1.5"><input
+            class="w-full bg-transparent border-none p-0 focus:ring-0 text-[0.6875rem] text-primary" type="text"
+            value="/admin/system/navigation" /></div>
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">Icon
+        </div>
+        <div class="p-1.5 flex items-center gap-2">
+          <span class="material-symbols-outlined text-[14px]">navigation</span>
+          <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-[0.6875rem]" type="text"
+            value="navigation" />
+        </div>
+      </div>
+      <!-- Property Category -->
+      <div class="bg-surface-container-high/50 p-1 px-2 font-bold text-on-surface-variant flex items-center mt-0.5">
+        <span class="material-symbols-outlined text-[14px] mr-1">expand_more</span> Layout
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">Order
+        </div>
+        <div class="p-1.5"><input class="w-full bg-transparent border-none p-0 focus:ring-0 text-[0.6875rem]"
+            type="number" value="2" /></div>
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">Parent
+        </div>
+        <div class="p-1.5 relative">
+          <select class="w-full bg-transparent border-none p-0 pr-4 focus:ring-0 text-[0.6875rem] appearance-none">
+            <option>Administration</option>
+            <option>Academic Config</option>
+            <option>None (Root)</option>
+          </select>
+          <span
+            class="material-symbols-outlined absolute right-1 top-1.5 pointer-events-none text-[12px]">expand_more</span>
+        </div>
+      </div>
+      <!-- Property Category -->
+      <div class="bg-surface-container-high/50 p-1 px-2 font-bold text-on-surface-variant flex items-center mt-0.5">
+        <span class="material-symbols-outlined text-[14px] mr-1">expand_more</span> System
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">
+          AttachedResource</div>
+        <div class="p-1.5 bg-surface-container-low text-slate-400 italic">sys.core.nav_manager.dll</div>
+      </div>
+      <div class="grid grid-cols-[100px_1fr] border-b border-outline-variant/10">
+        <div class="p-1.5 px-3 border-r border-outline-variant/10 text-slate-500 bg-surface-container-low">
+          ResourceKey</div>
+        <div class="p-1.5 bg-surface-container-low text-slate-400 font-mono">NAV_CONFIG_PRIMARY</div>
+      </div>
+    </div>
+    <!-- Description Panel at Bottom of Properties -->
+    <div class="h-24 bg-surface-container-low border-t border-outline-variant/15 p-2 px-3">
+      <h4 class="font-bold text-[10px] text-on-surface-variant uppercase mb-1">DisplayText</h4>
+      <p class="text-[0.625rem] text-slate-500 leading-relaxed">
+        The localized string displayed in the sidebar menu. Changing this may affect accessibility labels.
+      </p>
+    </div>
+  </section>
+</div>

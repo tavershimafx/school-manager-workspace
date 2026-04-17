@@ -1,0 +1,142 @@
+<div class="flex-1 overflow-y-auto p-6 max-w-5xl mx-auto w-full">
+  <!-- Inner Sub-Tabs -->
+  <div class="flex items-center gap-6 mb-8 border-b border-outline-variant/20">
+    <button class="pb-2 text-[0.75rem] font-medium text-outline transition-colors hover:text-on-surface relative">
+      App Setting Groups
+    </button>
+    <button class="pb-2 text-[0.75rem] font-bold text-primary relative">
+      General Settings
+      <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></div>
+    </button>
+  </div>
+  <!-- Settings Form -->
+  <div class="space-y-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Group: Core Identity -->
+      <section class="space-y-4">
+        <div>
+          <h3 class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Identity
+            &amp; Branding</h3>
+          <p class="text-[0.625rem] text-outline mb-4">Configure how your workspace identifies itself globally.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="space-y-1.5">
+            <label class="block text-[0.6875rem] font-medium text-on-surface-variant">System Name</label>
+            <input
+              class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-3 py-2 text-[0.75rem] focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+              type="text" value="ArchitectIDE Enterprise Edition" />
+          </div>
+          <div class="space-y-1.5">
+            <label class="block text-[0.6875rem] font-medium text-on-surface-variant">System UUID</label>
+            <div class="flex gap-2">
+              <input
+                class="flex-1 bg-surface-container-high/50 border border-outline-variant/20 rounded-lg px-3 py-2 text-[0.75rem] font-mono text-outline cursor-not-allowed"
+                readonly="" type="text" value="8f4e2-a1b2-4c9d-8e7f-6a5b4c3d2e1f" />
+              <button
+                class="p-2 bg-surface-container-low border border-outline-variant/30 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined !text-[16px]">content_copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Group: Localization -->
+      <section class="space-y-4">
+        <div>
+          <h3 class="text-[0.6875rem] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Time &amp;
+            Locality</h3>
+          <p class="text-[0.625rem] text-outline mb-4">Set regional parameters for logs and scheduled tasks.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="space-y-1.5">
+            <label class="block text-[0.6875rem] font-medium text-on-surface-variant">Timezone</label>
+            <select
+              class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-3 py-2 text-[0.75rem] focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none">
+              <option>(UTC-05:00) Eastern Time (US &amp; Canada)</option>
+              <option>(UTC+00:00) London, Dublin</option>
+              <option>(UTC+01:00) Paris, Berlin</option>
+              <option>(UTC+09:00) Tokyo, Seoul</option>
+            </select>
+          </div>
+          <div class="space-y-1.5">
+            <label class="block text-[0.6875rem] font-medium text-on-surface-variant">Default Academic
+              Year</label>
+            <select
+              class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-3 py-2 text-[0.75rem] focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none">
+              <option>2023-2024 (Current)</option>
+              <option>2024-2025 (Planning)</option>
+              <option>2022-2023 (Archived)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Maintenance Section - Full Width Asymmetric -->
+    <section class="bg-surface-container-low/50 rounded-lg p-6 border border-outline-variant/10">
+      <div class="flex items-start justify-between">
+        <div class="max-w-md">
+          <h3 class="text-[0.75rem] font-bold text-on-surface mb-1">Maintenance Mode</h3>
+          <p class="text-[0.6875rem] text-outline">Disable all public API access and web traffic. Only
+            administrative accounts will be able to log in. Scheduled migrations will still proceed.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[0.625rem] font-bold text-error uppercase tracking-tighter">Inactive</span>
+          <button
+            class="relative inline-flex h-5 w-10 shrink-0 cursor-pointer items-center rounded-full bg-outline-variant/30 transition-colors focus:outline-none ring-1 ring-inset ring-outline-variant/10">
+            <span
+              class="translate-x-1 inline-block h-3 w-3 transform rounded-full bg-white transition-transform duration-200 ease-in-out"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Advanced Card Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+      <div
+        class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="p-2 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined">security</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold">Security Audit</span>
+        </div>
+        <p class="text-[0.625rem] text-outline">Last audit completed 2 days ago. No critical vulnerabilities
+          found.</p>
+      </div>
+      <div
+        class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="p-2 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined">database</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold">Health Check</span>
+        </div>
+        <p class="text-[0.625rem] text-outline">Database latency: 12ms. Connection pool at 14% capacity.</p>
+      </div>
+      <div
+        class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:border-primary/30 transition-all cursor-pointer group">
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="p-2 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+            <span class="material-symbols-outlined">cloud_sync</span>
+          </div>
+          <span class="text-[0.6875rem] font-bold">Sync Status</span>
+        </div>
+        <p class="text-[0.625rem] text-outline">All clusters synchronized. Region: us-east-1 active.</p>
+      </div>
+    </div>
+    <!-- Action Bar -->
+    <div class="flex items-center justify-end gap-3 pt-6 mt-8 border-t border-outline-variant/15">
+      <button
+        class="px-4 py-1.5 text-[0.6875rem] font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-sm">
+        Reset to Default
+      </button>
+      <button
+        class="px-6 py-1.5 text-[0.6875rem] font-bold text-on-primary bg-gradient-to-r from-primary to-primary-container rounded-sm shadow-sm hover:brightness-110 transition-all">
+        Save Changes
+      </button>
+    </div>
+  </div>
+</div>

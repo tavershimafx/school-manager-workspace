@@ -14,6 +14,8 @@ import { ResultTermsComponent } from './result-terms/result-terms.component';
 import { MoveAssessmentModal } from './move-assessment/move-assessment.component';
 import { UploadAssessmentModal } from './upload-assessment/upload-assessment.component';
 import { DeleteAssessmentModal } from './delete-assessment/delete-assessment.component';
+import { GroupActionsComponent } from './group-actions/group-actions.component';
+import { GroupActionsNewComponent } from './group-actions-new/group-actions-new.component';
 
 const components = [
   AssessmentsComponent,
@@ -23,7 +25,9 @@ const components = [
   ResultTermsComponent,
   MoveAssessmentModal,
   UploadAssessmentModal,
-  DeleteAssessmentModal
+  DeleteAssessmentModal,
+  GroupActionsComponent,
+  GroupActionsNewComponent
 ]
 
 @NgModule({
