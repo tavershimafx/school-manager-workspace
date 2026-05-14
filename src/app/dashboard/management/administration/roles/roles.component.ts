@@ -17,15 +17,4 @@ export class RolesComponent {
     
   }
 
-
-  private getDashboard() {
-    this.httpClient.get<any>(ApiRoutes.student.dashboard).subscribe({
-      next: res => {
-        
-      },
-      error: er => {
-        throw "Cannot load dashboard at the moment. An error occured loading student dashboard"
-      }
-    })
-  }
 }

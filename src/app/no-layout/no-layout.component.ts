@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import { ApiRoutes } from '@models/api.routes';
 import { Store } from '@ngrx/store';
-import { dashboardServices } from '@store/actions/utility.actions';
 
 @Component({
   selector: 'no-layout',
@@ -13,18 +11,10 @@ import { dashboardServices } from '@store/actions/utility.actions';
 export class NoLayoutComponent implements OnInit {
   store = inject(Store)
   year = new Date().getFullYear()
-  constructor(private httpClient: HttpClient){
+  constructor(){
   }
 
 ngOnInit(): void {
-  
-    this.getLogos()
 }
-  private getLogos(){
-    this.httpClient.get<any>(ApiRoutes.identity.schoolLogo,).subscribe({
-        next: res =>{
-            this.store.dispatch(dashboardServices.schoolLogo({ schoolLogo: res.value }))
-        }
-    })
-  }
+
 }

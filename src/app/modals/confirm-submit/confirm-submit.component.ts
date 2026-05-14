@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DialogService } from '@services/dialog-service';
 
 @Component({
   selector: 'confirm-submit',
@@ -8,12 +9,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ConfirmSubmitModal {
 
-  @Output() submitted: EventEmitter<boolean> = new EventEmitter()
-  constructor() {
-  }
+  @Input() data?: { message: string, title: string}
+  constructor(private dialogService: DialogService) {
+    }
 
   closeDialog(s: boolean){
-    this.submitted.emit(s)
+     this.dialogService.closeDialog(s)
   }
 
   confirm(){

@@ -1,0 +1,278 @@
+.workbook{
+    position: relative;
+    /* background-color: var(--workbook-grey); */
+}
+
+.table-surface {
+    position: relative;
+    width: 100%;
+    /* height: 79vh; */
+    overflow-x: auto;
+    background-color: var(--theme-background);
+}
+
+.table-surface .table-container{
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    overflow-x: auto;
+}
+
+.formula-arena{
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+}
+
+.formula-arena .current-cell{
+    position: relative ;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--workbook-border);
+    background-color: var(--background);
+}
+
+.formula-arena .current-cell input{
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 100%;
+    width: 95%;
+}
+
+.formula-arena .current-cell i{
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formula-arena .functions{
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--workbook-border);
+    background-color: var(--background);
+    margin-right: 10px;
+}
+
+.formula-arena .functions i{
+    height: 27px;
+    padding: 7px 5px;
+    vertical-align: middle;
+}
+
+.formula-arena .functions i:hover{
+    background-color: var(--menu-hover);
+}
+
+.divide-more{
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+.formula-arena .cell-formula{
+    position: relative;
+    flex-grow: 100;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--workbook-border);
+    background-color: var(--background);
+}
+
+.formula-arena .cell-formula input{
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 100%;
+    width: 98%;
+}
+
+.formula-arena .cell-formula i{
+    position: absolute;
+    left: 99%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* .table-surface .column-labels div{
+    display: inline-block;
+    margin: 0;
+} */
+
+
+table{
+    /* height: 100%; */
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid var(--workbook-border);
+    z-index: 10;
+    background-color: var(--background);
+}
+tbody tr, tbody td{
+    color: var(--workbook-text);
+    border: 1px solid var(--workbook-cell-border);
+}
+
+tbody tr td:nth-child(2){
+    color: #000;
+    font-weight: bold;
+}
+
+table thead .shard{
+    width: 32.4px;
+}
+
+table thead .shard:hover{
+    cursor: pointer;
+    background-color: var(--workbook-grey);
+}
+
+table thead .label{
+    background-color: var(--theme-background);
+    border-right: 1px solid var(--workbook-cell-border);
+    min-width: 60px;
+    height: 30px;
+    padding: 0;
+    white-space: nowrap
+}
+
+table thead .editted{
+    border-top: 2px solid var(--warning);
+}
+
+table tbody td.nr-change{
+    border-left: 2px solid var(--success);
+}
+
+table tbody td.row-changed{
+    border-left: 2px solid var(--warning);
+}
+
+table thead .no-edit{
+    border-top: 2px solid var(--success);
+}
+
+table thead tr {
+  height: 30px;       /* Fix header row height */
+}
+
+.col-head-content{
+    /* font-family: "Roboto-Regular";
+    font-weight: normal; */
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    height: 100%;
+    width: 100%;
+}
+
+/* table thead .label:hover:not(:has(:hover)) {
+  cursor: col-resize;
+} */
+
+table, table head{
+    user-select: none;
+}
+
+table tr.highlight{
+    border: 2px solid var(--workbook-green);
+    background-color: var(--workbook-grey);
+}
+
+table tr.active-row{
+    background-color: var(--workbook-grey);
+}
+
+table tr td.high-col:first-child{
+    border-top: 2px solid var(--workbook-green);
+    border-left: 2px solid var(--workbook-green);
+    border-right: 2px solid var(--workbook-green);
+    background-color: var(--workbook-grey);
+}
+
+table tr td.high-col:last-child{
+    border-bottom: 2px solid var(--workbook-green);
+    border-left: 2px solid var(--workbook-green);
+    border-right: 2px solid var(--workbook-green);
+    background-color: var(--workbook-grey);
+}
+
+table tr td.high-col:not(:first-child){
+    border-left: 2px solid var(--workbook-green);
+    border-right: 2px solid var(--workbook-green);
+    background-color: var(--workbook-grey);
+}
+
+table tr td.hbg {
+    background-color: var(--workbook-grey);
+}
+
+.row-head{
+    border-bottom: 1px solid var(--workbook-border);
+    background-color: var(--theme-background);
+}
+
+.row-head div{
+    height: 100%;
+    width: 100%;
+    padding: 3px 5px;
+    text-align: center;
+    user-select: none;     
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+    -ms-user-select: none;  
+}
+
+.cell{
+    border: 1px solid var(--workbook-cell-border);
+    overflow: hidden;
+    min-height: 30px;
+    /* border: 1px solid rgb(224, 224, 224)  ; */
+}
+
+.cell.active{
+    border: 2px solid var(--workbook-green);
+}
+
+input.cell-input{
+    position: absolute;
+      display: none;
+      z-index: 1000;
+      font-size: 13px;
+      outline: none;
+      /* border: 2px solid var(--workbook-green); */
+      padding: 3px;
+}
+
+.cell .cell-data{
+    padding: 3px;
+    height: 100%;
+    width: 100%;
+    min-width: 60px;
+    /* color: var(--workbook-grey) !important; */
+    overflow: hidden;   
+    user-select: none;     
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+}
+
+.v-lighter{
+    position: absolute;
+    border: 2px solid var(--workbook-green);
+    pointer-events: none;
+    display: none;
+}
+
+.v-lighter .sll{
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    border: 2px solid var(--workbook-green);
+    bottom: 0;
+    right: 0;
+}

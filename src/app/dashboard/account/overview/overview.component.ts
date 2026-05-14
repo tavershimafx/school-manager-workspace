@@ -1,7 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { studentProfileSelector } from '@store/selectors/students.selectors';
+import { selectUserProfile } from '../../store/dashboard.selectors';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { comparisonValidator } from '@validators/app.validators';
+import { DialogService } from '@services/dialog-service';
+import { AccountServices } from '../account.services';
 
 @Component({
   selector: 'overview',
@@ -11,11 +14,36 @@ import { studentProfileSelector } from '@store/selectors/students.selectors';
 })
 export class AccountOverviewComponent {
 
-  private readonly store = inject(Store);
-  student = this.store.selectSignal(studentProfileSelector)
+  store = inject(Store);
+  userProfile = this.store.selectSignal(selectUserProfile)
   
-  constructor(private httpClient: HttpClient) {
-    
+  passwordSubmitting = false
+  passForm: FormGroup = new FormGroup({
+    "oldPassword": new FormControl("", Validators.compose([Validators.required])),
+    "newPassword": new FormControl("", Validators.compose([Validators.required])),
+    "confirmPassword": new FormControl("", Validators.compose([Validators.required, comparisonValidator('newPassword')])),
+  })
+
+  constructor(private dialogService: DialogService, private accountService: AccountServices) {
+
+  }
+
+  changePassword() {
+    this.passwordSubmitting = true
+    if (this.passForm.valid) {
+      this.passForm.disable()
+      this.accountService.updatePassword(this.passForm.value).subscribe({
+        next: x => {
+          this.passwordSubmitting = false
+          this.passForm.enable()
+          this.dialogService.showNotification("Password Updated", "User password updated successfully", "success")
+        },
+        error: x => {
+          this.passwordSubmitting = false
+          this.passForm.enable()
+        }
+      })
+    }
   }
 
 }

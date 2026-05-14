@@ -1,0 +1,162 @@
+<div class="bg-background text-on-surface flex flex-col min-h-screen">
+  <!-- <body
+  class=" items-center justify-center p-6 selection:bg-primary-fixed selection:text-on-primary-fixed"> -->
+
+  <!-- TopAppBar Shell (Suppressed Nav for 404 focus) -->
+  <header
+    class="bg-[#f9f9f9] dark:bg-[#1a1c1c] border-b border-[#c0c7d3]/15 flex justify-between items-center w-full px-6 py-2 fixed top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="text-lg font-bold tracking-tighter text-[#0061a3] dark:text-[#4dabff]">Rushcoq Workspace</span>
+    </div>
+  </header>
+  <!-- Register -->
+  @if(t == "re"){
+  <main class="flex-grow flex items-center justify-center p-6 sm:p-12">
+    <div class="w-full max-w-md">
+    <!-- Logo Section -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="text-primary font-extrabold text-2xl tracking-tighter mb-1">Rushcoq</div>
+        <div class="h-0.5 w-8 bg-primary-container rounded-full"></div>
+      </div>
+    <!-- Confirmation Card -->
+    <div
+      class="bg-surface-container-lowest w-full p-10 flex flex-col items-center text-center shadow-[0px_8px_24px_rgba(26,28,28,0.04)] border border-outline-variant/10 rounded-sm">
+      <!-- Success Icon Assembly -->
+      <div class="relative mb-6">
+        <div class="absolute inset-0 bg-primary/5 rounded-full scale-150 blur-xl"></div>
+        <div class="relative w-16 h-16 bg-primary-container flex items-center justify-center rounded-sm">
+          <span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="mark_email_read"
+            style="font-variation-settings: 'FILL' 1;">mark_email_read</span>
+        </div>
+      </div>
+      <!-- Content -->
+      <h1 class="text-on-surface text-xl font-bold tracking-tight mb-2">Registration Confirmed</h1>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+        Welcome to the workspace. We have sent a verification link to your primary email address. Please click the link
+        to activate your account and access your dashboard.
+      </p>
+      <!-- Instructions Box -->
+      <div class="w-full bg-surface-container-low/50 p-5 rounded-sm mb-8 text-left border-l-2 border-primary">
+        <p class="text-[0.6875rem] font-bold text-primary uppercase tracking-wider mb-2">Next Steps</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-primary text-[18px] mt-0.5" data-icon="inbox">inbox</span>
+            <span class="text-[0.8125rem] text-on-surface-variant leading-tight">Check your inbox and spam folder for
+              the activation email.</span>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-primary text-[18px] mt-0.5"
+              data-icon="touch_app">touch_app</span>
+            <span class="text-[0.8125rem] text-on-surface-variant leading-tight">Click the "Confirm Email" button
+              within the email.</span>
+          </li>
+          <li class="flex gap-3 items-start">
+            <span class="material-symbols-outlined text-primary text-[18px] mt-0.5"
+              data-icon="rocket_launch">rocket_launch</span>
+            <span class="text-[0.8125rem] text-on-surface-variant leading-tight">Return here to complete your profile
+              setup.</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Action Area -->
+      <div class="w-full space-y-3">
+        <button routerLink="/"
+          class="w-full h-11 bg-primary hover:bg-primary-container text-on-primary font-semibold text-sm rounded-sm transition-all duration-200 shadow-sm flex items-center justify-center gap-2">
+          <span>Return to Login</span>
+          <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+        </button>
+        <button
+          class="w-full h-11 bg-transparent hover:bg-surface-container-high text-on-surface-variant font-medium text-[0.8125rem] rounded-sm transition-colors flex items-center justify-center gap-2">
+          <span>Didn't receive an email?</span>
+          <span class="text-primary font-bold">Resend</span>
+        </button>
+      </div>
+    </div>
+    </div>
+  </main>
+  }
+
+  <!-- Forgot password Password -->
+  @if(t == "res"){
+  <main class="flex-grow flex items-center justify-center p-6 sm:p-12">
+    <!-- Precision Architecturalism: Centered Card with Tonal Depth -->
+    <div class="w-full max-w-md">
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="text-primary font-extrabold text-2xl tracking-tighter mb-1">Rushcoq</div>
+        <div class="h-0.5 w-8 bg-primary-container rounded-full"></div>
+      </div>
+      <!-- Main Confirmation Card -->
+      <div
+        class="bg-surface-container-lowest cloud-shadow border border-outline-variant/15 rounded-lg overflow-hidden flex flex-col items-center text-center p-10 transition-all duration-200 ease-in-out">
+        <!-- Large Status Icon -->
+        <div
+          class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center mb-8 ring-8 ring-primary-fixed/30">
+          <span class="material-symbols-outlined text-primary text-5xl"
+            style="font-variation-settings: 'FILL' 1;">mark_email_unread</span>
+        </div>
+        <!-- Content Hierarchy -->
+        <h1 class="text-on-surface font-bold text-2xl tracking-tight mb-3">Check your email</h1>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-8 max-w-[280px]">
+          We've sent a password reset link to your registered email address. Please follow the link to create
+          a new password.
+        </p>
+        <!-- Information Grid -->
+        <div
+          class="w-full bg-surface-container-low rounded-lg p-5 mb-8 text-left space-y-4 border border-outline-variant/10">
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-primary text-xl">info</span>
+            <div>
+              <p class="text-on-surface font-semibold text-[0.8125rem]">Didn't receive the email?</p>
+              <p class="text-on-surface-variant text-[0.75rem] leading-tight mt-1">Check your spam or junk
+                folder, or wait a few minutes for the message to arrive.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Primary Action -->
+        <button routerLink="/"
+          class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 px-6 rounded-lg font-semibold text-sm transition-colors duration-150 flex items-center justify-center gap-2 group">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          Return to Login
+        </button>
+      </div>
+    </div>
+  </main>
+  }
+  
+  <!-- Password reset -->
+   @if(t == "pr"){
+  <main class="flex-grow flex items-center justify-center p-6 sm:p-12">
+    <!-- Precision Architecturalism: Centered Card with Tonal Depth -->
+    <div class="w-full max-w-md">
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center mb-8">
+        <div class="text-primary font-extrabold text-2xl tracking-tighter mb-1">Rushcoq</div>
+        <div class="h-0.5 w-8 bg-primary-container rounded-full"></div>
+      </div>
+      <!-- Main Confirmation Card -->
+      <div
+        class="bg-surface-container-lowest cloud-shadow border border-outline-variant/15 rounded-lg overflow-hidden flex flex-col items-center text-center p-10 transition-all duration-200 ease-in-out">
+        <!-- Large Status Icon -->
+        <div
+          class="w-20 h-20 bg-success rounded-full flex items-center justify-center mb-8 ring-8 ring-success/30">
+          <span class="material-symbols-outlined text-white text-5xl"
+            style="font-variation-settings: 'FILL' 1;">check</span>
+        </div>
+        <!-- Content Hierarchy -->
+        <h1 class="text-on-surface font-bold text-2xl tracking-tight mb-3">Password Reset Complete</h1>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-8 max-w-[280px]">
+          Your password has been reset to your new password. Click the return button to login.
+        </p>
+        <!-- Primary Action -->
+        <button routerLink="/"
+          class="w-full bg-primary hover:bg-primary-container text-on-primary py-3 px-6 rounded-lg font-semibold text-sm transition-colors duration-150 flex items-center justify-center gap-2 group">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          Return to Login
+        </button>
+      </div>
+    </div>
+  </main>
+  }
+  <nolayout-footer></nolayout-footer>
+</div>

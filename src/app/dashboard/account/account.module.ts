@@ -8,6 +8,7 @@ import DirectivesModule from '@directives/directives.module';
 import PipesModule from '@pipes/pipes.module';
 import { AccountOverviewComponent } from './overview/overview.component';
 import { ChangeLogComponent } from './change-log/change-log.component';
+import { ComponentsModule } from '@components/components.module';
 
 const components = [
   AccountOverviewComponent,
@@ -22,7 +23,8 @@ const components = [
     ReactiveFormsModule,
     ModalsModule,
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    ComponentsModule
     ],
   exports: [],
   providers: [],

@@ -1,0 +1,20 @@
+.notification-progress {
+  animation: progress-animation 5s linear forwards;
+  /* Ensure it is running by default */
+  animation-play-state: running; 
+}
+
+/* Pause the animation when the parent container is hovered */
+[data-purpose="notification-stack"]:hover .notification-progress {
+  animation-play-state: paused;
+}
+
+
+@keyframes progress-animation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

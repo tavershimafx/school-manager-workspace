@@ -1,0 +1,234 @@
+<!-- <div class="flex-1 overflow-y-auto p-12 bg-surface-container-lowest custom-scrollbar">
+   <div class="max-w-6xl mx-auto">
+      
+      <div class="mb-12 border-b border-outline-variant/10 pb-10">
+         <h1 class="text-4xl font-light text-on-surface tracking-tight mb-2">EduStudio <span
+               class="font-bold text-primary">Pro</span></h1>
+         <p class="text-on-surface-variant text-lg leading-relaxed max-w-2xl font-light">
+            The precision architectural environment for high-performance school administration. Managed
+            workspace for District 7.
+         </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+         
+         <div class="space-y-8">
+            <div>
+               <h3
+                  class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  Start
+               </h3>
+               <div class="space-y-1">
+                  <button
+                     class="w-full flex items-center gap-3 px-3 py-2 text-primary hover:bg-primary-fixed group transition-colors rounded-sm text-sm">
+                     <span
+                        class="material-symbols-outlined group-hover:scale-110 transition-transform">person_add</span>
+                     <span>Create New Student</span>
+                  </button>
+                  <button
+                     class="w-full flex items-center gap-3 px-3 py-2 text-primary hover:bg-primary-fixed group transition-colors rounded-sm text-sm">
+                     <span class="material-symbols-outlined group-hover:scale-110 transition-transform">group_add</span>
+                     <span>Enroll New Staff</span>
+                  </button>
+                  <button
+                     class="w-full flex items-center gap-3 px-3 py-2 text-primary hover:bg-primary-fixed group transition-colors rounded-sm text-sm">
+                     <span
+                        class="material-symbols-outlined group-hover:scale-110 transition-transform">receipt_long</span>
+                     <span>Generate New Invoice</span>
+                  </button>
+                  <button
+                     class="w-full flex items-center gap-3 px-3 py-2 text-primary hover:bg-primary-fixed group transition-colors rounded-sm text-sm">
+                     <span
+                        class="material-symbols-outlined group-hover:scale-110 transition-transform">account_balance</span>
+                     <span>Configure School Structure</span>
+                  </button>
+               </div>
+            </div>
+            <div class="bg-surface-container-low p-5 rounded-sm border border-outline-variant/10">
+               <h4 class="text-[11px] font-bold text-on-surface-variant uppercase mb-3">Workspace
+                  Status</h4>
+               <div class="flex items-center gap-4">
+                  <div class="flex-1">
+                     <div class="h-1 bg-outline-variant/20 rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-[72%]"></div>
+                     </div>
+                     <p class="text-[10px] mt-2 text-on-surface-variant/70">Server capacity: 72%
+                        utilized</p>
+                  </div>
+                  <span class="text-xs font-mono text-primary font-bold">LIVE</span>
+               </div>
+            </div>
+         </div>
+         
+         <div>
+            <h3
+               class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 flex items-center gap-2">
+               <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+               Recent
+            </h3>
+            <div class="space-y-4">
+               <div class="group cursor-pointer">
+                  <div class="flex items-center justify-between mb-1">
+                     <span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">SS3
+                        Gradebook</span>
+                     <span class="text-[10px] text-on-surface-variant/60">2m ago</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant leading-none truncate">
+                     /records/grading/senior/ss3_main.csv</p>
+               </div>
+               <div class="group cursor-pointer">
+                  <div class="flex items-center justify-between mb-1">
+                     <span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Admin
+                        Settings - Primary</span>
+                     <span class="text-[10px] text-on-surface-variant/60">45m ago</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant leading-none truncate">
+                     /config/users/roles/primary_admin.json</p>
+               </div>
+               <div class="group cursor-pointer">
+                  <div class="flex items-center justify-between mb-1">
+                     <span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Bank
+                        Integration</span>
+                     <span class="text-[10px] text-on-surface-variant/60">3h ago</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant leading-none truncate">
+                     /fintech/api/v2/stripe_connect.yaml</p>
+               </div>
+               <div class="group cursor-pointer">
+                  <div class="flex items-center justify-between mb-1">
+                     <span
+                        class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Student
+                        Roster 2024</span>
+                     <span class="text-[10px] text-on-surface-variant/60">Yesterday</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant leading-none truncate">
+                     /database/entities/students/active_list.db</p>
+               </div>
+               <button class="mt-4 text-[11px] font-semibold text-primary hover:underline">Show more
+                  recent items...</button>
+            </div>
+         </div>
+         
+         <div>
+            <h3
+               class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 flex items-center gap-2">
+               <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+               Help &amp; Resources
+            </h3>
+            <div class="space-y-5">
+               <a class="block group" href="#">
+                  <div class="text-sm font-medium text-on-surface mb-1 flex items-center gap-2">
+                     Documentation
+                     <span
+                        class="material-symbols-outlined text-[14px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">Detailed guides for
+                     faculty and administrative procedures.</p>
+               </a>
+               <a class="block group" href="#">
+                  <div class="text-sm font-medium text-on-surface mb-1 flex items-center gap-2">
+                     Release Notes
+                     <span
+                        class="material-symbols-outlined text-[14px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">Check out the new
+                     automated grading features in v4.2.0.</p>
+               </a>
+               <a class="block group" href="#">
+                  <div class="text-sm font-medium text-on-surface mb-1 flex items-center gap-2">
+                     Community Support
+                     <span
+                        class="material-symbols-outlined text-[14px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+                  </div>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">Connect with other
+                     District 7 administrators.</p>
+               </a>
+               <div class="mt-8 pt-8 border-t border-outline-variant/10">
+                  <div class="bg-gradient-to-br from-primary to-primary-container p-4 rounded-sm shadow-sm">
+                     <h5 class="text-white text-xs font-bold mb-1">PRO TIP</h5>
+                     <p class="text-white/80 text-[11px] leading-normal italic">"Use <kbd
+                           class="bg-black/20 px-1 rounded">Ctrl</kbd> + <kbd class="bg-black/20 px-1 rounded">P</kbd>
+                        to quickly search for any
+                        student record across all campuses."</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+ -->
+
+<div class="flex-1 relative z-10 flex flex-col items-center justify-center p-12 text-center">
+   <div class="max-w-2xl w-full">
+      <div class="mb-8 flex justify-center">
+         <div class="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10">
+            <span class="material-symbols-outlined text-primary text-4xl">architecture</span>
+         </div>
+      </div>
+      <h1 class="text-3xl font-black text-on-surface tracking-tight mb-2">Precision architecturalism</h1>
+      <p class="text-on-surface-variant text-sm mb-12 max-w-md mx-auto leading-relaxed">
+         Welcome to the EduStudio IDE. Your professional workspace is ready for architectural precision and cognitive
+         clarity.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+         <div
+            class="p-4 rounded-sm border border-outline-variant/15 bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+            <div class="flex items-center gap-3 mb-2">
+               <span class="material-symbols-outlined text-primary text-lg">add_box</span>
+               <h3 class="text-sm font-semibold text-on-surface">New School Database</h3>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-normal">Initialize a fresh schema for student tracking
+               and curriculum management.</p>
+         </div>
+         <div
+            class="p-4 rounded-sm border border-outline-variant/15 bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+            <div class="flex items-center gap-3 mb-2">
+               <span class="material-symbols-outlined text-primary text-lg">folder_open</span>
+               <h3 class="text-sm font-semibold text-on-surface">Open Existing Workspace</h3>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-normal">Resume work on an existing project or sync from
+               the centralized campus server.</p>
+         </div>
+         <div
+            class="p-4 rounded-sm border border-outline-variant/15 bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+            <div class="flex items-center gap-3 mb-2">
+               <span class="material-symbols-outlined text-primary text-lg">terminal</span>
+               <h3 class="text-sm font-semibold text-on-surface">Console Tutorial</h3>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-normal">Learn the command-line shortcuts designed for
+               administrative speed.</p>
+         </div>
+         <div
+            class="p-4 rounded-sm border border-outline-variant/15 bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+            <div class="flex items-center gap-3 mb-2">
+               <span class="material-symbols-outlined text-primary text-lg">auto_graph</span>
+               <h3 class="text-sm font-semibold text-on-surface">Analytics Suite</h3>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-normal">Configure automated reports for attendance,
+               grading, and performance metrics.</p>
+         </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-outline-variant/10 flex flex-wrap justify-center gap-8">
+         <div class="flex flex-col items-center">
+            <span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Last
+               Session</span>
+            <span class="text-xs font-mono text-on-surface">reports_v2_final.sql</span>
+         </div>
+         <div class="flex flex-col items-center">
+            <span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Server
+               Status</span>
+            <div class="flex items-center gap-1.5">
+               <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+               <span class="text-xs font-mono text-on-surface">Connected</span>
+            </div>
+         </div>
+         <div class="flex flex-col items-center">
+            <span class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1">Editor
+               Theme</span>
+            <span class="text-xs font-mono text-on-surface">DevCore Light</span>
+         </div>
+      </div>
+   </div>
+</div>

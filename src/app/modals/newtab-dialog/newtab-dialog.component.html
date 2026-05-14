@@ -1,0 +1,64 @@
+<base-modal module="Dashboard" subModule="New Page" title="Create New Tab">
+  <!-- Modal Body -->
+  <form [formGroup]="newTabForm" (submit)="next()">
+    <div class="p-6 space-y-5">
+      <div class="flex gap-3 p-3 bg-primary-fixed/30 rounded-sm border border-primary/10">
+        <span class="material-symbols-outlined text-primary-fixed-dim" data-weight="fill">info</span>
+        <p class="text-[11px] text-on-primary-fixed-variant leading-relaxed">
+          Start a tab by selecting the activity and operations the tab will compose
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Name Input -->
+        <label [ngClass]="{
+        'border-error focus:ring-error': isSubmitting && !newTabForm.controls['tabType'].valid,
+        'border-outline-variant': (isSubmitting && newTabForm.controls['tabType'].valid) || !isSubmitting
+        }" 
+          class="flex items-start gap-3 p-3 rounded-sm border hover:bg-surface-container-low transition-colors cursor-pointer group">
+          <div class="mt-0.5 relative flex items-center">
+            <input formControlName="tabType"
+              class="h-3.5 w-3.5 rounded-sm border-outline-variant/50 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest"
+              type="radio" value="AdminTab" />
+          </div>
+          <div>
+            <div class="text-[11px] font-bold text-on-surface">Administrative</div>
+            <div class="text-[9px] text-on-surface-variant/70 leading-tight">Manage platform access such as users, roles, subscriptions
+            </div>
+          </div>
+        </label>
+        <!-- Short Name Input -->
+        <label [ngClass]="{
+        'border-error focus:ring-error': isSubmitting && !newTabForm.controls['tabType'].valid,
+        'border-outline-variant': (isSubmitting && newTabForm.controls['tabType'].valid) || !isSubmitting
+        }" 
+          class="flex items-start gap-3 p-3 rounded-sm border hover:bg-surface-container-low transition-colors cursor-pointer group">
+          <div class="mt-0.5 relative flex items-center">
+            <input formControlName="tabType"
+              class="h-3.5 w-3.5 rounded-sm border-outline-variant/50 text-primary focus:ring-0 focus:ring-offset-0 bg-surface-container-lowest"
+              type="radio" value="SchoolTab" />
+          </div>
+          <div>
+            <div class="text-[11px] font-bold text-on-surface">School Management</div>
+            <div class="text-[9px] text-on-surface-variant/70 leading-tight">Perform activities that require support for operations on tenants dashboard
+            </div>
+          </div>
+        </label>
+      </div>
+      <select-input label="Select School" formControlName="tenantId" [light]="true" placeholder="Select the school you want to render support"
+                     [showValidation]="isSubmitting" [small]="true"></select-input>
+
+      
+    </div>
+    <!-- Modal Footer Actions -->
+    <div class="px-6 py-4 bg-surface-container-low flex justify-end gap-3 border-t border-outline-variant/10">
+      <button (click)="closeDialog()"
+        class="px-5 py-2 text-xs font-bold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all rounded-sm border border-outline-variant/40">
+        Cancel
+      </button>
+      <button type="submit"
+        class="px-8 py-2 text-xs font-bold text-white bg-gradient-to-r from-primary to-primary-container hover:brightness-110 active:scale-95 transition-all rounded-sm shadow-sm">
+        Create
+      </button>
+    </div>
+  </form>
+</base-modal>

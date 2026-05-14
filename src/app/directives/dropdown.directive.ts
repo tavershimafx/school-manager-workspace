@@ -4,11 +4,12 @@ import { Directive, ElementRef, HostListener, Input, OnInit } from "@angular/cor
     selector: "[dropdown]",
     standalone: false
 })
-export class DropdownDirective implements OnInit{
+export class DropdownDirective implements OnInit {
     dropdown: boolean = false
     @Input("direction") direction: "right" | "left" = "left"
+    @Input("disabled") disabled: boolean = false
 
-    constructor(private el: ElementRef){
+    constructor(private el: ElementRef) {
         this.closeDropdown = this.closeDropdown.bind(this)
     }
 
@@ -24,17 +25,21 @@ export class DropdownDirective implements OnInit{
         }
     }
 
-    @HostListener("click") onClick(){
-        if (!this.dropdown){
-            this.parent.children[1].classList.remove("hidden")
-        }else{
-            this.parent.children[1].classList.add("hidden")
+    @HostListener("click") onClick() {
+        if (!this.disabled) {
+            if (!this.dropdown) {
+                this.parent.children[1].classList.remove("hidden")
+                this.dropdown = !this.dropdown
+            } else {
+                if(!this.dropdown && !this.parent.children[1].classList.contains("hidden")){
+                    this.parent.children[1].classList.add("hidden")
+                }
+            }
         }
-        this.dropdown = !this.dropdown
     }
 
-    closeDropdown(){
-        if (this.dropdown){
+    closeDropdown() {
+        if (this.dropdown) {
             this.parent.children[1].classList.add("hidden")
             this.dropdown = !this.dropdown
         }

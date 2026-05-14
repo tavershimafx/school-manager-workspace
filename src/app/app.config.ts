@@ -1,19 +1,17 @@
 import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
-  provideZoneChangeDetection,
 } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withEnabledBlockingInitialNavigation, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { baseHttpInterceptor } from './security/http.interceptor';
 import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    //provideZoneChangeDetection({ eventCoalescing: true }),
-    //provideRouter(routes),
     provideRouter(routes, withComponentInputBinding(),
       withEnabledBlockingInitialNavigation(),
       withInMemoryScrolling({
@@ -22,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       })),
     provideHttpClient(withInterceptors([baseHttpInterceptor])),
     provideStore(),
+    provideEffects()
   ],
 };
 

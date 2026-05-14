@@ -11,10 +11,14 @@ export function baseHttpInterceptor(req: HttpRequest<any>, next: HttpHandlerFn):
   const authorizeService = inject(AuthorizeService);
 
   let k = getRootDomain(window.location.hostname);
-  let baseUrl = environment.production? `https://application.${k}/` : environment.BASE_URL
+  let baseUrl = environment.production? `https://scmworkspace.${k}/` : environment.BASE_URL
 
   req = req.clone({
     url: `${baseUrl}${req.url}`,
+    setHeaders: {
+        'x-app-id': window.location.hostname,
+        'x-client-app': 'Admin'
+      },
     withCredentials: true
   });
 
@@ -33,7 +37,6 @@ export function baseHttpInterceptor(req: HttpRequest<any>, next: HttpHandlerFn):
       if (err.error instanceof Blob) {
         return new Observable<any>(observer => {
           const reader = new FileReader();
-          console.log("response is blob")
           reader.onload = () => {
             try {
               const json = JSON.parse(reader.result as string);

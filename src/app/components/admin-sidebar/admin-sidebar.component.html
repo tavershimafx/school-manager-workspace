@@ -1,0 +1,48 @@
+<!-- Solution Explorer -->
+<aside class="w-54 bg-surface-container-low flex flex-col border-r border-outline-variant/10">
+  <div class="p-3 flex items-center justify-between">
+    <div>
+      <h2 class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Administration</h2>
+      <p class="text-[10px] text-outline italic">main branch</p>
+    </div>
+    <span class="material-symbols-outlined text-on-surface-variant text-[16px]">more_horiz</span>
+  </div>
+  <div class="flex-1 overflow-y-auto px-1 py-2">
+    @for (item of items; track $index) {
+      @if (!item.children || item.children.length < 1){ 
+        <div [appRouter]="item.link"
+            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer">
+            <span class="material-symbols-outlined text-[16px] text-outline">{{item.icon}}</span>
+            <span class="text-[12px] text-on-surface">{{item.displayText}}</span>
+        </div>
+      }
+
+      @if (item.children && item.children.length > 0) {
+        <div class="group">
+          <div dropdown class="flex items-center gap-2 px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded-sm cursor-pointer mb-1">
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+          <span class="material-symbols-outlined text-[16px]">{{item.icon}}</span>
+          <span class="text-[12px] font-medium">{{item.displayText}}</span>
+        </div>
+        
+        <div class="pl-6 flex flex-col gap-0.5 hidden transition-all duration-1000 ease-in-out">
+              @for (child of item.children; track $index){
+              <div [appRouter]="child.link" 
+              class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
+                <span class="material-symbols-outlined text-[16px] text-primary">{{child.icon}}</span>
+                <span class="text-[12px] text-on-surface">{{child.displayText}}</span>
+              </div>
+              }
+        </div>
+        </div>
+      }
+    }
+  
+  <!-- <div class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer mt-1">
+    <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+    <span class="material-symbols-outlined text-[16px]">folder</span>
+    <span class="text-[12px] text-on-surface">assets</span>
+  </div> -->
+
+  </div>
+</aside>

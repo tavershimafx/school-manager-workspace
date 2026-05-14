@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { studentProfileSelector } from '@store/selectors/students.selectors';
 
 @Component({
   selector: 'change-log',
@@ -12,7 +11,6 @@ import { studentProfileSelector } from '@store/selectors/students.selectors';
 export class ChangeLogComponent {
 
   private readonly store = inject(Store);
-  student = this.store.selectSignal(studentProfileSelector)
   
   constructor(private httpClient: HttpClient) {
     

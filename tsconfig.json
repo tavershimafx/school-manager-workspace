@@ -25,6 +25,7 @@
       "@store/*":["./src/app/store/*"],
       "@pipes/*":["./src/app/pipes/*"],
       "@validators/*":["./src/app/validators/*"],
+      "@workspace/*":["./src/app/workspace-utils/*"],
     }
   },
   "angularCompilerOptions": {

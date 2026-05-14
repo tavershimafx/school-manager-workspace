@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiRoutes } from '@models/api.routes';
-import { comparisonValidator } from '@validators/app.validators';
+import { comparisonValidator, hasNumberValidator } from '@validators/app.validators';
 import { getValidationMessages } from '@services/utilities';
+import AuthorizeService from '../../security/auth.service';
 
 @Component({
   selector: 'reset-password',
@@ -13,8 +12,8 @@ import { getValidationMessages } from '@services/utilities';
   styleUrls: ['../login/login.component.css']
 })
 export class ResetPasswordComponent {
-  
-isLoading = false
+
+  isLoading = false
   isSubmitting = false
   message?: string
   isError = false
@@ -23,59 +22,48 @@ isLoading = false
   getErrors = getValidationMessages
 
   loginForm: FormGroup = new FormGroup({
-    "password": new FormControl(null, Validators.compose([Validators.required])),
+    "userId": new FormControl("", Validators.compose([Validators.required])),
+    "code": new FormControl("", Validators.compose([Validators.required])),
+    "password": new FormControl(null, Validators.compose([Validators.required, Validators.minLength(8), hasNumberValidator()])),
     "confirmPassword": new FormControl(null, Validators.compose([Validators.required, comparisonValidator("password")]))
   })
 
 
-  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute){
-    this.loginForm.valueChanges.subscribe({
-      next: (e) =>{
-        this.isSubmitting = false
+  constructor(private authorizeService: AuthorizeService, activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
+    activatedRoute.queryParamMap.subscribe({
+      next: x => {
+        this.loginForm.patchValue({ userId: x.get("a") })
+        this.loginForm.patchValue({ code: x.get("t") })
       }
     })
   }
 
- ngOnInit(): void {
-    this.activatedRoute.queryParamMap.subscribe({
-      next: p =>{
-        this.email = p.get("e")!
-        this.code = p.get("c")!
-      }
-    })
+  ngOnInit(): void {
+
   }
 
-  
-  submitLogin(){
+
+  submitLogin() {
     this.isSubmitting = true
-          this.message = undefined
-            this.isError = false
-        if(this.loginForm.valid){
-          if(this.loginForm.controls["password"].value != this.loginForm.controls["confirmPassword"].value){
-            this.message = "Password and Confirm password do not match"
-            this.isError = true
-            return
-          }
-          this.isLoading = true
-          let f = {
-            email: this.email,
-            password: this.loginForm.controls["password"].value,
-            code: this.code
-          }
-          this.httpClient.post<any>(ApiRoutes.identity.updatePass, f).subscribe({
-            next: res =>{
-                this.isLoading = false;
-                this.message = "Password updated successfully"
-                this.isError = false
-            },
-            error: er =>{
-              this.isSubmitting = false
-              this.isLoading = false;
-              this.isError = true
-              this.message = (er.error.errors as string[]).join("\n")
-              return;
-            }
-        })
+    this.message = undefined
+    this.isError = false
+    if (this.loginForm.valid) {
+      this.isLoading = true
+      this.loginForm.disable()
+      this.authorizeService.resetPassword(this.loginForm.value).subscribe({
+        next: res => {
+          this.router.navigateByUrl("/email-sent?t=pr")
+        },
+        error: er => {
+          this.loginForm.enable()
+          this.isSubmitting = this.isLoading = false
+          this.isError = true
+          this.message = (er.error.errors as string[]).join("\n")
+          return;
         }
-      }
+      })
+    }
+  }
 }

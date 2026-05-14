@@ -3,15 +3,18 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BaseModalComponent } from './base-modal/base-modal.component';
-import { ImportStudentModal } from './import-student/import-student.component';
-import { ConfirmDeleteModal } from './confirm-delete/confirm-delete.component';
+import { DeleteDialogModal } from './delete-dialog/delete-dialog.component';
 import { ConfirmSubmitModal } from './confirm-submit/confirm-submit.component';
+import { WarningDialogModal } from './warning-dialog/warning-dialog.component';
+import { NewTabDialogModal } from './newtab-dialog/newtab-dialog.component';
+import { ComponentsModule } from '@components/components.module';
 
 const components = [
   BaseModalComponent,
-  ImportStudentModal,
-  ConfirmDeleteModal,
+  DeleteDialogModal,
   ConfirmSubmitModal,
+  WarningDialogModal,
+  NewTabDialogModal
 ]
 
 @NgModule({
@@ -19,7 +22,8 @@ const components = [
   imports: [RouterModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
     ],
   exports: [...components],
   providers: [],

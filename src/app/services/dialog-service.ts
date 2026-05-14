@@ -1,8 +1,8 @@
 import { Component, inject, Injectable } from "@angular/core";
 import { DialogModel } from "@models/app.models";
 import { Store } from "@ngrx/store";
-import { dashboardServices } from "@store/actions/utility.actions";
 import { Observable, Subscriber} from "rxjs";
+import { DashboardActions } from "../dashboard/store/dashboard.actions";
 
 @Injectable({
     providedIn: "root"
@@ -100,7 +100,7 @@ export class DialogService{
     }
 
     toggleAsyncMode(showLoading: boolean = true){
-        this.store.dispatch(dashboardServices.loading({ loading: showLoading }))
+        this.store.dispatch(DashboardActions.loading({ loading: showLoading }))
     }
 
     showNotification(subject: string, message: string, accent: "danger" | "success" | "warning"){

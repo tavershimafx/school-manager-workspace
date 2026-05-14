@@ -1,45 +1,64 @@
+
+export const phoneNumberFormats = ["0701",
+"0702",
+"0703",
+"0704",
+"0705",
+"0706",
+"0707",
+"0708", 
+"0709", 
+"0802", 
+"0803", 
+"0804", 
+"0805", 
+"0806", 
+"0807", 
+"0808", 
+"0809", 
+"0810", 
+"0811", 
+"0812", 
+"0813", 
+"0814", 
+"0815", 
+"0816", 
+"0817", 
+"0818", 
+"0819", 
+"0909", 
+"0908", 
+"0901", 
+"0902", 
+"0903", 
+"0904", 
+"0905", 
+"0906", 
+"0907", 
+"0915", 
+"0913", 
+"0912", 
+"0916", 
+"0911"]
+
 export const ApiRoutes = {
+    entityTypes: "admin/users/entity-types",
+    entityStatus: "admin/users/entity-status",
+    
     identity:{
-        login: "identity/login",
-        signout: "identity/sign-out",
-        staffRegister: "identity/staff-registration/register",
-        genders: "identity/staff-registration/gender",
-        contracts: "identity/staff-registration/contract-type",
-        updatePass: "identity/reset-password",
-        schoolLogo: "identity/school-logo",
-        dashboardLogo: "identity/dashboard-logo",
+        login: "authentication/signin",
+        forgotPassword: "authentication/forgot-password",
+        validateCode: "authentication/validate-token",
+        resetPassword: "authentication/reset-password",
+        signout: "authentication/signout",
+        updatePass: "authentication/reset-password",
+        tenantLogo: "authentication/tenant-logo",
+        dashboardLogo: "authentication/dashboard-logo",
     },
 
     account: {
-        profile: "security-services/profile",
-        changePass: "security-services/update-password",
-    },
-
-    // result checker
-    resultChecker: {
-        sessions: "portal/result-checker/available-sessions",
-        classes: "portal/result-checker/available-classes",
-        terms: "portal/result-checker/terms",
-        result: "portal/result-checker/student-result",
-        printResult: "portal/result-checker/print-result",
-        availResults: "portal/result-checker/available-std-results",
-    },
-
-    student: {
-        profile: "portal/student/profile",
-        updateProfile: "portal/student/update-profile",
-        updateProfilePicture: "portal/student/update-profile-image",
-        genders: "portal/student/gender",
-        alive: "portal/student/alive",
-        dashboard: "portal/student/dashboard",
-        classes: "portal/student/classes",
-    },
-
-    finance:{
-        banking:{
-            accountInfo: "portal/student/account-info",
-            transactions: "portal/student/transactions",
-            accountInvoice: "portal/student/account-invoices"
-        }
+        profile: "live-services/profile",
+        alive: "live-services/alive",
+        changePass: "live-services/update-password",
     },
 }

@@ -7,15 +7,14 @@ import { DashboardIndexComponent } from './index/index.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalsModule } from '@modals/modals.module';
 import DirectivesModule from '@directives/directives.module';
-import { provideState } from '@ngrx/store';
-import { studentProfileReducer } from '@store/reducers/student.reducers';
-import { userProfileReducer } from '@store/reducers/user.reducers';
-import { dashboardStateReducer } from '@store/reducers/utility.reducers';
 import PipesModule from '@pipes/pipes.module';
+import { ComponentsModule } from '@components/components.module';
+import { DefaultComponent } from './default/default.component';
 
 const components = [
   DashboardLayoutComponent,
   DashboardIndexComponent,
+  DefaultComponent
 ]
 
 @NgModule({
@@ -27,14 +26,11 @@ const components = [
     ReactiveFormsModule,
     ModalsModule,
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    ComponentsModule
     ],
   exports: [],
-  providers: [
-    provideState("studentProfile", studentProfileReducer),
-    provideState("userProfile", userProfileReducer),
-    provideState("dashboard", dashboardStateReducer)
-  ],
+  providers: [ ],
 })
 export class DashboardLayoutModule {
   

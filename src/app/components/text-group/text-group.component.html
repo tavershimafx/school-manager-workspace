@@ -1,0 +1,44 @@
+
+@if(type == 'password' || type == "email" || type == "text" || type == "number" || type == "phone" || type == "date" ||
+type == "datetime-local"){
+
+<div class="space-y-1.5">
+    @if(label){
+    <label class="block text-[11px] font-semibold uppercase tracking-widest text-on-surface-variant" [for]="label">
+        {{label}}
+    </label>
+    }
+
+    <div class="relative group mb-0" [class.opacity-50]="disabled" [class.pointer-events-none]="disabled">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <span class="material-symbols-outlined text-outline text-[18px]" data-icon="alternate_email">{{icon}}</span>
+        </div>
+        <input #inputEl [type]="type" [(ngModel)]="value" (ngModelChange)="onChangeCallback($event)"
+            [disabled]="disabled" (blur)="onTouchedCallback()" [ngClass]="{
+        'border-error focus:ring-error': showValidation && showVal, 
+        'border-success focus:ring-success': showValidation && !showVal,
+        'focus:border-primary focus:ring-primary/20 border-outline-variant/30': !showValidation,
+        'border-outline-variant/30': light && !showVal
+        }" class="block w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border text-sm focus:ring-1 outline-none transition-all duration-200 placeholder:text-outline/50"
+            [placeholder]="(type == 'password' ? '••••••••••••': placeholder)" autocomplete="new-password" />
+
+        @if(type == 'password'){
+        <button (click)="showPassword($event)"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]" data-icon="visibility">{{visibility}}</span>
+        </button>
+        }@else if(showClear && (value != undefined && value.length > 0)){
+        <button (click)="clearInput()"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]" data-icon="visibility">cancel</span>
+        </button>
+        }
+    </div>
+    
+    @if(showValidation && showVal){
+    <div class="text-danger text-[10px] text-error">{{getErrors(controlDir.errors)}}</div>
+    }
+</div>
+}

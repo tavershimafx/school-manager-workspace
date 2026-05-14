@@ -1,0 +1,24 @@
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between">
+    <span class="text-xs font-medium text-on-surface-variant">
+        Showing: {{(smartTable?.currentPage! * smartTable?.pageSize!) - smartTable?.pageSize! + 1}} -
+        {{(smartTable?.totalItems! < smartTable?.pageSize!)? smartTable?.totalItems : smartTable?.currentPage! *
+            smartTable?.pageSize!}} of {{smartTable?.totalItems}} Items </span>
+    <div class="flex items-center gap-2">
+        <button (click)="mPage(smartTable?.currentPage! - 1)" [disabled]="!smartTable?.hasPreviousPage"
+            class="p-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-variant disabled:opacity-30 transition-all"
+            disabled="">
+            <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+        </button>
+        <div class="flex gap-1">
+            @for (page of pagination; track $index) {
+            <button (click)="mPage(page.page!)" class="w-8 h-8 rounded-lg font-bold text-[10px]" 
+            [ngClass]="{'bg-primary text-white': page.page == smartTable?.currentPage, 
+            'hover:bg-surface-variant': page.page != smartTable?.currentPage}">{{ page.label }}</button>
+            }
+        </div>
+        <button (click)="mPage(smartTable?.currentPage! + 1)" [disabled]="!smartTable?.hasNextPage"
+            class="p-1.5 rounded-lg border border-outline-variant/50 hover:bg-surface-variant transition-all">
+            <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+        </button>
+    </div>
+</div>

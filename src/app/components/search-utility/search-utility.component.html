@@ -1,0 +1,68 @@
+<div class="bg-surface-container-low rounded-xl p-4 mb-6 flex flex-wrap items-center gap-4">
+    <div class="flex-1 min-w-[300px] relative">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant"
+            data-icon="search">search</span>
+        <input (ngModelChange)="fireChange($event)" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"
+            class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border-none rounded-md text-sm focus:ring-2 focus:ring-primary"
+            [placeholder]="placeholder" type="text" />
+    </div>
+    <div class="flex items-center gap-3">
+        <select [(ngModel)]="option" [ngModelOptions]="{standalone: true}"
+            class="bg-surface-container-lowest border-none rounded-md text-sm py-2.5 px-4 focus:ring-2 focus:ring-primary min-w-[150px]">
+            <option disabled="" selected>Search By</option>
+            @for (item of searchOptions; track $index) {
+            <option [value]="item.key">{{item.value | sentencecase}}</option>
+            }
+        </select>
+        <select [(ngModel)]="msize" [ngModelOptions]="{standalone: true}"
+            class="bg-surface-container-lowest border-none rounded-md text-sm py-2.5 px-4 focus:ring-2 focus:ring-primary w-[60px]">
+            <option disabled="">Per Page</option>
+            @for (item of pageOptions; track $index) {
+                <option [value]="item.key">{{item.value}}</option>
+            }
+        </select>
+        <button (click)="sq()"
+            class="p-2.5 bg-primary text-white rounded-md transition-colors border border-transparent">
+            <span class="material-symbols-outlined" data-icon="filter_list">search</span>
+        </button>
+        <button
+            class="p-2.5 bg-surface-container-lowest text-on-surface-variant rounded-md hover:text-primary transition-colors border border-transparent hover:border-primary/20">
+            <span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+        </button>
+    </div>
+</div>
+
+    <!-- <div class="bg-surface-container-low rounded-xl p-4 mb-6 flex flex-wrap items-center gap-4">
+        <div class="flex-1 min-w-[300px] relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant"
+                data-icon="search">search</span>
+            <input [ngModel]="q" (ngModelChange)="search($event)" [ngModelOptions]="{standalone: true}"
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border-none rounded-md text-sm focus:ring-2 focus:ring-primary"
+                placeholder="Search by staff name or code..." type="text" />
+        </div>
+        <div class="flex items-center gap-3">
+            <select
+                class="bg-surface-container-lowest border-none rounded-md text-sm py-2.5 px-4 focus:ring-2 focus:ring-primary min-w-[150px]">
+                <option disabled="" selected>Search By</option>
+                @for (item of searchOptions(); track $index) {
+                <option [value]="item.key">{{item.value}}</option>
+                }
+            </select>
+            <select
+                class="bg-surface-container-lowest border-none rounded-md text-sm py-2.5 px-4 focus:ring-2 focus:ring-primary w-[60px]">
+                <option disabled="">Per Page</option>
+                <option value="50">50</option>
+                <option value="70">70</option>
+                <option value="100" selected>100</option>
+                <option value="200">200</option>
+            </select>
+            <button
+                class="p-2.5 bg-primary text-white rounded-md hover:text-primary transition-colors border border-transparent hover:border-primary/20">
+                <span class="material-symbols-outlined" data-icon="filter_list">search</span>
+            </button>
+            <button
+                class="p-2.5 bg-surface-container-lowest text-on-surface-variant rounded-md hover:text-primary transition-colors border border-transparent hover:border-primary/20">
+                <span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+            </button>
+        </div>
+    </div> -->

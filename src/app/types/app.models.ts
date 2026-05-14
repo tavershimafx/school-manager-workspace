@@ -14,16 +14,6 @@
 //   ApexTitleSubtitle
 // } from "ng-apexcharts";
 
-// export interface UserProfile{
-//   id: string
-//   userName: string
-//   firstName: string
-//   lastName: string
-//   email: string
-//   profilePicture: string
-//   role: string
-// }
-
 // export type ChartOptions = {
 //   series: ApexAxisChartSeries;
 //   chart: ApexChart;
@@ -52,6 +42,12 @@ export interface IKeyValue{
    */
   value: string
 
+
+  /**
+   * An additional field to include for custom collections
+   */
+  meta?: any
+
   /**
    * A flag to determine if the option should be disabled
    */
@@ -64,20 +60,36 @@ export interface IModelBase{
   concurrencyStamp?: string
 }
 
+export interface TaskResult<T>{
+  value: T
+  errors: string[]
+  warning: string
+  succeeded: boolean
+}
 
 export class DialogModel{
   data: any
   dialogType: any
 }
 
-export interface UserProfile {
-  id: number;
-  userName: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  role: string;
-  profilePicture: string;
+export interface UserProfile{
+  id: string
+  userName: string
+  firstName: string
+  lastName: string
+  email: string
+  phoneNumber: string
+  profilePicture: string
+  role: string
+  navigations: NavigationItem[]
+}
+
+export interface NavigationItem{
+  displayText: string
+  link: string
+  icon: string
+  notificationCount?: number
+  children?: NavigationItem[]
 }
 
 export interface IBasicListDto extends IModelBase{
@@ -93,178 +105,60 @@ export interface IBasicInfoDto extends IModelBase{
   status: string
 }
 
-export interface ResultSheet {
-  studentId: number;
-  enrollmentNumber: string
-  studentName: string;
-  studentEmail: string;
-  className: string;
-  yearName: string;
-
-  passportUrl: string;
-  average: string;
-  position: string;
-  term: string;
-  nextTermStart: string;
-  nextTermEnd: string;
-  nextTermFees: string;
-  totalMarksObtained: string;
-  totalMarksObtainable: string;
-  numberInClass: string;
-  daysPresent: string;
-  daysOpened: string;
-  formMasterRemark: string;
-  headTeacherRemark: string;
-
-  headTeacherName: string;
-  formMasterName: string;
-  gender: string;
-  age: string;
-  height: string;
-  weight: string;
-  clubs: string;
-  specialization: string;
-  dateComputed: string;
-  percentAttendance: string;
-
-  schoolSettings: SchoolSettingsDto;
-  subjects: ResultSheetSubject[];
-}
-
-export interface SchoolSettingsDto {
-  name: string;
-  address: string;
-  logo: string;
-  phoneNumber: string;
-  email: string;
-  stamp: string;
-}
-
-
-export interface ResultSheetSubject {
-  subjectName: string;
-  cA1: string;
-  cA2: string;
-  cA3: string;
-  exam: string;
-  total: string;
-  position: string;
-  average: string;
-  highestInSubject: string;
-  lowestInSubject: string;
-  remark: string;
-  grade: string;
-}
-
-export interface AvailableSessionResult{
-  id: number
-  schoolYearName: string
-}
-
-export interface AvailableClassResult{
-  yearId: number
-  schoolYearName: string
-  classId: number
-  className: string
-  terms: string[]
-  schoolTerm: string
-  dateComputed: Date
-}
-
-export interface StudentProfile
-{
-    id:string
-    fullName:string
-    email :string
-    currentClass :string
-    currentTerm :string
-}
-
-export interface StudentDashboard {
-  feesPaid: number;
-  outstandingFees: number
-  totalExams: number;
-  currentClass: string;
-  currentTerm: string
-  subjects: string[];
-  averages: AverageComparison[];
-}
-
-export interface AverageComparison {
-  className: string;
-  yearName: string;
-  yearId: number;
-  average: number;
-  highestInClass: number;
-  lowestInClass: number;
-}
-
-export interface Student {
-  classId: number;
-  file: string | null;
+export interface INotificationDto {
   id: number;
-  concurrencyStamp: string | null;
-  surname: string;
-  firstName: string;
-  middleName: string;
-  email: string;
-  gender: string;
-  studentStatus: string;
-  dob: Date;
-  nationality: string;
-  state: string;
-  lga: string;
-  residentialAddress: string;
-  classAdmitted: string;
-  height: number | null;
-  weight: number | null;
-  clubs: string | null;
-  dateofAdmission: Date;
-  enrollmentNumber: string;
-  currentClass: string;
-  specialization: string | null;
-  previousSchool: string;
-  parentName: string;
-  relationship: string;
-  parentPhone: string;
-  parentAddress: string;
-  parentEmail: string;
-  profilePicureUrl: string
+  message: string;
+  action: string;
+  icon: string;
+  accent: string;
+  isRead: boolean;
+  messageType: string;
+  dateCreated: Date;
 }
 
+export class QueryForm{
+  query: string = "";
+  para:string = "";
+  page: number = 1;
+  size: number = 50
+}
+export class Pagination{
+  requestedPage?: number = 1
+  pageSize?: number = 100
 
-export interface AccountInfo {
-  accountName: string;
-  accountNumber: string;
-  bankName: string;
-  currencyCode: string;
-
-  entityId: number;
-  entityName: string;
-  summary: TransactionSummary
+  /**
+   *  for use in client side pagination and not necessarily required by the server
+   *  just because we dont want to define another pagination class
+   */ 
+  label?: string
+  page?: number | null
+  disabled?: boolean
 }
 
-export interface TransactionSummary {
-  totalTransaction: number;
-  totalPayment: number;
-  totalInvoice: number;
-  totalDebt: number;
+export interface SmartTableResult<T>{
+  items: T[]
+  totalItems: number
+  currentPage: number
+  pageSize: number
+  hasPreviousPage: boolean
+  hasNextPage: boolean
+  totalPages: number
 }
 
-export interface PaymentInvoiceList extends IModelBase {
-  amount: number;
-  balance: number;
-  invoiceStatus: string;
-  paymentPurpose: string;
-  dueDate: Date;
+export interface MediaListItem {
+  id: number;
+  name: string;
+  type: string;
+  url: string;
+  size: number;     
+  dateCreated: Date;
 }
 
-export interface TransactionListDto extends IModelBase {
-  transactionReference: string;
-  amount: number;
-  fees: number;
-  date: Date;
-  senderBank: string;
-  senderAccount: string;
-  senderAccountName: string;
+export interface FileDirectory {
+  currentPage: number;
+  pageSize: number;
+  fullPath: string;
+  name: string;
+  directories: FileDirectory[];
+  files: MediaListItem[];
 }

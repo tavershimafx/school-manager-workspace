@@ -1,0 +1,31 @@
+ <!-- px-3 py-2 -->
+<div class="space-y-1.5">
+    <label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wide">{{label}}</label>
+    <div class="relative" [class.opacity-50]="disabled" [class.pointer-events-none]="disabled">
+        <select [(ngModel)]="value" (ngModelChange)="onChangeCallback($event)" [disabled]="disabled"
+            (blur)="onTouchedCallback()"
+            [ngClass]="{
+        'border-error focus:ring-error': showValidation && showVal, 
+        'border-success focus:ring-success': showValidation && !showVal,
+        'focus:border-primary focus:ring-primary/20 border-outline-variant/30': !showValidation,
+        'py-1.5 px-3': small, 'pl-10 pr-4 py-2.5': !small,
+        'bg-surface-container-low': !light, 'bg-surface-container-lowest': light
+        }" 
+
+            class="w-full appearance-none border border-outline-variant/30 rounded-sm text-sm outline-none cursor-pointer">
+            @if(placeholder){
+                @if(value == null || value == undefined){
+                    <option disabled="" selected="" [value]="undefined">{{placeholder}}</option>
+                }@else if(value == ""){
+                    <option disabled="" selected="" value="">{{placeholder}}</option>
+                }
+            }
+            @for (item of options; track item.key) {
+            <option [value]="item.key">{{item.value}}</option>
+            }
+        </select>
+        <span
+            class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[18px]"
+            data-icon="expand_more">expand_more</span>
+    </div>
+</div>

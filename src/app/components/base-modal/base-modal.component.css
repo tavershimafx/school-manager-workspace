@@ -1,0 +1,122 @@
+.modal-dialog{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000059;
+  z-index: 500;
+}
+
+.dialog-container{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dialog-body{
+  display: block;
+  max-height: 90%;
+  align-self: center;
+  overflow-y: auto;
+  border-radius: 12px;
+  background-color: #fff;
+  animation-name: scale-out;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
+  
+  .dialog-body.xs{
+    width: 20%;
+  }
+
+.dialog-body.sm{
+  width: 30%;
+}
+
+.dialog-body.md{
+  width: 40%;
+}
+
+.dialog-body.lg{
+  width: 75%;
+}
+
+.dialog-body.xl{
+  width: 100%;
+}
+
+@keyframes scale-out {
+  from{
+    transform: scale(0.3, 0.3);
+  }
+
+  to{
+    transform: scale(1, 1);
+  }
+}
+
+/*********************************************************************/
+/***************************Mobile phones*****************************/
+/*********************************************************************/
+
+@media only screen and (min-width: 360px) and (max-width: 575.98px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  .dialog-body.xs, .dialog-body.sm, .dialog-body.md,
+  .dialog-body.lg, .dialog-body.xl{
+    width: 100%;
+  }
+}
+
+/**************************************************************************/
+/**********************************Tablets*********************************/
+/**************************************************************************/
+@media (min-width: 576px) and (max-width: 992px) and (orientation:portrait) {
+  .dialog-body.xs{
+    width: 35%;
+  }
+
+  .dialog-body.sm{
+    width: 50%;
+  }
+
+  .dialog-body.md{
+    width: 80%;
+  }
+  
+  .dialog-body.lg{
+    width: 85%;
+  }
+  
+  .dialog-body.xl{
+    width: 100%;
+  }
+}
+
+
+/**************************************************************************/
+/*****************************iPad Pro 12"*********************************/
+/**************************************************************************/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+  .dialog-body.xs{
+    width: 25%;
+  }
+
+  .dialog-body.sm{
+    width: 50%;
+  }
+
+  .dialog-body.md{
+    width: 80%;
+  }
+  
+  .dialog-body.lg{
+    width: 85%;
+  }
+  
+  .dialog-body.xl{
+    width: 100%;
+  }
+}

@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiRoutes } from '@models/api.routes';
 import { Store } from '@ngrx/store';
-import { dashboardSelector } from '@store/selectors/students.selectors';
+import { utilitySelector } from '@store/utility.selectors';
+import AuthorizeService from '../../security/auth.service';
 
 @Component({
   selector: 'forgot-password',
@@ -14,39 +13,29 @@ import { dashboardSelector } from '@store/selectors/students.selectors';
 })
 export class ForgotPasswordComponent {
   store = inject(Store)
-  dashboard = this.store.selectSignal(dashboardSelector)
+  dashboard = this.store.selectSignal(utilitySelector)
   errorMessage?: string
   isSubmitting = false
   isLoading = false
-  constructor(private router: Router, private httpClient: HttpClient){
+  constructor(private router: Router, private authorizeService: AuthorizeService){
   }
 
   loginForm: FormGroup = new FormGroup({
     "email": new FormControl("", Validators.compose([Validators.required])),
-    "password": new FormControl("", Validators.compose([Validators.required])),
-    "rememberMe": new FormControl(true)
   })
 
-  submitLogin(){
+  submitReset(){
       this.isSubmitting = true
+      this.errorMessage = undefined
     if(this.loginForm.valid){
       this.isLoading = true
       this.loginForm.disable()
-      let f = {
-        email: this.loginForm.controls["email"].value,
-        password: this.loginForm.controls["password"].value,
-        rememberMe: true
-      }
-      this.httpClient.post<any>(ApiRoutes.identity.login, f).subscribe({
+      
+      this.authorizeService.forgotPassword(this.loginForm.value).subscribe({
         next: res =>{
             this.isLoading = false;
             this.loginForm.enable()
-            if(res.value?.upgradeRequired == true){
-              this.router.navigateByUrl(`/update-password?e=${res.value.email}&c=${res.value.code}`)
-            }else{
-              this.router.navigateByUrl("/dashboard")
-              return;
-            }
+            this.router.navigateByUrl(`/pass-code?a=${res}`)
         },
         error: er =>{
         this.loginForm.enable()

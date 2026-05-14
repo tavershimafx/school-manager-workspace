@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ApiRoutes } from '@models/api.routes';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { dashboardSelector } from '@store/selectors/students.selectors';
+import AuthorizeService from '../../security/auth.service';
+import { utilitySelector } from '@store/utility.selectors';
 
 @Component({
   selector: 'login',
@@ -14,47 +13,68 @@ import { dashboardSelector } from '@store/selectors/students.selectors';
 })
 export class LoginComponent {
   store = inject(Store)
-  dashboard = this.store.selectSignal(dashboardSelector)
-  errorMessage?: string
+  dashboard = this.store.selectSignal(utilitySelector)
+  error?: string
   isSubmitting = false
   isLoading = false
-  constructor(private router: Router, private httpClient: HttpClient){
-  }
-
+  returnUrl?: string | null
   loginForm: FormGroup = new FormGroup({
     "email": new FormControl("", Validators.compose([Validators.required])),
     "password": new FormControl("", Validators.compose([Validators.required])),
-    "rememberMe": new FormControl(true)
+    "rememberMe": new FormControl("",)
   })
 
-  submitLogin(){
-      this.isSubmitting = true
-    if(this.loginForm.valid){
+  constructor(private router: Router, private authorizeService: AuthorizeService,
+    activatedRoute: ActivatedRoute
+  ) {
+    activatedRoute.queryParamMap.subscribe({
+      next: p => {
+        this.returnUrl = p.get("returnUrl")
+        if((this.returnUrl?.match(/(returnUrl)/)?.length??0) > 1){
+          this.returnUrl = "/"
+        }
+      }
+    })
+  }
+
+  hasError(control: string) {
+    return this.isSubmitting && this.loginForm.get(control)?.invalid;
+  }
+
+  submitLogin() {
+    this.isSubmitting = true
+    this.error = undefined
+    if (this.loginForm.valid) {
       this.isLoading = true
-      this.loginForm.disable()
       let f = {
         email: this.loginForm.controls["email"].value,
         password: this.loginForm.controls["password"].value,
         rememberMe: true
       }
-      this.httpClient.post<any>(ApiRoutes.identity.login, f).subscribe({
-        next: res =>{
-            this.isLoading = false;
-            this.loginForm.enable()
-            if(res.value?.upgradeRequired == true){
-              this.router.navigateByUrl(`/update-password?e=${res.value.email}&c=${res.value.code}`)
+
+      this.loginForm.disable()
+      this.authorizeService.login(f).subscribe({
+        next: res => {
+          this.isLoading = false;
+          this.loginForm.enable()
+          if (res?.value?.upgradeRequired == true) {
+            this.router.navigateByUrl(`/update-password?e=${res.value.email}&c=${res.value.code}`)
+          } else {
+            if(this.returnUrl && this.returnUrl != "/"){
+              this.router.navigateByUrl(this.returnUrl)
             }else{
               this.router.navigateByUrl("/dashboard")
-              return;
             }
+          }
         },
-        error: er =>{
-        this.loginForm.enable()
+        error: er => {
+          this.loginForm.enable()
           this.isSubmitting = false
-          this.isLoading = false
-          this.errorMessage = er.error.errors.reduce((a:string, b:string) => {return `${a}\n${b}`})
+          this.isLoading = false;
+          this.error = (er.error.errors as string[]).join("\n")
+          return;
         }
-    })
+      })
     }
   }
 }

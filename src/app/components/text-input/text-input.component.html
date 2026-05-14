@@ -1,0 +1,69 @@
+
+<!-- @if(type == "file"){
+<div class="space-y-1.5">
+    <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">{{label}}</label>
+    <div [ngClass]="{'border-error/20 ring-1 ring-error focus:ring-error focus:border-error focus:bg-surface-container-lowest': showVal,
+        'border-transparent text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest': !showVal,
+        'bg-surface-container-low': !light, ' bg-surface-container-lowest': light}"
+
+        class="flex items-center gap-3 p-1.5 rounded-lg border border-dashed border-outline-variant/50">
+        <button (click)="openFile()" [disabled]="disabled" type="button"
+            class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-md text-sm font-semibold shadow-sm">
+            Browse...
+        </button>
+        <input type="file" [disabled]="disabled" class="hidden" #fileInput (change)="onFileSelected($event)" >
+        <span class="text-sm text-outline font-medium">{{ value?.name || placeholder}}</span>
+    </div>
+</div>
+} -->
+
+
+@if(type == 'password' || type == "email" || type == "text" || type == "number" || type == "phone" || type == "date" ||
+type == "datetime-local"){
+
+<div class="space-y-1.5">
+    @if(label){
+    <label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant" [for]="label">
+        {{label}}
+    </label>
+    }
+
+    <!-- 'border-outline-variant/30': light && !showVal,  -->
+    <div class="relative group mb-0" [class.opacity-50]="disabled" [class.pointer-events-none]="disabled"
+            [class.cursor-not-allowed]="disabled"
+            [ngClass]="{
+                'bg-surface-container-low': !light, 
+                'bg-surface-container-lowest': light,
+                'border-outline-variant/30': !light && !showVal
+            }"
+            >
+        <input #inputEl [type]="type" [(ngModel)]="value" (ngModelChange)="onChangeCallback($event)"
+            [disabled]="disabled" (blur)="onTouchedCallback()" [ngClass]="{
+        'border-error focus:ring-error': showValidation && showVal, 
+        'border-success focus:ring-success': showValidation && !showVal,
+        'focus:border-primary focus:ring-primary/20 border-outline-variant/30': !showValidation,
+        'py-1.5 px-3': small, 'pl-10 pr-4 py-2.5': !small
+        }" 
+        class="w-full border focus:ring-1 text-sm outline-none"
+            [placeholder]="(type == 'password' ? '••••••••••••': placeholder)" autocomplete="new-password" />
+
+        @if(type == 'password'){
+        <button (click)="showPassword($event)"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]" data-icon="visibility">{{visibility}}</span>
+        </button>
+        }@else if(showClear && (value != undefined && value.length > 0)){
+        <button (click)="clearInput()"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
+            type="button">
+            <span class="material-symbols-outlined text-[18px]" data-icon="visibility">cancel</span>
+        </button>
+        }
+    </div>
+    
+    @if(showValidation && showVal){
+    <div class="text-danger text-[10px] text-error">{{getErrors(controlDir.errors)}}</div>
+    }
+</div>
+}

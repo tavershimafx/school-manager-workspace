@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
-import { ApiRoutes } from '@models/api.routes';
-import { AvailableClassResult, StudentDashboard } from '@models/app.models';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { selfRegisterTab } from '@workspace/tab-manager';
 import { Store } from '@ngrx/store';
-import { studentProfileSelector } from '@store/selectors/students.selectors';
+import { IAdminTab } from '@workspace/tab-context';
 
 @Component({
   selector: 'dashboard-index',
@@ -11,54 +10,31 @@ import { studentProfileSelector } from '@store/selectors/students.selectors';
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
-export class DashboardIndexComponent {
+export class DashboardIndexComponent implements IAdminTab, OnInit {
+  name: string = "Dashboard"
+  tabId: number
+  data: any
+  route: string
 
   private readonly store = inject(Store);
-  student = this.store.selectSignal(studentProfileSelector)
-  results?: AvailableClassResult[]
-  barX: string[] = []
-  barSeries: { name: string, data: number[] }[] = []
-  // {
-  //   name: "Your's",
-  //   data: []//[44, 55, 57, 56, 61, 58]
-  // },
-  // {
-  //   name: "Highest",
-  //   data: []//[76, 85, 92, 95, 87, 99]
-  // },
-  // {
-  //   name: "Lowest",
-  //   data: []//[35, 41, 36, 26, 45, 48]
-  // }
+  constructor(private router: Router) {
 
-  //barOptions?: Partial<ChartOptions>;
-  dashboardView?: StudentDashboard
-  constructor(private httpClient: HttpClient) {
-    this.getDashboard()
-    this.getResults()
+    const nav = this.router.currentNavigation();
+    this.route = nav?.extras.state?.['route'];
+    this.tabId = nav?.extras.state?.['tabId'];
+
+    selfRegisterTab(this);
   }
 
-  randomWidth() {
-    return `${Math.floor(Math.random() * 100)}%`
-  }
-  
-  private getResults() {
-    this.httpClient.get<any>(ApiRoutes.resultChecker.availResults).subscribe({
-      next: res => {
-        this.results = res.value
-      }
-    })
+  ngOnInit(): void {
+
   }
 
-  private getDashboard() {
-    this.httpClient.get<any>(ApiRoutes.student.dashboard).subscribe({
-      next: res => {
-        this.dashboardView = res.value
-        
-      },
-      error: er => {
-        throw "Cannot load dashboard at the moment. An error occured loading student dashboard"
-      }
-    })
+  executeCommand(command: string, data: any): void {
+
+  }
+
+  loadTabContext(): void {
+
   }
 }

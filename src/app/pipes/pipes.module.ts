@@ -1,11 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MoneyPipe, TimespanPipe } from "./timespan.pipe";
+import { InitialsPipe, MoneyPipe, SentenceCasePipe, TimespanPipe } from "./timespan.pipe";
 
 const components = [
    TimespanPipe,
-   MoneyPipe
+   MoneyPipe,
+   SentenceCasePipe,
+   InitialsPipe
 ]
 
 @NgModule({

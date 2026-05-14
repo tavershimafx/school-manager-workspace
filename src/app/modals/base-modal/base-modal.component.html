@@ -1,5 +1,27 @@
-<!-- Modal Overlay -->
-<div class="fixed inset-0 z-[100] flex items-center justify-center glass-overlay overflow-y-auto">
+<!-- <div class="fixed inset-0 z-50 flex items-center justify-center bg-on-background/40 backdrop-blur-sm p-4">
+   <div [ngClass]="{'max-w-4xl' : large, 'max-w-lg': !large}"
+      class="w-full max-h-screen bg-surface-container-lowest rounded-xl shadow-[0px_8px_32px_rgba(25,28,30,0.06)] overflow-hidden flex flex-col">
+      <header class="flex items-center justify-between px-6 py-4 w-full bg-[#ffffff] dark:bg-slate-900 rounded-t-2xl">
+         <div class="flex flex-col">
+            <nav class="flex items-center gap-1 mb-1">
+               <span class="text-[10px] uppercase tracking-wider font-semibold text-outline">{{module}}</span>
+               <span class="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
+               <span class="text-[10px] uppercase tracking-wider font-semibold text-primary">{{subModule}}</span>
+            </nav>
+            <h1 class="font-['Manrope'] text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{{title}}
+            </h1>
+         </div>
+         <button (click)="closeDialog()"
+            class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-150">
+            <span class="material-symbols-outlined" data-icon="close">close</span>
+         </button>
+      </header>
+   </div>
+</div> -->
+
+
+
+<div class="fixed inset-0 z-[100] flex items-center justify-center glass-overlay">
    <!-- Modal Dialog -->
    <div
       class="bg-surface-bright w-full max-w-[540px] rounded-lg shadow-[0px_8px_24px_rgba(26,28,28,0.12)] border border-outline-variant/20 overflow-hidden">

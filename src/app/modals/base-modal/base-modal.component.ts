@@ -13,6 +13,7 @@ export class BaseModalComponent {
   @Input("module") module?: string
   @Input("subModule") subModule?: string
   @Input("description") description?: string
+  @Input("large") large?: boolean
 
   constructor(private dialogService: DialogService){
 

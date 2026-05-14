@@ -19,7 +19,10 @@
           <p class="text-on-surface-variant text-sm mt-1">School Management Workspace</p>
         </div>
         <!-- Form -->
-        <form class="space-y-5">
+        <form class="space-y-5" [formGroup]="loginForm" (submit)="submitLogin()">
+          @if(error){
+          <p class="text-error text-[12px] m-0">{{error}}</p>
+          }
           <!-- Email Field -->
           <div class="space-y-1.5">
             <label class="block text-[11px] font-bold uppercase tracking-widest text-on-surface-variant"
@@ -27,9 +30,13 @@
             <div class="relative">
               <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl"
                 data-icon="mail">mail</span>
-              <input
-                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-sm text-sm transition-all duration-200 outline-none"
-                id="email" name="email" placeholder="name@school.edu" type="email" />
+              <input [ngClass]="{
+                'border-error focus:ring-error': isSubmitting && !loginForm.controls['email'].valid, 
+                'border-success focus:ring-success': isSubmitting && loginForm.controls['email'].valid,
+                'focus:border-primary focus:ring-primary/20 border-transparent': !isSubmitting
+              }"
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border focus:ring-1 rounded-sm text-sm transition-all duration-200 outline-none"
+                formControlName="email" placeholder="name@school.edu" type="email" />
             </div>
           </div>
           <!-- Password Field -->
@@ -43,25 +50,34 @@
             <div class="relative">
               <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl"
                 data-icon="lock">lock</span>
-              <input
-                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-sm text-sm transition-all duration-200 outline-none"
-                id="password" name="password" placeholder="••••••••" type="password" />
+              <input [ngClass]="{
+                'border-error focus:ring-error': isSubmitting && !loginForm.controls['password'].valid, 
+                'border-success focus:ring-success': isSubmitting && loginForm.controls['password'].valid,
+                'focus:border-primary focus:ring-primary/20 border-transparent': !isSubmitting
+              }"
+                class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border focus:ring-1 rounded-sm text-sm transition-all duration-200 outline-none"
+                formControlName="password" placeholder="••••••••" type="password" />
             </div>
           </div>
           <!-- Remember Me -->
           <div class="flex items-center">
-            <input class="w-4 h-4 text-primary border-outline-variant rounded-sm focus:ring-primary" id="remember"
-              type="checkbox" />
+            <input class="w-4 h-4 text-primary border-outline-variant rounded-sm focus:ring-primary" type="checkbox"
+              formControlName="rememberMe" />
             <label class="ml-2 text-xs text-on-surface-variant select-none" for="remember">Remember this device for 30
               days</label>
           </div>
           <!-- Sign In Button -->
           <button
-            class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold text-sm rounded-sm shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200 uppercase tracking-widest"
+            class="flex justify-center w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold text-sm rounded-sm shadow-sm hover:shadow-md active:scale-[0.98] transition-all duration-200 uppercase tracking-widest"
             type="submit">
-            Sign In
+            @if(isLoading){
+              <spinner [small]="true"></spinner>
+            }@else {
+              Sign In
+            }
           </button>
         </form>
+       
         <!-- Footer Links -->
         <div class="mt-8 pt-6 border-t border-outline-variant/10 text-center">
           <p class="text-xs text-on-surface-variant">

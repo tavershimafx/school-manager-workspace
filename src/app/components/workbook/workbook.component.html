@@ -1,0 +1,66 @@
+<div class="workbook">
+    <div class="table-surface">
+        <div class="table-container" #container>
+            <table cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="shard" (click)="downloadPage()" [ngClass]="{'editted': hasEdit, 'no-edit': !hasEdit}"
+                        ><span class="material-symbols-outlined">download</span></th>
+                        @for (h of sheetHeaders; track $index) {
+                            <th (click)="headerClicked($index)" class="label" [ngClass]="{'editted': hasEdit, 'no-edit': !hasEdit}"><div class="col-head-content bold">{{h.label}}</div></th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <div class="v-lighter" #lighter>
+                        <div class="sll"></div>
+                    </div>
+                    
+                    @for (row of workbook.worksheets![0].rows; track $index) {
+                        <tr class="{{row.isHighlighted? 'highlight' : ''}} {{row.isActive? 'active-row' : ''}}">
+                            <td class="row-head text-center" (click)="highlightRow(row.id, $event)" [ngClass]="{'row-changed': row.hasChanges, 'nr-change': !row.hasChanges}">{{$index + 1}}</td>
+                            @for (c of row.cells; track $index) {
+                                @if($index == 0){
+                                    <!-- <td class="cell"><div class="cell-data b">{{c.value == undefined? "-" : c.value}}</div></td> -->
+                                    <td class="cell"
+                                    [ngClass]="{'high-col' : c.col == workbook.worksheets![0].highlightedCol,
+                                        'hbg': c.highlighted,
+                                    }" 
+                                    data-id="{{c.id}}"
+                                    (click)="cellClicked($event, row.id, c.col)"
+                                    (mousedown)="startMouseDown($event, row.id, c.col)"
+                                    (mouseup)="mouseUp($event, row.id, c.col)"
+                                    (mouseover)="mouseOverCell($event)"
+                                    >
+                                    @if(isValidDate(c.value)){
+                                        <div class="cell-data text-bold" [tabindex]="$index">{{c.value == undefined || c.value == ''? "-" : c.value | date:'dd/MM/yyyy'}}</div>
+                                    }@else{
+                                        <div class="cell-data text-bold" [tabindex]="$index">{{c.value == undefined || c.value == ''? "-" : c.value}}</div>
+                                    }
+                                </td>
+                                }@else {
+                                    <td class="cell"
+                                    [ngClass]="{'high-col' : c.col == workbook.worksheets![0].highlightedCol,
+                                        'hbg': c.highlighted,
+                                    }" 
+                                    data-id="{{c.id}}"
+                                    (click)="cellClicked($event, row.id, c.col)"
+                                    (mousedown)="startMouseDown($event, row.id, c.col)"
+                                    (mouseup)="mouseUp($event, row.id, c.col)"
+                                    (mouseover)="mouseOverCell($event)"
+                                    >
+                                    @if(isValidDate(c.value)){
+                                        <div class="cell-data text-center" [tabindex]="$index">{{c.value == undefined || c.value == ''? "-" : c.value | date:'dd/MM/yyyy'}}</div>
+                                    }@else{
+                                        <div class="cell-data text-center" [tabindex]="$index">{{c.value == undefined || c.value == ''? "-" : c.value}}</div>
+                                    }
+                                    </td>
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

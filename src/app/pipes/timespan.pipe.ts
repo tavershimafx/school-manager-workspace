@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { formatMoney } from "@services/utilities";
+import { formatMoney, getInitials, toSentenceCase } from "@services/utilities";
 //import { UtilityFunctions } from "@services/functions";
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -78,5 +78,25 @@ export class MoneyPipe implements PipeTransform{
         }
 
         return value
+    }
+}
+
+@Pipe({
+    name: "sentencecase",
+    standalone: false
+})
+export class SentenceCasePipe implements PipeTransform{
+    transform(value: any) {
+        return toSentenceCase(value)
+    }
+}
+
+@Pipe({
+    name: "initials",
+    standalone: false
+})
+export class InitialsPipe implements PipeTransform{
+    transform(value: any) {
+        return getInitials(value)
     }
 }

@@ -7,10 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { provideState } from '@ngrx/store';
-import { dashboardStateReducer } from '@store/reducers/utility.reducers';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoLayoutFooterComponent } from './footer/footer.component';
+import { ComponentsModule } from '@components/components.module';
+import { EmailSentComponent } from './email-sent/email-sent.component';
+import { PasswordCodeComponent } from './password-code/password-code.component';
 
 const components = [
   NoLayoutComponent,
@@ -18,7 +20,9 @@ const components = [
   LoginComponent,
   ResetPasswordComponent,
   ForgotPasswordComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  EmailSentComponent,
+  PasswordCodeComponent
 ]
 
 @NgModule({
@@ -27,11 +31,11 @@ const components = [
     NoLayoutRoutingModule, 
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ReactiveFormsModule,
     ],
   exports: [],
   providers: [
-      provideState("dashboard", dashboardStateReducer),
   ],
 })
 export class NoLayoutModule {

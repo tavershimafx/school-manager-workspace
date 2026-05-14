@@ -3,10 +3,12 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DropdownDirective } from "./dropdown.directive";
 import { BadgeDirective } from "./badge.directive";
+import { AppRouterDirective } from "./app-router.directive";
 
 const components = [
    BadgeDirective,
    DropdownDirective,
+   AppRouterDirective
 ]
 
 @NgModule({

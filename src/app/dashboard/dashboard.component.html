@@ -9,10 +9,10 @@
         <span class="text-[11px] font-semibold text-on-surface">Workspace IDE</span>
       </div>
       <nav class="flex gap-4">
-        <div class="inline">
+        <div class="inline relative">
           <a class="text-[11px] text-on-surface-variant hover:text-on-surface relative" dropdown>File</a>
           <div
-            class="pointer-events-auto absolute hidden z-70 top-[-4px] left-[110px] w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
+            class="pointer-events-auto absolute hidden z-70 top-full w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
             <div
               class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default group">
               <span
@@ -55,10 +55,10 @@
             </div>
           </div>
         </div>
-        <div class="inline">
+        <div class="inline relative">
           <a class="text-[11px] text-on-surface-variant hover:text-on-surface relative" dropdown>Edit</a>
           <div
-            class="pointer-events-auto hidden z-70 absolute top-[-4px] left-[165px] w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
+            class="pointer-events-auto hidden z-70 absolute top-full w-64 bg-surface-bright border border-outline-variant/30 shadow-cloud rounded-sm py-1 flex flex-col">
             <div
               class="px-3 py-1.5 flex items-center hover:bg-primary-fixed hover:text-on-primary-fixed cursor-default">
               <div class="w-[18px] mr-3"></div>
@@ -137,7 +137,7 @@
       </div>
       <div class="relative">
         <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary"
-          dropdown>settings</span>
+          dropdown>notifications</span>
         <div class="hidden absolute right-0 mt-2 w-[350px] max-w-sm self-end mt-4">
           <!-- Dropdown Arrow Indicator  -->
           <div
@@ -225,10 +225,11 @@
               <div class="w-16 h-16 rounded-full border-2 border-primary-fixed p-0.5 mb-2">
                 <img alt="User Avatar" class="w-full h-full rounded-full object-cover"
                   data-alt="Close up portrait of a male software engineer with a beard wearing glasses and a navy sweater"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96K7Pkn71rU6xnitdmMI3FFLOxGtfDV8npo8fRkTnM3W87fIug-40BH9MIBiaFlFlWAgAFkCyf9PKqxgoVz_U2i9Lh152kgTzZZS5f5p6PqKouMPJzYdaGphP_olc4_2kELVj4prZL4B6rk6iUCG9hMYWJt_0D0BkAV1r_p_kaycoVOMO0qeIuY7oQz_zA0hNZJsgUJ4jf_9B01wFQEyPCbPzEXIfUt4-ixQcMSqX7hO7dVbClafdoia-Lz0X8vFrLloQDZatdT2P" />
+                  src="/user-profile.png" />
               </div>
-              <h3 class="font-['Inter'] text-sm font-bold text-on-surface">Alex Rivera</h3>
-              <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant">Senior Cloud Architect</p>
+              <h3 class="font-['Inter'] text-sm font-bold text-on-surface">{{userProfile()?.firstName}}
+                {{userProfile()?.lastName}}</h3>
+              <p class="font-['Inter'] text-[0.6875rem] text-on-surface-variant">{{userProfile()?.role}}</p>
               <div
                 class="mt-2 px-2 py-0.5 bg-primary-fixed text-on-primary-fixed rounded-full text-[0.625rem] font-bold tracking-tight">
                 PRO ACCOUNT</div>
@@ -245,7 +246,7 @@
                 </div>
                 <span class="text-[10px] text-outline font-mono">⌘,</span>
               </button>
-              <button
+              <button routerLink="/dashboard/account"
                 class="w-full px-4 py-2 flex items-center justify-between hover:bg-surface-container-highest transition-colors group">
                 <div class="flex items-center gap-3">
                   <span
@@ -260,12 +261,12 @@
                   <span
                     class="material-symbols-outlined text-[1.1rem] text-on-surface-variant group-hover:text-primary transition-colors"
                     data-icon="swap_horiz">swap_horiz</span>
-                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-on-surface">Switch Workspace</span>
+                  <span class="font-['Inter'] text-[0.6875rem] font-medium text-on-surface">Last Login:</span>
                 </div>
-                <span class="text-[10px] text-outline font-mono">⌃S</span>
+                <span class="text-[10px] text-outline font-mono">N/A</span>
               </button>
               <div class="h-[1px] bg-outline-variant/10 my-1"></div>
-              <button
+              <button (click)="logout()"
                 class="w-full px-4 py-2 flex items-center justify-between hover:bg-error-container/20 transition-colors group">
                 <div class="flex items-center gap-3">
                   <span class="material-symbols-outlined text-[1.1rem] text-error" data-icon="logout">logout</span>
@@ -280,6 +281,7 @@
   </header>
   <!-- Main Content Area -->
   <main class="flex-1 flex overflow-hidden">
+
     <!-- SideNavBar (Activity Bar) -->
     <aside
       class="w-12 bg-surface-container-low border-r border-outline-variant/10 flex flex-col items-center py-4 gap-4">
@@ -302,75 +304,25 @@
           class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer">settings</span>
       </div>
     </aside>
-    <!-- Solution Explorer -->
-    <aside class="w-54 bg-surface-container-low flex flex-col border-r border-outline-variant/10">
-      <div class="p-3 flex items-center justify-between">
-        <div>
-          <h2 class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Project Alpha</h2>
-          <p class="text-[10px] text-outline italic">main branch</p>
-        </div>
-        <span class="material-symbols-outlined text-on-surface-variant text-[16px]">more_horiz</span>
-      </div>
-      <div class="flex-1 overflow-y-auto px-1 py-2">
-        <div
-          class="flex items-center gap-2 px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded-sm cursor-pointer mb-1">
-          <span class="material-symbols-outlined text-[14px]">expand_more</span>
-          <span class="material-symbols-outlined text-[16px]">folder_open</span>
-          <span class="text-[12px] font-medium">src</span>
-        </div>
-        <div class="pl-6 flex flex-col gap-0.5">
-          <div
-            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
-            <span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
-            <span class="text-[12px] text-on-surface">main.py</span>
-          </div>
-          <div
-            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
-            <span class="material-symbols-outlined text-[16px] text-secondary">css</span>
-            <span class="text-[12px] text-on-surface">styles.css</span>
-          </div>
-          <div
-            class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer group">
-            <span class="material-symbols-outlined text-[16px] text-error">html</span>
-            <span class="text-[12px] text-on-surface">index.html</span>
-          </div>
-        </div>
-        <div
-          class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer mt-1">
-          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
-          <span class="material-symbols-outlined text-[16px]">folder</span>
-          <span class="text-[12px] text-on-surface">assets</span>
-        </div>
-        <div class="flex items-center gap-2 px-2 py-1 hover:bg-surface-container-highest rounded-sm cursor-pointer">
-          <span class="material-symbols-outlined text-[16px] text-outline">description</span>
-          <span class="text-[12px] text-on-surface">README.md</span>
-        </div>
-      </div>
-    </aside>
+    <admin-sidebar [items]="userProfile()?.navigations"></admin-sidebar>
     <!-- Editor Canvas -->
     <section class="flex-1 flex flex-col bg-surface-container-lowest overflow-hidden">
       <!-- Tabs  overflow-x-auto-->
       <div class="h-9 flex items-center bg-surface-container-high no-scrollbar">
         <div class="flex h-full items-end">
-          <div
-            class="px-4 py-2 hover:bg-surface-dim border-t-2 border-primary flex items-center gap-2 cursor-pointer h-full">
+          @for (tb of Array.from(workspaceManager.tabs().values()); track $index) {
+          <div (click)="workspaceManager.gotoTab(tb.tabId)"
+          [ngClass]="{'bg-surface-container-lowest border-t-2 border-primary': tb.tabId == workspaceManager.activeTabContext?.tabId,
+            'hover:bg-surface-dim border-r border-outline-variant/10': tb.tabId != workspaceManager.activeTabContext?.tabId
+          }"
+            class="px-4 py-2 flex items-center gap-2 cursor-pointer h-full">
             <span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
-            <span class="text-[11px] font-bold text-on-surface">main.py</span>
-            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
+            <span class="text-[11px] font-bold text-on-surface">{{tb.name}}</span>
+            <span (click)="workspaceManager.closeTab(tb.tabId)"
+              class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
           </div>
-          <div
-            class="px-4 py-2 bg-surface-container-lowest flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
-            <span class="material-symbols-outlined text-[16px] text-secondary">css</span>
-            <span class="text-[11px] text-on-surface-variant">styles.css</span>
-            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
-          </div>
-          <div
-            class="px-4 py-2 hover:bg-surface-dim flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
-            <span class="material-symbols-outlined text-[16px] text-error">html</span>
-            <span class="text-[11px] text-on-surface-variant">index.html</span>
-            <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">close</span>
-          </div>
-          <div
+          }
+          <div (click)="workspaceManager.newTab()"
             class="px-4 py-2 hover:bg-surface-dim flex items-center gap-2 cursor-pointer h-full border-r border-outline-variant/10">
             <span class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface">add</span>
           </div>
@@ -380,6 +332,67 @@
       <!-- Editor Surface -->
       <div class="flex-1 flex flex-col relative overflow-y-auto">
         <router-outlet></router-outlet>
+
+        @if(showNotification()){
+
+        <div class="fixed top-6 right-6 flex flex-col gap-4 w-full max-w-sm pointer-events-auto"
+          data-purpose="notification-stack" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+
+          <div class="relative overflow-hidden p-3 rounded flex gap-3 items-center shadow-lg border" [ngClass]="{
+         'border-error/20 bg-error-container text-on-error-container': notifyProps?.accent == 'danger',
+         'border-outline-variant/10 bg-white text-green-900': notifyProps?.accent == 'success',
+         'border-amber-200 bg-amber-50 text-amber-600': notifyProps?.accent == 'warning'
+       }">
+
+            <!-- THE PROGRESS BAR -->
+            <div class="notification-progress absolute bottom-0 left-0 h-1 w-full origin-left" [ngClass]="{
+           'bg-error': notifyProps?.accent == 'danger',
+           'bg-green-600': notifyProps?.accent == 'success',
+           'bg-amber-600': notifyProps?.accent == 'warning'
+         }">
+            </div>
+
+            <!-- Rest of your content -->
+            <span class="material-symbols-outlined !text-lg">
+              {{ notifyProps?.accent == 'danger'? 'error': notifyProps?.accent == 'warning'? 'warning': 'check_circle'}}
+            </span>
+            <div class="flex items-center gap-3 flex-1">
+              <div>
+                <p class="text-xs font-bold">{{notifyProps?.subject}}</p>
+                <p class="text-[10px] opacity-80">{{notifyProps?.message}}</p>
+              </div>
+            </div>
+            <span (click)="closeNotify()"
+              class="material-symbols-outlined !text-sm cursor-pointer hover:text-on-surface z-10">close</span>
+          </div>
+        </div>
+        }
+
+        @if(dashboard().isLoading == true){
+        <main
+          class="fixed inset-0 bg-surface-container-lowest blur-[2px] opacity-50 z-60 flex items-center justify-center p-4">
+
+          <div class="relative w-48 h-48 mb-12 flex items-center justify-center">
+            <spinner></spinner>
+          </div>
+        </main>
+        }
+
+        @if(false){
+        <div class="fixed inset-0 z-50 pointer-events-none flex items-start">
+          <div
+            class="pointer-events-auto absolute bottom-8 right-8 max-w-xs bg-surface-bright/80 backdrop-blur-xl border border-outline-variant/30 shadow-cloud p-4 rounded-lg">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">info</span>
+              <div>
+                <h4 class="text-[13px] font-bold text-on-surface mb-1">Overlay System</h4>
+                <p class="text-[12px] text-on-surface-variant leading-relaxed">Context menus use a "Cloud Shadow"
+                  elevation and high-density typography (13px) for a professional tool look.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
       </div>
     </section>
 
